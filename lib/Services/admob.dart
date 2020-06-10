@@ -1,0 +1,2 @@
+String APPID = "ca-app-pub-9015890388437933~9605177767";
+String InterId = "ca-app-pub-9015890388437933/7908952717";
