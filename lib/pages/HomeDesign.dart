@@ -332,14 +332,11 @@ class HomeDesignState extends State<HomeDesign>
                 heroTag: "Hero",
                 automaticallyImplyLeading: true,
                 backgroundColor: Theme.of(context).dividerColor,
-                largeTitle: Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 10.0),
-                  child: Text(
-                    'Welcome',
-                    style: TextStyle(
-                      fontFamily: "arial",
-                      color: Theme.of(context).primaryColor,
-                    ),
+                largeTitle: Text(
+                  'Welcome',
+                  style: TextStyle(
+                    fontFamily: "arial",
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               )
@@ -347,14 +344,13 @@ class HomeDesignState extends State<HomeDesign>
           },
           body: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(3, 30, 3, 3),
+              padding: const EdgeInsets.fromLTRB(3, 10, 3, 3),
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: 300,
                     child: CircularPercentIndicator(
-                      radius: 210.0,
-                      lineWidth: 18.0,
+                      radius: 190.0,
+                      lineWidth: 16.0,
                       animation: true,
                       percent: 1.0,
                       backgroundColor: Colors.transparent,
@@ -362,16 +358,18 @@ class HomeDesignState extends State<HomeDesign>
                       center: new Text(
                         "$levelsComplite",
                         style: new TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                           fontSize: 60.0,
                         ),
                       ),
                       footer: Padding(
-                        padding: const EdgeInsets.only(top: 10.0, bottom: 20.0),
+                        padding: const EdgeInsets.only(top: 0.0, bottom: 10.0),
                         child: new Text(
                           "Levels Completed",
                           style: new TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25.0),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 25.0,
+                          ),
                         ),
                       ),
                       circularStrokeCap: CircularStrokeCap.round,
@@ -421,7 +419,7 @@ class HomeDesignState extends State<HomeDesign>
                         Expanded(
                           flex: 1,
                           child: Container(
-                            height: 120,
+                            height: 100,
                             child: Card(
                               elevation: 0.0,
                               shape: BeveledRectangleBorder(
@@ -436,7 +434,7 @@ class HomeDesignState extends State<HomeDesign>
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Container(
-                                      height: 80,
+                                      height: 65,
                                       child: Image.asset(
                                         "assets/images/coins.png",
                                       ),
@@ -474,7 +472,7 @@ class HomeDesignState extends State<HomeDesign>
                     ),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 5.0,
                   ),
                   Center(
                     child: Container(
@@ -489,7 +487,7 @@ class HomeDesignState extends State<HomeDesign>
                           child: Text(
                             "Levels Score",
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 25),
+                            style: TextStyle(fontSize: 20),
                           ),
                         ),
                       ),
@@ -516,7 +514,8 @@ class HomeDesignState extends State<HomeDesign>
                               }).toList(),
                               staggeredTiles: snapshot.data
                                   .map<StaggeredTile>(
-                                      (_) => StaggeredTile.fit(2))
+                                    (_) => StaggeredTile.fit(2),
+                                  )
                                   .toList(),
                               mainAxisSpacing: 0.1,
                               crossAxisSpacing: 0.1, // add some space
@@ -648,8 +647,14 @@ class _ScoreCardState extends State<ScoreCard> {
     return GestureDetector(
       onTap: () {
         Category cata = Category(levelNo, levelNo.toString());
-        _categoryPressed(context, cata, levelNo - 1, levelNo,
-            mainPref.MainCurrentScore, mainPref.MainPId);
+        _categoryPressed(
+          context,
+          cata,
+          levelNo - 1,
+          levelNo,
+          mainPref.MainCurrentScore,
+          mainPref.MainPId,
+        );
         // print("levelNo $levelNo");
         // print("per $per");
       },
@@ -662,7 +667,7 @@ class _ScoreCardState extends State<ScoreCard> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(1.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -682,7 +687,7 @@ class _ScoreCardState extends State<ScoreCard> {
                     ),
                   ),
                   footer: SizedBox(
-                    height: 2.0,
+                    height: 1.0,
                   ),
                   circularStrokeCap: CircularStrokeCap.round,
                   progressColor: perColor,

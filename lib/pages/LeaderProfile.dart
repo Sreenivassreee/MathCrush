@@ -158,7 +158,7 @@ class _LeaderProfileState extends State<LeaderProfile> {
                                             ),
                                           ),
                                           Text(
-                                            'Score',
+                                            'Coins',
                                             style: TextStyle(
                                               fontFamily: 'arial',
                                               fontSize: 20.0,

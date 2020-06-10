@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
+import 'package:mathcrush/Services/admob.dart';
 import 'package:theme_provider/theme_provider.dart';
 import '../models/category.dart';
 import '../models/question.dart';
@@ -48,7 +49,7 @@ class _QuizPageState extends State<QuizPage> {
   );
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: InterId,
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
@@ -65,7 +66,7 @@ class _QuizPageState extends State<QuizPage> {
   @override
   void initState() {
     super.initState();
-    FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
+    FirebaseAdMob.instance.initialize(appId: APPID);
 // APPID
     // createInterstitialAd()..load();
 

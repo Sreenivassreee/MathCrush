@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:html_unescape/html_unescape.dart';
 import 'package:mathcrush/Services/Preferences.dart';
+import 'package:mathcrush/Services/admob.dart';
 import 'package:mathcrush/pages/error.dart';
 import 'package:mathcrush/resources/Global.dart';
 import 'package:mathcrush/ui/widgets/globalWidgets.dart';
@@ -65,7 +66,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
 //Interstitial Ads
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: InterId,
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
@@ -81,7 +82,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
 
   @override
   void initState() {
-    FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
+    FirebaseAdMob.instance.initialize(appId: APPID);
     //Change appId With Admob Id
     // _bannerAd = createBannerAd()
     // ..load()

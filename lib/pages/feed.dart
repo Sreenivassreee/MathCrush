@@ -79,22 +79,29 @@ class _FeedState extends State<Feed> {
                           ),
                         ),
                         Container(
-                          color: Colors.black54,
+                          color: Colors.black26,
                         ),
-                        Center(
+                        Align(
+                          alignment: Alignment.bottomCenter,
                           child: Container(
-                            color: Colors.black54,
-                            margin: EdgeInsets.only(top: 400.0),
+                            margin: EdgeInsets.only(bottom: 50.0),
+                            decoration: BoxDecoration(
+                              color: Colors.black45,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 10.0,
-                                vertical: 15.0,
+                                vertical: 10.0,
                               ),
                               child: Text(
-                                snapshot.data.documents[i]['quotes'],
+                                snapshot.data.documents[i]['quotes'] ??
+                                    "Do what is right, not what is easy.",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  fontSize: 25.0,
+                                  fontSize: 22.0,
                                   color: Colors.white,
                                 ),
                               ),
