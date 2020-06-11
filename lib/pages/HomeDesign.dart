@@ -646,7 +646,7 @@ class _ScoreCardState extends State<ScoreCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Category cata = Category(levelNo, levelNo.toString());
+        Category cata = Category(id: levelNo, level: levelNo.toString());
         _categoryPressed(
           context,
           cata,
