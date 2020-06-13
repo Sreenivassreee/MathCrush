@@ -1,15 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mathcrush/models/homeLearn.dart';
 import '../models/category.dart';
 import '../models/question.dart';
 
 // var db = new Mysql();
+final levelReference = Firestore.instance.collection("AllLevels");
+
 String _level;
 Future<List<Question>> getQuestions(Category category) async {
   List<Question> list = List();
   List<Question> list2 = List();
   _level = category.level;
   try {
-    final levelReference = Firestore.instance.collection("AllLevels");
     QuerySnapshot documentSnapshot = await levelReference
         .document("M5xgqSw5RA2VaBkQEP5N")
         .collection("Level-" + _level)
@@ -26,4 +28,23 @@ Future<List<Question>> getQuestions(Category category) async {
   print(list.length);
   print(list2.length);
   return list2;
+}
+
+Learn learn = Learn();
+
+Future<Learn> getLearn(Category category) async {
+  _level = category.level;
+
+  QuerySnapshot learnDocument = await levelReference
+      .document("M5xgqSw5RA2VaBkQEP5N")
+      .collection("Level-" + _level)
+      .document("learn")
+      .collection("home")
+      .getDocuments();
+
+  // print(learnDocument.documents[0]['pic']);
+
+  return Learn(
+      pic: learnDocument.documents[0]['pic'],
+      video: learnDocument.documents[0]['video']);
 }

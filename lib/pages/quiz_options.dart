@@ -3,6 +3,9 @@ import 'dart:io';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mathcrush/models/homeLearn.dart';
+import 'package:mathcrush/pages/youtubeVideo.dart';
 import 'package:mathcrush/resources/Global.dart';
 import 'package:theme_provider/theme_provider.dart';
 import '../models/category.dart';
@@ -39,15 +42,29 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
   _QuizOptionsDialogState(
       this.cScore, this.cLevel, this.corret_level, this.p_Id);
 
-  bool processing;
+  bool processing, isLoadingLearn;
+  Learn learn = Learn();
 
   @override
   void initState() {
     super.initState();
-
+    isLoadingLearn = true;
+    getL(widget.category);
 //    _noOfQuestions = 10;
 //    _difficulty = "easy";
     processing = false;
+  }
+
+  getL(category) async {
+    print(category);
+    await getLearn(category).then((value) {
+      if (value != null) {
+        setState(() {
+          learn = value;
+          isLoadingLearn = false;
+        });
+      }
+    });
   }
 
   @override
@@ -68,6 +85,101 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
           color: Theme.of(context).dividerColor,
           child: Column(
             children: [
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: 5,
+                      color: Theme.of(context).cardColor,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 5),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            5,
+                          ),
+                          color: Colors.black,
+                        ),
+                        height: 26,
+                        width: double.infinity,
+                        child: Text(
+                          "Learn Concept",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    learn.pic != null
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                children: [
+                                  IconButton(
+                                    icon: Icon(
+                                      FontAwesomeIcons.video,
+                                      size: 40,
+                                    ),
+                                    onPressed: learn == null
+                                        ? null
+                                        : () {
+                                            Navigator.of(context)
+                                                .push(MaterialPageRoute(
+                                              builder: (
+                                                context,
+                                              ) =>
+                                                  MyHomePage(),
+                                            ));
+                                            print("video there ${learn.pic}");
+                                          },
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text("Video"),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  IconButton(
+                                    icon: Icon(
+                                      FontAwesomeIcons.stickyNote,
+                                      size: 30,
+                                    ),
+                                    onPressed: learn == null
+                                        ? null
+                                        : () {
+                                            print("video there ${learn.pic}");
+                                          },
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text("Notes"),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        : Container(
+                            height: 70,
+                            child: CupertinoActivityIndicator(
+                              animating: true,
+                            ),
+                          ),
+                  ],
+                ),
+              ),
               Column(
                 children: <Widget>[
                   Container(
@@ -247,6 +359,8 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
 
     try {
       List<Question> questions = await getQuestions(widget.category);
+      print(learn.pic);
+
       questions.shuffle();
       Navigator.pop(context);
       if (questions.length < 1) {
