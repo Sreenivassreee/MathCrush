@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +8,13 @@ import 'package:mathcrush/models/DataClass.dart';
 import 'package:mathcrush/models/PrefData.dart';
 import 'package:mathcrush/models/category.dart';
 import 'package:mathcrush/models/levelsPersentage.dart';
+import 'package:mathcrush/pages/EarningAds.dart';
+import 'package:mathcrush/pages/WinnersPage.dart';
+import 'package:mathcrush/pages/demo.dart';
 import 'package:mathcrush/pages/feed.dart';
 import 'package:mathcrush/pages/quiz_options.dart';
 import 'package:mathcrush/pages/settings.dart';
+import 'package:mathcrush/pages/totalScore.dart';
 import 'package:mathcrush/resources/Global.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:theme_provider/theme_provider.dart';
@@ -288,7 +293,7 @@ class HomeDesignState extends State<HomeDesign>
   }
 
   Widget DashBoard(
-      {BuildContext context, String pId, int currentLevel, int currentScore}) {
+      {BuildContext context2, String pId, int currentLevel, int currentScore}) {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
 // print(widget.data);
@@ -325,18 +330,19 @@ class HomeDesignState extends State<HomeDesign>
     if (isLoading == false) {
       return CupertinoPageScaffold(
         child: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          headerSliverBuilder:
+              (BuildContext context2, bool innerBoxIsScrolled) {
             return <Widget>[
               CupertinoSliverNavigationBar(
                 automaticallyImplyTitle: true,
                 heroTag: "Hero",
                 automaticallyImplyLeading: true,
-                backgroundColor: Theme.of(context).dividerColor,
+                backgroundColor: Theme.of(context2).dividerColor,
                 largeTitle: Text(
                   'Welcome',
                   style: TextStyle(
                     fontFamily: "arial",
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context2).primaryColor,
                   ),
                 ),
               )
@@ -436,7 +442,7 @@ class HomeDesignState extends State<HomeDesign>
                                     Container(
                                       height: 65,
                                       child: Image.asset(
-                                        "assets/images/coins.png",
+                                        "assets/images/coins1.png",
                                       ),
                                     ),
                                     Column(
@@ -447,7 +453,7 @@ class HomeDesignState extends State<HomeDesign>
                                           '$currentScore',
                                           style: TextStyle(
                                             fontFamily: 'arial',
-                                            fontSize: 40.0,
+                                            fontSize: 30.0,
                                             color: Color(
                                               0xffFF9C00,
                                             ),
@@ -474,58 +480,145 @@ class HomeDesignState extends State<HomeDesign>
                   SizedBox(
                     height: 5.0,
                   ),
-                  Center(
-                    child: Container(
-                      height: 40,
-                      width: 200,
-                      child: Card(
-                        elevation: 0.0,
-                        shape: BeveledRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Levels Score",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 20),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Center(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => ThemeConsumer(
+                                  child: WinnersPage(),
+                                ),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            child: Card(
+                              elevation: 0.0,
+                              shape: BeveledRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Flexible(
+                                      flex: 2,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Fwinner-icon.png?alt=media&token=52df5c84-c845-4188-a2c9-3997640c1944",
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 1,
+                                      child: Text(
+                                        "Winners",
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  Container(
-                    child: FutureBuilder<List>(
-                      future: fetchLevels(id: pId),
-                      builder: (BuildContext context, AsyncSnapshot snapshot) {
-                        if (snapshot.hasData) {
-                          return Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: new StaggeredGridView.count(
-                              shrinkWrap: true,
-                              physics: ScrollPhysics(),
-
-                              crossAxisCount: 10,
-                              padding: const EdgeInsets.all(1.0),
-                              children: snapshot.data.map<Widget>((item) {
-                                return new ScoreCard(item);
-                              }).toList(),
-                              staggeredTiles: snapshot.data
-                                  .map<StaggeredTile>(
-                                    (_) => StaggeredTile.fit(2),
-                                  )
-                                  .toList(),
-                              mainAxisSpacing: 0.1,
-                              crossAxisSpacing: 0.1, // add some space
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context2) => ThemeConsumer(
+                                child: EarnAds(),
+                              ),
                             ),
                           );
-                        } else {
-                          return Center(); // If there are no data show this
-                        }
-                      },
-                    ),
+                        },
+                        child: Center(
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            child: Card(
+                              elevation: 0.0,
+                              shape: BeveledRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Flexible(
+                                      flex: 2,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FEarn.png?alt=media&token=9a360431-40ef-4acf-927c-03ec0e7b4655",
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 1,
+                                      child: Text(
+                                        "Earn",
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context2) => ThemeConsumer(
+                                child: TotalScore(id: pId),
+                              ),
+                            ),
+                          );
+                        },
+                        child: Center(
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            child: Card(
+                              elevation: 0.0,
+                              shape: BeveledRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Flexible(
+                                      flex: 2,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Fprogress.png?alt=media&token=baad0328-c06d-400d-8467-417582fadce6",
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 1,
+                                      child: Text(
+                                        "Progress",
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -533,201 +626,245 @@ class HomeDesignState extends State<HomeDesign>
           ),
         ),
       );
-    } else {
-      return Center(
-        child: CupertinoActivityIndicator(
-          radius: 15.0,
-        ),
-      );
     }
   }
 
-//   Future<List> fetchLevels(String id) async {
-//     print("id is $id");
-//     List list = [];
-//     var map = Map<String, dynamic>();
-//     map['action'] = "getLevels";
-//     map['userId'] = "$id";
-//     var response = await http.post(ROOT, body: map);
-//     var a = json.decode(response.body);
-// //    print(a);
-//     for (var i = 1; i <= 1000; i++) {
-//       if (a[0][i.toString()] == null) {
-//       } else {
-// //        print(i);
-// //        print(a[0][i.toString()]);
+  // SizedBox(
+  // height: 5.0,
+  // ),
+//                   Container(
+//                     child: FutureBuilder<List>(
+//                       future: fetchLevels(id: pId),
+//                       builder: (BuildContext context, AsyncSnapshot snapshot) {
+//                         if (snapshot.hasData) {
+//                           return Padding(
+//                             padding: const EdgeInsets.all(4.0),
+//                             child: new StaggeredGridView.count(
+//                               shrinkWrap: true,
+//                               physics: ScrollPhysics(),
 
-//         list.add(levelPer(level: "$i", per: a[0][i.toString()]));
-//       }
-//     }
-
-// //    print(list.length);
-
-//     if (response.statusCode == 200) {
-//       return list;
+//                               crossAxisCount: 10,
+//                               padding: const EdgeInsets.all(1.0),
+//                               children: snapshot.data.map<Widget>((item) {
+//                                 return new ScoreCard(item);
+//                               }).toList(),
+//                               staggeredTiles: snapshot.data
+//                                   .map<StaggeredTile>(
+//                                     (_) => StaggeredTile.fit(2),
+//                                   )
+//                                   .toList(),
+//                               mainAxisSpacing: 0.1,
+//                               crossAxisSpacing: 0.1, // add some space
+//                             ),
+//                           );
+//                         } else {
+//                           return Center(); // If there are no data show this
+//                         }
+//                       },
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       );
 //     } else {
-//       return [];
+//       return Center(
+//         child: CupertinoActivityIndicator(
+//           radius: 15.0,
+//         ),
+//       );
 //     }
 //   }
-  Future<List> fetchLevels({String id}) async {
-    final usersReference = Firestore.instance.collection("Users");
 
-    List list = List();
+// //   Future<List> fetchLevels(String id) async {
+// //     print("id is $id");
+// //     List list = [];
+// //     var map = Map<String, dynamic>();
+// //     map['action'] = "getLevels";
+// //     map['userId'] = "$id";
+// //     var response = await http.post(ROOT, body: map);
+// //     var a = json.decode(response.body);
+// // //    print(a);
+// //     for (var i = 1; i <= 1000; i++) {
+// //       if (a[0][i.toString()] == null) {
+// //       } else {
+// // //        print(i);
+// // //        print(a[0][i.toString()]);
 
-    QuerySnapshot documentSnapshot = await usersReference
-        .document(id)
-        .collection("LevelPercentages")
-        .orderBy('level', descending: false)
-        .getDocuments();
-    // .collection("Users")
-    // .document(id)
-    // .collection("LevelPercentages")
-    // .document()
-    // .get();
-    // print("documentSnapshot.data.length ${documentSnapshot.documents.length}");
-    documentSnapshot.documents.forEach((e) {
-      levelPer levelP = levelPer.fromMap(e.data);
-      list.add(levelP);
-    });
+// //         list.add(levelPer(level: "$i", per: a[0][i.toString()]));
+// //       }
+// //     }
 
-    // return levelPer.fromMap(documentSnapshot);
-// .document(id)
-    // .collection("LevelPercentages")
-    // .document(level.toString())
-    // for (var row in results) {
-    //   list.add(levelPer(level: row['level'], per: row['percentage']));
-    // }
-    // print(list);
-    return List.from(list.reversed);
-  }
-}
+// // //    print(list.length);
 
-class ScoreCard extends StatefulWidget {
-  ScoreCard(this.ad);
+// //     if (response.statusCode == 200) {
+// //       return list;
+// //     } else {
+// //       return [];
+// //     }
+// //   }
+//   Future<List> fetchLevels({String id}) async {
+//     final usersReference = Firestore.instance.collection("Users");
 
-  final ad;
+//     List list = List();
 
-  _ScoreCardState createState() => _ScoreCardState();
-}
+//     QuerySnapshot documentSnapshot = await usersReference
+//         .document(id)
+//         .collection("LevelPercentages")
+//         .orderBy('level', descending: false)
+//         .getDocuments();
+//     // .collection("Users")
+//     // .document(id)
+//     // .collection("LevelPercentages")
+//     // .document()
+//     // .get();
+//     // print("documentSnapshot.data.length ${documentSnapshot.documents.length}");
+//     documentSnapshot.documents.forEach((e) {
+//       levelPer levelP = levelPer.fromMap(e.data);
+//       list.add(levelP);
+//     });
 
-class _ScoreCardState extends State<ScoreCard> {
-  //to keep things readable
-  var _ad;
-  int levelNo;
-  int per;
-  Color perColor;
-  void initState() {
-    setState(() {
-      _ad = widget.ad;
-      //if values are not null only we need to show them
-//      levleNO = (_ad['imageUrl'] != '')
-//          ? _ad['imageUrl']
-//          : 'https://uae.microless.com/cdn/no_image.jpg';
-      levelNo = (_ad.level);
-      per = int.parse(_ad.per);
-      per = per.round();
-      // print("Per is $per");
+//     // return levelPer.fromMap(documentSnapshot);
+// // .document(id)
+//     // .collection("LevelPercentages")
+//     // .document(level.toString())
+//     // for (var row in results) {
+//     //   list.add(levelPer(level: row['level'], per: row['percentage']));
+//     // }
+//     // print(list);
+//     return List.from(list.reversed);
+//   }
+// }
 
-      if (per <= 25.0) {
-        perColor = Colors.red;
-      } else if (per <= 50.0) {
-        perColor = Colors.yellow;
-      } else if (per <= 75.0) {
-        perColor = Colors.blue;
-      } else if (per <= 100.0) {
-        perColor = Colors.green;
-      }
-    });
+// class ScoreCard extends StatefulWidget {
+//   ScoreCard(this.ad);
 
-    super.initState();
-  }
+//   final ad;
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Category cata = Category(id: levelNo, level: levelNo.toString());
-        _categoryPressed(
-          context,
-          cata,
-          levelNo - 1,
-          levelNo,
-          mainPref.MainCurrentScore,
-          mainPref.MainPId,
-        );
-        // print("levelNo $levelNo");
-        // print("per $per");
-      },
-      child: Card(
-        elevation: 0.0,
-        semanticContainer: false,
-        shape: BeveledRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            8,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: CircularPercentIndicator(
-                  radius: 50.0,
-                  lineWidth: 5.0,
-                  animation: true,
-                  percent: per / 100,
-                  backgroundColor: Colors.transparent,
-                  animationDuration: 1500,
-                  center: new Text(
-                    "$per" + " %",
-                    style: new TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
-                    ),
-                  ),
-                  footer: SizedBox(
-                    height: 1.0,
-                  ),
-                  circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: perColor,
-                ),
-              ),
-              Text("$levelNo"),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   _ScoreCardState createState() => _ScoreCardState();
+// }
 
-_categoryPressed(BuildContext context, Category category, int complite_level,
-    int corret_level, int correntScore, var pId) {
-  int com_level = complite_level;
-  int co_Score = correntScore;
-  int crt_level = corret_level;
-  var p_Id = pId;
+// class _ScoreCardState extends State<ScoreCard> {
+//   //to keep things readable
+//   var _ad;
+//   int levelNo;
+//   int per;
+//   Color perColor;
+//   void initState() {
+//     setState(() {
+//       _ad = widget.ad;
+//       //if values are not null only we need to show them
+// //      levleNO = (_ad['imageUrl'] != '')
+// //          ? _ad['imageUrl']
+// //          : 'https://uae.microless.com/cdn/no_image.jpg';
+//       levelNo = (_ad.level);
+//       per = int.parse(_ad.per);
+//       per = per.round();
+//       // print("Per is $per");
 
-  // print(">>>>> $com_level");
-  // print(">>>>> $co_Score");
-  // print(">>>>> $crt_level");
+//       if (per <= 25.0) {
+//         perColor = Colors.red;
+//       } else if (per <= 50.0) {
+//         perColor = Colors.yellow;
+//       } else if (per <= 75.0) {
+//         perColor = Colors.blue;
+//       } else if (per <= 100.0) {
+//         perColor = Colors.green;
+//       }
+//     });
 
-  showModalBottomSheet(
-    context: context,
-    builder: (sheetContext) => BottomSheet(
-      builder: (_) {
-        return ThemeConsumer(
-          child: QuizOptionsDialog(
-            category: category,
-            cScore: co_Score,
-            cLevel: com_level,
-            corret_level: crt_level,
-            p_Id: p_Id.toString(),
-          ),
-        );
-      },
-      onClosing: () {},
-    ),
-  );
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: () {
+//         Category cata = Category(id: levelNo, level: levelNo.toString());
+//         _categoryPressed(
+//           context,
+//           cata,
+//           levelNo - 1,
+//           levelNo,
+//           mainPref.MainCurrentScore,
+//           mainPref.MainPId,
+//         );
+//         // print("levelNo $levelNo");
+//         // print("per $per");
+//       },
+//       child: Card(
+//         elevation: 0.0,
+//         semanticContainer: false,
+//         shape: BeveledRectangleBorder(
+//           borderRadius: BorderRadius.circular(
+//             8,
+//           ),
+//         ),
+//         child: Padding(
+//           padding: const EdgeInsets.all(1.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             children: [
+//               Container(
+//                 child: CircularPercentIndicator(
+//                   radius: 50.0,
+//                   lineWidth: 5.0,
+//                   animation: true,
+//                   percent: per / 100,
+//                   backgroundColor: Colors.transparent,
+//                   animationDuration: 1500,
+//                   center: new Text(
+//                     "$per" + " %",
+//                     style: new TextStyle(
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 12.0,
+//                     ),
+//                   ),
+//                   footer: SizedBox(
+//                     height: 1.0,
+//                   ),
+//                   circularStrokeCap: CircularStrokeCap.round,
+//                   progressColor: perColor,
+//                 ),
+//               ),
+//               Text("$levelNo"),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// _categoryPressed(BuildContext context, Category category, int complite_level,
+//     int corret_level, int correntScore, var pId) {
+//   int com_level = complite_level;
+//   int co_Score = correntScore;
+//   int crt_level = corret_level;
+//   var p_Id = pId;
+
+//   // print(">>>>> $com_level");
+//   // print(">>>>> $co_Score");
+//   // print(">>>>> $crt_level");
+
+//   showModalBottomSheet(
+//     context: context,
+//     builder: (sheetContext) => BottomSheet(
+//       builder: (_) {
+//         return ThemeConsumer(
+//           child: QuizOptionsDialog(
+//             category: category,
+//             cScore: co_Score,
+//             cLevel: com_level,
+//             corret_level: crt_level,
+//             p_Id: p_Id.toString(),
+//           ),
+//         );
+//       },
+//       onClosing: () {},
+//     ),
+//   );
+// }
 }

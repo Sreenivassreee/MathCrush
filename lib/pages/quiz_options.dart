@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mathcrush/models/homeLearn.dart';
+import 'package:mathcrush/pages/picture.dart';
 import 'package:mathcrush/pages/youtubeVideo.dart';
 import 'package:mathcrush/resources/Global.dart';
 import 'package:theme_provider/theme_provider.dart';
@@ -128,13 +129,18 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                                     onPressed: learn == null
                                         ? null
                                         : () {
-                                            Navigator.of(context)
-                                                .push(MaterialPageRoute(
-                                              builder: (
-                                                context,
-                                              ) =>
-                                                  MyHomePage(),
-                                            ));
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (
+                                                  context,
+                                                ) =>
+                                                    ThemeConsumer(
+                                                  child: Youtube(
+                                                    url: learn.video,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
                                             print("video there ${learn.pic}");
                                           },
                                   ),
@@ -157,6 +163,18 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                                     onPressed: learn == null
                                         ? null
                                         : () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (
+                                                  context,
+                                                ) =>
+                                                    ThemeConsumer(
+                                                  child: picture(
+                                                    picUrl: learn.pic,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
                                             print("video there ${learn.pic}");
                                           },
                                   ),

@@ -1,13 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:theme_provider/theme_provider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import '../models/category.dart';
 import './quiz_options.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class HomePage extends StatefulWidget {
   // List<BasicData> basicData;
@@ -102,183 +99,222 @@ class _HomePageState extends State<HomePage> {
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
-                : _SuccessTimeline(
+                : Lis(
                     pId: pId,
                     compliteLevel: compliteLevel,
                     currentScore: currentScore)
-
-            // CustomScrollView(
-            //     physics: BouncingScrollPhysics(),
-            //     slivers: <Widget>[
-            //       SliverToBoxAdapter(
-            //         child: Padding(
-            //           padding: const EdgeInsets.symmetric(
-            //             horizontal: 16.0,
-            //             vertical: 8.0,
-            //           ),
-            //           // child: Text(
-            //           //   "Math Quiz",
-            //           //   style: TextStyle(
-            //           //       color: Colors.white,
-            //           //       fontWeight: FontWeight.w500,
-            //           //       fontSize: 16.0),
-            //           // ),
-            //         ),
-            //       ),
-            //       SliverPadding(
-            //         padding: const EdgeInsets.all(16.0),
-            //         sliver: SliverGrid(
-            //           gridDelegate:
-            //               SliverGridDelegateWithFixedCrossAxisCount(
-            //             crossAxisCount: 5,
-            //             childAspectRatio: 1.2,
-            //             crossAxisSpacing: 5.0,
-            //             mainAxisSpacing: 15.0,
-            //           ),
-            //           delegate: SliverChildBuilderDelegate(
-            //             _buildCategoryItem,
-            //             childCount: categories.length,
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget _buildCategoryItem(BuildContext context, int index) {
-    // int userid=1-1;
-    Category category = categories[index];
-    int corret_level = 0;
-    int correntScore = 0;
-    var p_Id;
+class Lis extends StatefulWidget {
+  var pId;
+  var currentScore, compliteLevel;
 
-    int complite_level = 1;
+  Lis({this.pId, this.compliteLevel, this.currentScore});
 
-    // setState(() {
-    complite_level = compliteLevel;
-    corret_level = int.parse(categories[index].level);
-    correntScore = currentScore;
-    p_Id = pId;
+  @override
+  _LisState createState() => _LisState();
+}
 
-    // });
-//
-    print(".........correntScore...... $correntScore");
-    print("........complite_level........ $complite_level");
-    print(".........p_Id..... $p_Id");
-    print("........corret_level...... $corret_level");
+class _LisState extends State<Lis> {
+  final _controller = ScrollController();
 
-    // if (complite_level > corret_level) {
-    //   return TimelineTile(
-    //     alignment: TimelineAlign.center,
-    //     rightChild: Container(
-    //       constraints: const BoxConstraints(
-    //         minHeight: 120,
-    //       ),
-    //       color: Colors.lightGreenAccent,
-    //     ),
-    //     leftChild: Container(
-    //       color: Colors.amberAccent,
-    //     ),
-    //   );
-    // }
-    //   return Scaffold(
-    //     backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-    //     body: MaterialButton(
-    //       elevation: 1.0,
-    //       highlightElevation: 1.0,
-    //       onPressed: () => _categoryPressed(context, category, complite_level,
-    //           corret_level, correntScore, p_Id),
-    //       shape: new CircleBorder(),
-    //       color: Colors.red,
-    //       textColor: Colors.white70,
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         children: <Widget>[
-    //           AutoSizeText(
-    //             category.level,
-    //             minFontSize: 18.0,
-    //             textAlign: TextAlign.center,
-    //             maxLines: 1,
-    //             wrapWords: false,
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // } else if (complite_level == corret_level) {
-    //   return Scaffold(
-    //     backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-    //     body: MaterialButton(
-    //       elevation: 1.0,
-    //       highlightElevation: 1.0,
-    //       onPressed: () => _categoryPressed(context, category, complite_level,
-    //           corret_level, correntScore, p_Id),
-    //       shape: new CircleBorder(),
-    //       color: Colors.green,
-    //       textColor: Colors.white,
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         children: <Widget>[
-    //           AutoSizeText(
-    //             category.level,
-    //             minFontSize: 18.0,
-    //             textAlign: TextAlign.center,
-    //             maxLines: 1,
-    //             wrapWords: true,
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // } else {
-    //   return MaterialButton(
-    //     elevation: 1.0,
-    //     highlightElevation: 1.0,
-    //     onPressed: () {
-    //       if (corret_level > complite_level) {
-    //         // Navigator.of(context).push(
-    //         //   MaterialPageRoute(
-    //         //     builder: (BuildContext context) => LevelErrorPage(
-    //         //       message: "Your Current Level is : $complite_level",
-    //         //     ),
-    //         //   ),
-    //         // );
-    //       } else {
-    //         _categoryPressed(context, category, complite_level, corret_level,
-    //             correntScore, p_Id);
-    //         print("hi");
-    //       }
-    //     },
-    //     shape: new CircleBorder(),
-    //     color: Colors.blueGrey[800],
-    //     textColor: Colors.white,
-    //     child: Column(
-    //       mainAxisAlignment: MainAxisAlignment.center,
-    //       children: <Widget>[
-    //         Material(
-    //           color: Colors.transparent,
-    //           child: Icon(
-    //             Icons.lock,
-    //             color: Colors.white,
-    //           ),
-    //         )
+  final _height = 100.0;
 
-    //         // AutoSizeText(
-    //         //   category.level,
-    //         //   minFontSize: 20.0,
-    //         //   textAlign: TextAlign.center,
-    //         //   maxLines: 3,
-    //         //   wrapWords: false,
-    //         // ),
-    //       ],
-    //     ),
-    //   );
-    // }
+  int corret_level = 0;
+
+  int correntScore = 0;
+
+  var p_Id;
+
+  int complite_level = 1;
+
+  String co;
+  @override
+  void initState() {
+    complite_level = widget.compliteLevel;
+
+    // corret_level = int.parse(categories[int.parse(pressed)].level);
+
+    correntScore = widget.currentScore;
+
+    p_Id = widget.pId;
+
+    super.initState();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    print(widget.compliteLevel);
+    print(widget.currentScore);
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _animateToIndex(widget.compliteLevel - 3),
+        child: Icon(
+          Icons.location_on,
+        ),
+      ),
+      body: ListView.builder(
+        controller: _controller,
+        itemCount: categories.length,
+        itemBuilder: (_, i) => Container(
+            height: _height,
+            child: widget.compliteLevel > categories[i].id
+                ? t(
+                    i: i,
+                    color: Colors.red,
+                    category: categories[i],
+                    context: context,
+                    pressed: categories[i].level,
+                    complite_level: widget.compliteLevel,
+                    correntScore: widget.compliteLevel,
+                    pId: p_Id,
+                  )
+                : widget.compliteLevel == categories[i].id
+                    ? t(
+                        i: i,
+                        color: Colors.green,
+                        category: categories[i],
+                        context: context,
+                        pressed: categories[i].level,
+                        complite_level: widget.compliteLevel,
+                        correntScore: widget.compliteLevel,
+                        pId: p_Id,
+                      )
+                    : t(i: i, color: Colors.grey, islock: true, action: false)
+
+            // TimelineTile(
+            //   alignment: TimelineAlign.left,
+
+            //   rightChild: Padding(
+            //     padding: const EdgeInsets.all(8.0),
+            //     child: Container(
+            //       child: Text(categories[i].level),
+            //     ),
+            //   ),
+            // ),
+            ),
+      ),
+    );
+  }
+
+  _animateToIndex(i) => _controller.animateTo(
+        _height * i,
+        duration: Duration(seconds: 2),
+        curve: Curves.fastOutSlowIn,
+      );
+}
+
+// class tile extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+// }
+
+t(
+    {int i,
+    color,
+    islock,
+    pressed,
+    category,
+    context,
+    action,
+    complite_level,
+    correntScore,
+    pId}) {
+  final isFirst = i == 0;
+  final isLast = i == categories.length - 1;
+  double indicatorY;
+  if (isFirst) {
+    indicatorY = 0.2;
+  } else if (isLast) {
+    indicatorY = 0.8;
+  } else {
+    indicatorY = 0.5;
+  }
+
+  return TimelineTile(
+    alignment: TimelineAlign.manual,
+    lineX: 0.1,
+    isFirst: isFirst,
+    isLast: isLast,
+    indicatorStyle: IndicatorStyle(
+      width: 50,
+      height: 50,
+      indicatorY: indicatorY,
+      indicator: GestureDetector(
+        onTap: () {
+          action == false
+              ? {}
+              : _categoryPressed(
+                  category: category,
+                  context: context,
+                  complite_level: complite_level,
+                  corret_level: int.parse(pressed),
+                  correntScore: correntScore,
+                  pId: pId,
+                );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color,
+          ),
+          child: Center(
+            child: islock == true
+                ? Icon(Icons.lock)
+                : Text(
+                    categories[i].level,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+          ),
+        ),
+      ),
+    ),
+    rightChild: Card(
+      shape: BeveledRectangleBorder(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(50),
+          bottomLeft: Radius.circular(50),
+        ),
+      ),
+      elevation: 0.0,
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                categories[i].title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 17.0,
+                ),
+              ),
+            ),
+            // Text(
+            //   categories[i].message,
+            //   style: TextStyle(
+            //     fontSize: 15.0,
+            //   ),
+            // ),
+          ],
+        ),
+      ),
+    ),
+    topLineStyle: const LineStyle(
+      color: Color(0xFFCB8421),
+      width: 3,
+    ),
+  );
 }
 
 _categoryPressed(
@@ -333,274 +369,4 @@ _categoryPressed(
       onClosing: () {},
     ),
   );
-}
-
-class _SuccessTimeline extends StatefulWidget {
-  var pId;
-  var currentScore, compliteLevel;
-
-  _SuccessTimeline({this.pId, this.compliteLevel, this.currentScore});
-  @override
-  _SuccessTimelineState createState() => _SuccessTimelineState();
-}
-
-class _SuccessTimelineState extends State<_SuccessTimeline> {
-  List<Category> cates;
-
-  @override
-  void initState() {
-    cates = categories;
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      child: Theme(
-        data: Theme.of(context).copyWith(
-          accentColor: const Color(0xFFFCB69F).withOpacity(0.2),
-        ),
-        child: SafeArea(
-          child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: Center(
-              child: Column(
-                children: <Widget>[
-                  // _Header(),
-                  Expanded(
-                    child: CustomScrollView(
-                      slivers: <Widget>[
-                        _TimelineSteps(
-                            cates: cates,
-                            pId: widget.pId,
-                            compliteLevel: widget.compliteLevel,
-                            currentScore: widget.currentScore)
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _TimelineSteps extends StatelessWidget {
-  var pId;
-  var currentScore, compliteLevel;
-  _TimelineSteps(
-      {Key key, this.cates, this.pId, this.compliteLevel, this.currentScore})
-      : super(key: key);
-
-  final List<Category> cates;
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
-          if (index.isOdd)
-            return const TimelineDivider(
-              color: Color(0xFFCB8421),
-              thickness: 3,
-              begin: 0.1,
-              end: 0.9,
-            );
-
-          final int itemIndex = index ~/ 2;
-          // print("itemIndex $itemIndex");
-          final Category cate = cates[itemIndex];
-
-          final bool isLeftAlign = itemIndex.isEven;
-
-          final child = _TimelineStepsChild(
-            title: cate.title,
-            subtitle: cate.message,
-            isLeftAlign: isLeftAlign,
-          );
-
-          final isFirst = itemIndex == 0;
-          final isLast = itemIndex == cates.length - 1;
-          double indicatorY;
-          if (isFirst) {
-            indicatorY = 0.2;
-          } else if (isLast) {
-            indicatorY = 0.8;
-          } else {
-            indicatorY = 0.5;
-          }
-
-          return TimelineTile(
-            alignment: TimelineAlign.manual,
-            rightChild: isLeftAlign ? child : null,
-            leftChild: isLeftAlign ? null : child,
-            lineX: isLeftAlign ? 0.1 : 0.9,
-            isFirst: isFirst,
-            isLast: isLast,
-            indicatorStyle: IndicatorStyle(
-              width: 50,
-              height: 50,
-              indicatorY: indicatorY,
-              indicator: _TimelineStepIndicator(
-                pressed: '${cate.level}',
-                pId: pId,
-                compliteLevel: compliteLevel,
-                currentScore: currentScore,
-              ),
-            ),
-            topLineStyle: const LineStyle(
-              color: Color(0xFFCB8421),
-              width: 3,
-            ),
-          );
-        },
-        childCount: max(0, cates.length * 2 - 1),
-      ),
-    );
-  }
-}
-
-class _TimelineStepIndicator extends StatelessWidget {
-  var pId;
-  var currentScore, compliteLevel;
-  final String pressed;
-
-  _TimelineStepIndicator(
-      {Key key, this.pressed, this.pId, this.compliteLevel, this.currentScore})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    // print(".........correntScore...... $currentScore");
-    // print("........complite_level........ $compliteLevel");
-    // print(".........p_Id..... $pId");
-    // print("........pressed...... $pressed");
-    Category category = categories[int.parse(pressed) - 1];
-    int corret_level = 0;
-    int correntScore = 0;
-    var p_Id;
-    int complite_level = 1;
-    String co;
-    complite_level = compliteLevel;
-    corret_level = int.parse(categories[int.parse(pressed)].level);
-    correntScore = currentScore;
-    p_Id = pId;
-
-    if (complite_level + 1 > corret_level) {
-      return GestureDetector(
-        onTap: () {
-          _categoryPressed(
-              category: category,
-              context: context,
-              complite_level: complite_level,
-              corret_level: int.parse(pressed),
-              correntScore: correntScore,
-              pId: pId);
-          print(pressed);
-        },
-        child: Container(
-          decoration:
-              const BoxDecoration(shape: BoxShape.circle, color: Colors.red),
-          child: Center(
-            child: Text(
-              pressed,
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      );
-    } else if (complite_level + 1 == corret_level) {
-      return GestureDetector(
-        onTap: () {
-          _categoryPressed(
-              category: category,
-              context: context,
-              complite_level: complite_level,
-              corret_level: int.parse(pressed),
-              correntScore: correntScore,
-              pId: pId);
-          print(pressed);
-        },
-        child: Container(
-          decoration:
-              const BoxDecoration(shape: BoxShape.circle, color: Colors.green),
-          child: Center(
-            child: Text(
-              pressed,
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      );
-    } else {
-      return GestureDetector(
-        onTap: () {
-          print(pressed);
-        },
-        child: Container(
-          decoration:
-              const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
-          child: Center(child: Icon(Icons.lock)),
-        ),
-      );
-    }
-  }
-}
-
-class _TimelineStepsChild extends StatelessWidget {
-  const _TimelineStepsChild({
-    Key key,
-    this.title,
-    this.subtitle,
-    this.isLeftAlign,
-  }) : super(key: key);
-
-  final String title;
-  final String subtitle;
-  final bool isLeftAlign;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: isLeftAlign
-          ? const EdgeInsets.only(right: 32, top: 16, bottom: 16, left: 10)
-          : const EdgeInsets.only(left: 32, top: 16, bottom: 16, right: 10),
-      child: Column(
-        crossAxisAlignment:
-            isLeftAlign ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Text(
-            title,
-            textAlign: isLeftAlign ? TextAlign.right : TextAlign.left,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.green,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Container(child: const SizedBox(height: 20)),
-          Text(
-            subtitle,
-            textAlign: isLeftAlign ? TextAlign.right : TextAlign.left,
-            style: TextStyle(
-              fontSize: 14,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }

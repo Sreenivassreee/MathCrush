@@ -34,17 +34,26 @@ Learn learn = Learn();
 
 Future<Learn> getLearn(Category category) async {
   _level = category.level;
+  try {
+    QuerySnapshot learnDocument = await levelReference
+        .document("M5xgqSw5RA2VaBkQEP5N")
+        .collection("Level-" + _level)
+        .document("learn")
+        .collection("home")
+        .getDocuments();
 
-  QuerySnapshot learnDocument = await levelReference
-      .document("M5xgqSw5RA2VaBkQEP5N")
-      .collection("Level-" + _level)
-      .document("learn")
-      .collection("home")
-      .getDocuments();
+    // print(learnDocument.documents[0]['pic']);
 
-  // print(learnDocument.documents[0]['pic']);
-
-  return Learn(
-      pic: learnDocument.documents[0]['pic'],
-      video: learnDocument.documents[0]['video']);
+    if (learnDocument.documents == null) {
+      return Learn();
+    } else {
+      return Learn(
+        pic: learnDocument.documents[0]['pic'],
+        video: learnDocument.documents[0]['video'],
+      );
+    }
+  } catch (e) {
+    print("Error");
+    return Learn();
+  }
 }
