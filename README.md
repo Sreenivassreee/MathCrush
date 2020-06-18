@@ -75,3 +75,13 @@ Done:-
 <br>
 4.EarnAds Page with math_helper
 <br>
+
+<h2>19/06/2020<h2>
+<br>
+Done:
+<br>
+
+1.Getting levels data with New Optimised Database
+<br>
+2.updating the helper to store the database Questions
+<br>

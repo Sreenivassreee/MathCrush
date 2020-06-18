@@ -383,7 +383,9 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
       Navigator.pop(context);
       if (questions.length < 1) {
         ErrorPage(
-            message: "Your Internet Connection is Slow", context: context);
+          message:
+              "InSufficient Questions \n Our Dedicated Team is Working on it,We will update it soon...",
+        );
         return;
       }
       questions.shuffle();

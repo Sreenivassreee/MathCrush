@@ -73,13 +73,13 @@ class _QuizPageState extends State<QuizPage> {
     // myInterstitial = buildInterstitialAd()..load();
   }
 
-  @override
-  void dispose() {
-    // myInterstitial.dispose();
-    // _interstitialAd.dispose();
-    super.dispose();
-    _interstitialAd.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // myInterstitial.dispose();
+  //   // _interstitialAd.dispose();
+  //   super.dispose();
+  //   // _interstitialAd.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

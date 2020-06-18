@@ -93,12 +93,12 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
       ..show();
   }
 
-  @override
-  void dispose() {
-    // _bannerAd.dispose();
-    super.dispose();
-    _interstitialAd.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // _bannerAd.dispose();
+  //   super.dispose();
+  //   _interstitialAd.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
