@@ -76,7 +76,7 @@ Done:-
 4.EarnAds Page with math_helper [ X ]
 <br>
 
-<h2>19/06/2020<h2>
+<h2>19/06/2020</h2>
 <br>
 Done:
 <br>
@@ -86,7 +86,7 @@ Done:
 2.updating the helper to store the database Questions [ X ]
 <br>
 
-<h2>19/06/2020 Night<h2>
+<h2>19/06/2020 Night</h2>
 <br>
 Done: <br>
 1.setup levelByLevel Percentage [ X ]<br>
