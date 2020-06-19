@@ -4,7 +4,8 @@ With all the Firebase data project ---- Math Crush project
 
 ## Getting Started
 
-11/06/2020<br>
+<h2>11/06/2020</h2>
+<br>
 Done :<br>
 <br>
 
@@ -17,9 +18,11 @@ Next :<br>
 3. try to add play icon in corrent level<br>
 4. adgestments<br>
 
-12/06/2020<br>
+<h2>12/06/2020</h2>
+<br>
 
-13/06/2020<br>
+<h2>13/06/2020</h2>
+<br>
 Done :<br>
 <br>
 
@@ -40,13 +43,15 @@ PP:<br>
    2.collecting ways to learn Pics,Youtube<br>
    3.Levels with ListView [ X ]<br>
 
-14/06/2020 <br>
+<h2>14/06/2020</h2>
+ <br>
 Done:<br>
 p:1:<br>
 Implemented the Youtube with firestore intigration[ X ]
 
-15/06/2020 <br>
+<h2>15/06/2020 </h2>
 <br>
+
 Done<br>
 1.Added Learing picture screen[ X ] <br>
 2.Making admin panel to Learing system[ X ]<br>
@@ -59,9 +64,7 @@ Next:
 2.Implement Download Pictures [ X ]
 <br>
 <br>
-<br>
 
-<br>
 <h2>17/06/2020</h2>
 <br>
 
