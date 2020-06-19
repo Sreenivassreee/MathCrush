@@ -34,6 +34,7 @@ class _QuizFinishedPageState extends State<QuizFinishedPage> {
 
   var _Score;
   int displaycoins = 0;
+  int coins = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +65,9 @@ class _QuizFinishedPageState extends State<QuizFinishedPage> {
       print(correct);
       print("General");
 
-      displaycoins = displaycoins + correct * 5;
+      coins = displaycoins + correct * 5;
     } else {
-      displaycoins = displaycoins + correct * 2;
+      coins = displaycoins + correct * 2;
       print("Random");
     }
 
@@ -273,7 +274,7 @@ class _QuizFinishedPageState extends State<QuizFinishedPage> {
                                           MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
-                                          '$displaycoins',
+                                          '$coins',
                                           style: TextStyle(
                                             fontFamily: 'arial',
                                             fontSize: 30.0,

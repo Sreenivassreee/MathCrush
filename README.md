@@ -43,7 +43,7 @@ PP:<br>
 14/06/2020 <br>
 Done:<br>
 p:1:<br>
-Implemented the Youtube with firestore intigration
+Implemented the Youtube with firestore intigration[ X ]
 
 15/06/2020 <br>
 <br>
@@ -51,12 +51,12 @@ Done<br>
 1.Added Learing picture screen[ X ] <br>
 2.Making admin panel to Learing system[ X ]<br>
 3.tested and added 8 Levels also[ X ]<br>
-4.Added content in Levels for 8 Levels
+4.Added content in Levels for 8 Levels [ X ]
 <br>
 
 Next:
-1.Need to add Content in Level by Level
-2.Implement Download Pictures
+1.Need to add Content in Level by Level [ X ]
+2.Implement Download Pictures [ X ]
 <br>
 <br>
 <br>
@@ -67,13 +67,13 @@ Next:
 
 Done:-
 <br>
-1.Earn Page
+1.Earn Page [ X ]
 <br>
-2.Winners Page with math_Helper
+2.Winners Page with math_Helper [ X ]
 <br>
-3.Progress page
+3.Progress page [ X ]
 <br>
-4.EarnAds Page with math_helper
+4.EarnAds Page with math_helper [ X ]
 <br>
 
 <h2>19/06/2020<h2>
@@ -81,7 +81,14 @@ Done:-
 Done:
 <br>
 
-1.Getting levels data with New Optimised Database
+1.Getting levels data with New Optimised Database[ X ]
 <br>
-2.updating the helper to store the database Questions
+2.updating the helper to store the database Questions [ X ]
 <br>
+
+<h2>19/06/2020 Night<h2>
+<br>
+Done: <br>
+1.setup levelByLevel Percentage [ X ]<br>
+2.setup Home learn with helper [ X ]<br>
+3.implemented the Download Funtinolity in mathCrush [ X ] <br>

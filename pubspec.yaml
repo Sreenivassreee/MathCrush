@@ -57,12 +57,13 @@ dependencies:
   flutter_open_whatsapp: ^0.1.2
   firebase_auth:
   youtube_player_flutter: ^7.0.0+3
-
   timeline_tile: ^0.1.0
   google_fonts: ^1.1.0
   weather_icons: ^2.0.1
   flutter_showcase: ^0.1.0
-
+  image_gallery_saver: ^1.2.2
+  permission_handler: ^5.0.0+hotfix.3
+  dio: ^3.0.9
   example_timeline_tile:
     git:
       url: https://github.com/JHBitencourt/timeline_tile.git

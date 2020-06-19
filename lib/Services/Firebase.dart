@@ -103,40 +103,69 @@ class Fire {
       String id, int level, String per) async {
     String _mess;
     print("Per $per");
-    DocumentSnapshot documentSnapshot = await usersReference
-        .document(id)
-        .collection("LevelPercentages")
-        .document(level.toString())
-        .get();
-    if (documentSnapshot.exists) {
-      try {
-        usersReference
-            .document(id)
-            .collection("LevelPercentages")
-            .document(level.toString())
-            .updateData({
-          "level": level,
+    // DocumentSnapshot documentSnapshot = await usersReference
+    //     .document(id)
+    //     .collection("LevelPercentages")
+    //     .document("LevelByPer")
+    //     .get();
+    // var a = documentSnapshot.data["LevelByPer"];
+
+    // print("documentSnapshot.data${a}");
+
+    // if (documentSnapshot.exists) {
+    try {
+      Firestore.instance
+          .collection("Users")
+          .document(id)
+          .collection("LevelPercentages")
+          .document("LevelByPer")
+          .setData({
+        // "LevelByPer": FieldValue.arrayUnion([
+        level.toString(): {
+          "Level": level,
           "percentage": per.toString(),
-        });
-        _mess = "Sucess";
-      } catch (e) {
-        _mess = "Failed";
-      }
-    } else {
-      try {
-        usersReference
-            .document(id)
-            .collection("LevelPercentages")
-            .document(level.toString())
-            .setData({
-          "level": level,
-          "percentage": per.toString(),
-        });
-        _mess = "Sucess";
-      } catch (e) {
-        _mess = "Failed";
-      }
+        }
+        // ])
+      }, merge: true);
+
+      // )
+      // .document(level.toString())
+      // .updateData
+      // ({
+      // "level": level,
+      // "percentage": per.toString(),
+      // });
+      _mess = "Sucess";
+    } catch (e) {
+      _mess = "Failed";
     }
+    // } else {
+    // try {
+    //   usersReference
+    //       .document(id)
+    //       .collection("LevelPercentages")
+    //       .document("LevelByPer")
+    //       .updateData({
+    //     // "LevelByPer": FieldValue.arrayUnion([
+    //       {
+    //         "Level": level,
+    //         "percentage": per.toString(),
+    //       }
+    //     // ])
+    //   }, merge: true);
+    // usersReference
+    //     .document(id)
+    //     .collection("LevelPercentages")
+    //     .document(level.toString())
+    //     .setData({
+    //   "level": level,
+    //   "percentage": per.toString(),
+    // });
+    // _mess = "Sucess";
+    // } catch (e) {
+    //   _mess = "Failed";
+    // }
+    // }
 
     return _mess;
   }

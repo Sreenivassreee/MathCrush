@@ -150,7 +150,7 @@ class _LisState extends State<Lis> {
   @override
   Widget build(BuildContext context) {
     print(widget.compliteLevel);
-    print(widget.currentScore);
+    print("widget.currentScore${widget.currentScore}");
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () => _animateToIndex(widget.compliteLevel - 3),
@@ -171,7 +171,7 @@ class _LisState extends State<Lis> {
                     context: context,
                     pressed: categories[i].level,
                     complite_level: widget.compliteLevel,
-                    correntScore: widget.compliteLevel,
+                    correntScore: widget.currentScore,
                     pId: p_Id,
                   )
                 : widget.compliteLevel == categories[i].id
@@ -182,7 +182,7 @@ class _LisState extends State<Lis> {
                         context: context,
                         pressed: categories[i].level,
                         complite_level: widget.compliteLevel,
-                        correntScore: widget.compliteLevel,
+                        correntScore: widget.currentScore,
                         pId: p_Id,
                       )
                     : t(i: i, color: Colors.grey, islock: true, action: false)
@@ -237,7 +237,7 @@ t(
   } else {
     indicatorY = 0.5;
   }
-
+  print("correntScore $correntScore");
   return TimelineTile(
     alignment: TimelineAlign.manual,
     lineX: 0.1,

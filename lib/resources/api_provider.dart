@@ -54,7 +54,7 @@ Future<List<Question>> getQuestions(Category category) async {
   } catch (e) {
     print(e.toString());
   }
-  for (var i = 0; i <= 10; i++) {
+  for (var i = 0; i <= 3; i++) {
     list2.add(list[i]);
     list2.shuffle();
     print(list2.length);
@@ -92,15 +92,12 @@ Learn learn = Learn();
 
 Future<Learn> getLearn(Category category) async {
   _level = category.level;
+  print("Level $_level");
   try {
     QuerySnapshot learnDocument = await levelReference
-        .document("M5xgqSw5RA2VaBkQEP5N")
-        .collection("Level-" + _level)
-        .document("learn")
+        .document("Level-" + _level)
         .collection("home")
         .getDocuments();
-
-    // print(learnDocument.documents[0]['pic']);
 
     if (learnDocument.documents == null) {
       return Learn();

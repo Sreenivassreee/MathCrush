@@ -114,25 +114,47 @@ class _TotalScoreState extends State<TotalScore> {
 
     List list = List();
 
-    QuerySnapshot documentSnapshot = await usersReference
+    DocumentSnapshot documentSnapshot = await usersReference
         .document(id)
         .collection("LevelPercentages")
-        .orderBy('level', descending: false)
-        .getDocuments();
+        .document("LevelByPer")
+        .get();
+    // .orderBy('level', descending: false)
+    // .getDocuments();
     // .collection("Users")
     // .document(id)
     // .collection("LevelPercentages")
     // .document()
     // .get();
-    if (documentSnapshot.documents.length < 0) {
+    print(documentSnapshot.data["1"]["Level"]);
+    var i = 1;
+    print(documentSnapshot.data[i.toString()]["Level"] != null);
+    if (documentSnapshot.data.length < 0) {
       setState(() {
         isLoading = false;
       });
     }
-    documentSnapshot.documents.forEach((e) {
-      levelPer levelP = levelPer.fromMap(e.data);
-      list.add(levelP);
-    });
+    try {
+      for (var i = 1;
+          documentSnapshot.data[i.toString()]["Level"] != null;
+          i++) {
+        list.add(
+          levelPer(
+            level: documentSnapshot.data[i.toString()]["Level"],
+            per: documentSnapshot.data[i.toString()]["percentage"],
+          ),
+        );
+      }
+    } catch (e) {
+      print("e $e");
+    }
+
+    print(list);
+    // documentSnapshot.documents.forEach((e) {
+    //   levelPer levelP = levelPer.fromMap(e.data);
+
+    //   list.add(levelP);
+    // });
 
     // return levelPer.fromMap(documentSnapshot);
 // .document(id)
