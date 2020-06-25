@@ -68,13 +68,16 @@ class _FeedState extends State<Feed> {
                     child: Stack(
                       children: [
                         Container(
+                          color: Colors.black,
                           height: MediaQuery.of(context).size.height,
                           child: CachedNetworkImage(
-                            imageUrl: snapshot.data.documents[i]['url'],
-                            errorWidget: (context, url, error) => Image.network(
-                              "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-                              fit: BoxFit.cover,
+                            fadeInDuration: Duration(seconds: 1),
+                            placeholder: (context, url) => Center(
+                              child: CircularProgressIndicator(),
                             ),
+                            imageUrl: snapshot.data.documents[i]['url'],
+                            errorWidget: (context, url, error) =>
+                                Icon(Icons.error),
                             fit: BoxFit.cover,
                           ),
                         ),

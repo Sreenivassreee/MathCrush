@@ -56,31 +56,53 @@ class _EarnAdsState extends State<EarnAds> {
           stream: Firestore.instance.collection('EarnAds').snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return CupertinoActivityIndicator();
-            } else {
+              return Stack(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height,
+                    color: Colors.black,
+                  ),
+                  Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ],
+              );
+            } else if (snapshot.hasData) {
               return ThemeProvider(
                 child: PageView.builder(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   controller: controller,
                   itemBuilder: (context, i) {
+                    var url = snapshot.data.documents[i]['Poster url'];
                     return Container(
                       height: MediaQuery.of(context).size.height,
                       child: Stack(
                         children: [
                           Container(
+                            color: Colors.black,
                             height: MediaQuery.of(context).size.height,
                             child: CachedNetworkImage(
-                              imageUrl: snapshot.data.documents[i]
-                                  ['Poster url'],
-                              errorWidget: (context, url, error) =>
-                                  Image.network(
-                                "",
-                                //TODO:
-                                fit: BoxFit.cover,
+                              fadeInDuration: Duration(seconds: 1),
+                              placeholder: (context, url) => Center(
+                                child: CircularProgressIndicator(),
                               ),
+                              imageUrl: url,
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
                               fit: BoxFit.cover,
                             ),
+                            // child: CachedNetworkImage(
+                            //   imageUrl: snapshot.data.documents[i]
+                            //       ['Poster url'],
+                            //   errorWidget: (context, url, error) =>
+                            //       Image.network(
+                            //     "",
+                            //     //TODO:
+                            //     fit: BoxFit.cover,
+                            //   ),
+                            //   fit: BoxFit.cover,
+                            // ),
                           ),
                           Container(
                             color: Colors.black26,

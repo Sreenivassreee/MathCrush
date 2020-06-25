@@ -64,76 +64,94 @@ class _WinnersPageState extends State<WinnersPage> {
                   scrollDirection: Axis.vertical,
                   controller: controller,
                   itemBuilder: (context, i) {
-                    return Container(
-                      height: MediaQuery.of(context).size.height,
-                      child: Stack(
+                    if (!snapshot.hasData) {
+                      return Stack(
                         children: [
                           Container(
                             height: MediaQuery.of(context).size.height,
-                            child: CachedNetworkImage(
-                              imageUrl: snapshot.data.documents[i]
-                                  ['Poster url'],
-                              errorWidget: (context, url, error) =>
-                                  Image.network(
-                                "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-                                fit: BoxFit.cover,
-                              ),
-                              fit: BoxFit.cover,
-                            ),
+                            color: Colors.black,
                           ),
-                          Container(
-                            color: Colors.black26,
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              margin: EdgeInsets.only(bottom: 50.0),
-                              decoration: BoxDecoration(
-                                color: Colors.black45,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(5),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0,
-                                      vertical: 10.0,
-                                    ),
-                                    child: Text(
-                                      snapshot.data.documents[i]['Name'] ?? "",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: 22.0,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0,
-                                      vertical: 10.0,
-                                    ),
-                                    child: Text(
-                                      snapshot.data.documents[i]['Date'] ?? "",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: 22.0,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                          Center(
+                            child: CircularProgressIndicator(),
                           ),
                         ],
-                      ),
-                    );
+                      );
+                    } else if (snapshot.hasData) {
+                      var url = snapshot.data.documents[i]['Poster url'];
+                      return Container(
+                        color: Colors.black,
+                        height: MediaQuery.of(context).size.height,
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: MediaQuery.of(context).size.height,
+                              child: CachedNetworkImage(
+                                fadeInDuration: Duration(seconds: 1),
+                                placeholder: (context, url) => Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                                imageUrl: url,
+                                errorWidget: (context, url, error) =>
+                                    Icon(Icons.error),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              color: Colors.black26,
+                            ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                margin: EdgeInsets.only(bottom: 50.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.black45,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(5),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10.0,
+                                        vertical: 10.0,
+                                      ),
+                                      child: Text(
+                                        snapshot.data.documents[i]['Name'] ??
+                                            "",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 22.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10.0,
+                                        vertical: 10.0,
+                                      ),
+                                      child: Text(
+                                        snapshot.data.documents[i]['Date'] ??
+                                            "",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 22.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
                   },
                   itemCount: snapshot.data.documents.length,
                 ),

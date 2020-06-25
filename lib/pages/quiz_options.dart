@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -169,13 +167,13 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                                                   context,
                                                 ) =>
                                                     ThemeConsumer(
-                                                  child: picture(
+                                                  child: Picture(
                                                     picUrl: learn.pic,
                                                   ),
                                                 ),
                                               ),
                                             );
-                                            print("video there ${learn.pic}");
+                                            // print("video there ${learn.pic}");
                                           },
                                   ),
                                   SizedBox(

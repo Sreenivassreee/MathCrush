@@ -618,6 +618,50 @@ class HomeDesignState extends State<HomeDesign>
                           ),
                         ),
                       ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context2) => ThemeConsumer(
+                                child: demo(),
+                              ),
+                            ),
+                          );
+                        },
+                        child: Center(
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            child: Card(
+                              elevation: 0.0,
+                              shape: BeveledRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Flexible(
+                                      flex: 2,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FEarn.png?alt=media&token=9a360431-40ef-4acf-927c-03ec0e7b4655",
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 1,
+                                      child: Text(
+                                        "Earn",
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],

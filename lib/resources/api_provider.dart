@@ -32,29 +32,24 @@ Future<List<Question>> getQuestions(Category category) async {
     // print("documentSnapshot.data $d");
     // print("documentSnapshot.data $e");
 
-    for (int i = 0;
-        documentSnapshot.data["Level-" + _level][i]["Q"] != null;
-        i++) {
-      if (documentSnapshot.data["Level-" + _level][i] == null) {
-        print("hi");
-      } else {
-        list.add(Question(
-          question: documentSnapshot.data["Level-" + _level][i]["Q"].toString(),
-          correctAnswer:
-              documentSnapshot.data["Level-" + _level][i]["CA"].toString(),
-          incorrectAnswer1:
-              documentSnapshot.data["Level-" + _level][i]["ICA1"].toString(),
-          incorrectAnswer2:
-              documentSnapshot.data["Level-" + _level][i]["ICA2"].toString(),
-          incorrectAnswer3:
-              documentSnapshot.data["Level-" + _level][i]["ICA3"].toString(),
-        ));
-      }
+    for (int i = 0; documentSnapshot.data["Level-" + _level][i] != null; i++) {
+      list.add(Question(
+        question: documentSnapshot.data["Level-" + _level][i]["Q"].toString(),
+        correctAnswer:
+            documentSnapshot.data["Level-" + _level][i]["CA"].toString(),
+        incorrectAnswer1:
+            documentSnapshot.data["Level-" + _level][i]["ICA1"].toString(),
+        incorrectAnswer2:
+            documentSnapshot.data["Level-" + _level][i]["ICA2"].toString(),
+        incorrectAnswer3:
+            documentSnapshot.data["Level-" + _level][i]["ICA3"].toString(),
+      ));
+      list.shuffle();
     }
   } catch (e) {
     print(e.toString());
   }
-  for (var i = 0; i <= 3; i++) {
+  for (var i = 0; i <= 14; i++) {
     list2.add(list[i]);
     list2.shuffle();
     print(list2.length);

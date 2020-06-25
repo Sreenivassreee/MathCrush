@@ -64,46 +64,42 @@ class _HomePageState extends State<HomePage> {
     }
 
     return ThemeConsumer(
-      child: Scaffold(
-        // CupertinoPageScaffold(
-        //   child: NestedScrollView(
-        //     headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        //       return <Widget>[
-        //         CupertinoSliverNavigationBar(
-        //           backgroundColor: Theme.of(context).dividerColor,
-        //           automaticallyImplyTitle: true,
-        //           automaticallyImplyLeading: true,
-        //           actionsForegroundColor: Theme.of(context).primaryColor,
-        //           heroTag: "Hero",
-        //           largeTitle: Text(
-        //             'Levels',
-        //             style: TextStyle(
-        //               color: Theme.of(context).primaryColor,
-        //               fontFamily: "arial",
-        //             ),
-        //           ),
-        //         ),
-        //       ];
-        //     },
-        body: Stack(
-          children: <Widget>[
-            ClipPath(
-                // clipper: WaveClipperTwo(),
-                // child: Container(
-                //   decoration:
-                //       BoxDecoration(color: Theme.of(context).primaryColor),
-                //   height: 200,
-                // ),
+      child: CupertinoPageScaffold(
+        child: NestedScrollView(
+          physics: ScrollPhysics(),
+          headerSliverBuilder:
+              (BuildContext context2, bool innerBoxIsScrolled) {
+            return <Widget>[
+              CupertinoSliverNavigationBar(
+                automaticallyImplyTitle: true,
+                heroTag: "Hero",
+                previousPageTitle: "Home",
+                automaticallyImplyLeading: true,
+                backgroundColor: Theme.of(context2).dividerColor,
+                largeTitle: Text(
+                  'Levels',
+                  style: TextStyle(
+                    fontFamily: "arial",
+                    color: Theme.of(context2).primaryColor,
+                  ),
                 ),
-            isloading
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : Lis(
-                    pId: pId,
-                    compliteLevel: compliteLevel,
-                    currentScore: currentScore)
-          ],
+              )
+            ];
+          },
+          body: Scaffold(
+            body: Stack(
+              children: <Widget>[
+                isloading
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : Lis(
+                        pId: pId,
+                        compliteLevel: compliteLevel,
+                        currentScore: currentScore)
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -153,12 +149,19 @@ class _LisState extends State<Lis> {
     print("widget.currentScore${widget.currentScore}");
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
         onPressed: () => _animateToIndex(widget.compliteLevel - 3),
         child: Icon(
           Icons.location_on,
+          size: 45,
+          color: Colors.red,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: ListView.builder(
+        shrinkWrap: false,
+        physics: ScrollPhysics(),
         controller: _controller,
         itemCount: categories.length,
         itemBuilder: (_, i) => Container(
