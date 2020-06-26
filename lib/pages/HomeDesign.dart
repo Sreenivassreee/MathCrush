@@ -9,7 +9,10 @@ import 'package:mathcrush/models/PrefData.dart';
 import 'package:mathcrush/models/category.dart';
 import 'package:mathcrush/models/levelsPersentage.dart';
 import 'package:mathcrush/pages/EarningAds.dart';
-import 'package:mathcrush/pages/Formule/formuleMainPage.dart';
+
+import 'package:mathcrush/pages/Formule/formulePage.dart';
+import 'package:mathcrush/pages/Tables/AllTableDesign.dart';
+import 'package:mathcrush/pages/Tables/TableMainPage.dart';
 import 'package:mathcrush/pages/WinnersPage.dart';
 import 'package:mathcrush/pages/demo.dart';
 import 'package:mathcrush/pages/feed.dart';
@@ -620,6 +623,45 @@ class HomeDesignState extends State<HomeDesign>
                         ),
                       ),
                     ],
+                  ),
+                  Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                ThemeConsumer(child: AllTableDesign()),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 110,
+                        width: 110,
+                        child: Card(
+                          elevation: 0.0,
+                          shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Flexible(
+                                  flex: 2,
+                                  child: Icon(Icons.add),
+                                ),
+                                Flexible(
+                                  flex: 1,
+                                  child: Text(
+                                    "Winners",
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

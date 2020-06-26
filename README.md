@@ -95,3 +95,13 @@ Done: <br>
 1.setup levelByLevel Percentage [ X ]<br>
 2.setup Home learn with helper [ X ]<br>
 3.implemented the Download Funtinolity in mathCrush [ X ] <br>
+<h2>26/06/2020</h2>
+<br>
+Done:
+<br>
+1.implemented the Formule[ X ]<br>
+2.Adding Functionality of Table Generation[ X ]<br>
+3.SetUp FireStore for Data to Store Formule urls[ X ]<br>
+
+Next:<br>
+1.Need to implement Types of Table Screen implementations<br>
