@@ -148,6 +148,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
                         ),
                       )
                     : ListView.builder(
+                        physics: AlwaysScrollableScrollPhysics(),
                         padding: const EdgeInsets.all(7.0),
                         itemCount: widget.questions.length + 1,
                         itemBuilder: _buildItem,

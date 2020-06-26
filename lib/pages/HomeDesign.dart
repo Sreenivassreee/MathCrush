@@ -9,6 +9,7 @@ import 'package:mathcrush/models/PrefData.dart';
 import 'package:mathcrush/models/category.dart';
 import 'package:mathcrush/models/levelsPersentage.dart';
 import 'package:mathcrush/pages/EarningAds.dart';
+import 'package:mathcrush/pages/Formule/formuleMainPage.dart';
 import 'package:mathcrush/pages/WinnersPage.dart';
 import 'package:mathcrush/pages/demo.dart';
 import 'package:mathcrush/pages/feed.dart';
@@ -231,9 +232,7 @@ class HomeDesignState extends State<HomeDesign>
             ),
             Center(
               child: Container(
-                child: Container(
-                  child: Container(child: Feed()),
-                ),
+                child: FormuleMainPage(),
               ),
             ),
             Center(
@@ -261,10 +260,12 @@ class HomeDesignState extends State<HomeDesign>
 
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (BuildContext context) => HomePage(
-                          pId: mainPref.MainPId,
-                          compliteLevel: mainPref.MainCurrentLevel,
-                          currentScore: mainPref.MainCurrentScore,
+                        builder: (BuildContext context) => ThemeConsumer(
+                          child: HomePage(
+                            pId: mainPref.MainPId,
+                            compliteLevel: mainPref.MainCurrentLevel,
+                            currentScore: mainPref.MainCurrentScore,
+                          ),
                         ),
                       ),
                     );
@@ -609,50 +610,6 @@ class HomeDesignState extends State<HomeDesign>
                                       flex: 1,
                                       child: Text(
                                         "Progress",
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context2) => ThemeConsumer(
-                                child: demo(),
-                              ),
-                            ),
-                          );
-                        },
-                        child: Center(
-                          child: Container(
-                            height: 110,
-                            width: 110,
-                            child: Card(
-                              elevation: 0.0,
-                              shape: BeveledRectangleBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Center(
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Flexible(
-                                      flex: 2,
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FEarn.png?alt=media&token=9a360431-40ef-4acf-927c-03ec0e7b4655",
-                                      ),
-                                    ),
-                                    Flexible(
-                                      flex: 1,
-                                      child: Text(
-                                        "Earn",
                                       ),
                                     )
                                   ],
