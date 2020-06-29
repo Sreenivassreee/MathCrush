@@ -105,3 +105,20 @@ Done:
 
 Next:<br>
 1.Need to implement Types of Table Screen implementations<br>
+
+<br>
+<h2>26/06/2020</h2>
+<br>
+Done:
+<br>
+      1.  Implemented the Tables Sceeen <br>
+1.1  Mul<br>
+1.2  Div <br>
+1.3  Add<br>
+1.4  Sub <br>
+1.5  Power <br>
+      2.  Adjested the Formule Page 
+<br>
+<br>
+
+<br>

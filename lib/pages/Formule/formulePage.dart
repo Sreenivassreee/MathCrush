@@ -69,27 +69,34 @@ class _FormuleMainPageState extends State<FormuleMainPage>
                   itemCount: lenght,
                   itemBuilder: (context, i) {
                     return Card(
-                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
                       elevation: 0,
                       color: Theme.of(context).dividerColor,
                       child: ExpansionTile(
-                          leading: CircleAvatar(
-                            backgroundColor: Colors.red,
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.red,
+                          child: Center(
                             child: Text(
-                              formuleData[i]["Top"][0],
+                              "${i + 1}",
                               style: TextStyle(
                                 color: Colors.white,
                               ),
                             ),
                           ),
-                          title: new Text(
+                        ),
+                        title: Expanded(
+                          child: new Text(
                             formuleData[i]["Top"],
                           ),
-                          children: <Widget>[
-                            Column(
-                                children:
-                                    tile(formuleData[i][formuleData[i]["Top"]]))
-                          ]),
+                        ),
+                        children: <Widget>[
+                          Column(
+                            children: tile(
+                              formuleData[i][formuleData[i]["Top"]],
+                            ),
+                          )
+                        ],
+                      ),
                     );
                   },
                 ),
@@ -134,19 +141,24 @@ class _FormuleMainPageState extends State<FormuleMainPage>
                         CircleAvatar(
                           backgroundColor: Colors.green,
                           radius: 15,
-                          child: Text(
-                            data[i]["topic"][0],
-                            style: TextStyle(
-                              color: Colors.white,
+                          child: Expanded(
+                            child: Center(
+                              child: Text(
+                                "${i + 1}",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        Text(
-                          data[i]["topic"],
-                          style: TextStyle(),
+                        Expanded(
+                          child: Text(
+                            data[i]["topic"],
+                          ),
                         ),
                       ],
                     ),

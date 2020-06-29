@@ -3,10 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mathcrush/pages/Tables/Tables.dart';
 import 'package:theme_provider/theme_provider.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 class TableMainPage extends StatelessWidget {
+  String operation;
+  TableMainPage(this.operation);
   @override
   Widget build(BuildContext context) {
+    // print(operation);
+
     return CupertinoPageScaffold(
       child: NestedScrollView(
         headerSliverBuilder: (BuildContext context2, bool innerBoxIsScrolled) {
@@ -17,7 +22,7 @@ class TableMainPage extends StatelessWidget {
               automaticallyImplyLeading: true,
               backgroundColor: Theme.of(context2).dividerColor,
               largeTitle: Text(
-                'Tables',
+                operation,
                 style: TextStyle(
                   fontFamily: "arial",
                   color: Theme.of(context2).primaryColor,
@@ -75,9 +80,7 @@ class TableMainPage extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (BuildContext) => ThemeConsumer(
-              child: Tables(
-                index + 1,
-              ),
+              child: Tables(table: index + 1, operation: operation),
             ),
           ),
         );

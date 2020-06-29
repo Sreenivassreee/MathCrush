@@ -118,15 +118,21 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
     if (isSignedIn) {
       user = await _auth.currentUser();
     } else {
-      final GoogleSignInAccount googleUser = await _googleSignIn2.signIn();
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      try {
+        final GoogleSignInAccount googleUser = await _googleSignIn2.signIn();
+        final GoogleSignInAuthentication googleAuth =
+            await googleUser.authentication;
 
-      final AuthCredential credential = GoogleAuthProvider.getCredential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      user = (await _auth.signInWithCredential(credential)).user;
+        final AuthCredential credential = GoogleAuthProvider.getCredential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        user = (await _auth.signInWithCredential(credential)).user;
+      } catch (e) {
+        // ErrorPage(context: context, message: "Internet Problem");
+        print(e);
+        // logOut(context);
+      }
 
       // print(user.gmailId);
     }

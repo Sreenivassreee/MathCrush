@@ -1,8 +1,33 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mathcrush/pages/Tables/TableMainPage.dart';
+import 'package:theme_provider/theme_provider.dart';
 
 class AllTableDesign extends StatelessWidget {
+  // final List operations = [
+  //   ["Multiplication",["1"],
+  //   "Division",
+  //   "Addition",
+  //   "Subtraction",
+  //   "Square",
+  //   "Square Root",
+  //   "Square Cube",
+  //   "Cube Root",
+  //   "Factorial"]
+  // ];
+  final List operations = [
+    ["Multiplication", "1 x 1 = 1", "1 x 2 = 2", "1 x 3 = 3"],
+    ["Division", "1 / 1 = 1", "1 / 2 = 0", "1 / 3 = 0"],
+    ["Addition", "1 + 1 = 2", "1 + 2 = 3", "1 + 3 = 4"],
+    ["Subtraction", "1 - 1 = 0", "1 - 2 = -1", "1 - 3 = -2"],
+    ["Power", "1^1 = 1", "1^2 = 1", "1^3 = 1"],
+    ["Square Root", "v1 = 1.00", "v2 = 1.41", "v3 = 1.73"],
+    ["Square Cube", "1^3 = 01", "2^3 = 08", "3^3 = 27"],
+    ["Cube Root", "3v1 = 1.00", "3v2 = 1.26", "3v3 = 1.44"],
+    ["Factorial", "1! = 1", "2! = 2", "3! = 3"]
+  ];
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -54,7 +79,7 @@ class AllTableDesign extends StatelessWidget {
                   ),
                   delegate: SliverChildBuilderDelegate(
                     _buildCategoryItem,
-                    childCount: 10,
+                    childCount: operations.length,
                   ),
                 ),
               ),
@@ -67,44 +92,80 @@ class AllTableDesign extends StatelessWidget {
 
   Widget _buildCategoryItem(BuildContext context, int index) {
     return MaterialButton(
-      elevation: 1.0,
+      elevation: 0.0,
       // highlightElevation: 1.0,
       onPressed: () {
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(
-        //     builder: (BuildContext) => ThemeConsumer(
-        //       child: Tables(
-        //         index + 1,
-        //       ),
-        //     ),
-        //   ),
-        // );
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (BuildContext) => ThemeConsumer(
+              child: TableMainPage(operations[index][0]
+                  // index + 1,
+                  ),
+            ),
+          ),
+        );
       },
-      color: Theme.of(context).primaryColor,
+      // color: Theme.of(context).primaryColor,
+      color: Theme.of(context).cardColor,
+
       textColor: Colors.white70,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             child: Text(
-              "Multiplication",
+              operations[index][0],
               style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
+                color: Colors.red,
+                fontSize: 21,
               ),
             ),
           ),
-          Center(
-            child: Container(
-              child: Text(
-                "x",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 50,
+          Column(
+            children: [
+              Center(
+                child: Container(
+                  child: Text(
+                    operations[index][1],
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+
+                      // color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          )
+              SizedBox(height: 5),
+              Center(
+                child: Container(
+                  child: Text(
+                    operations[index][2],
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+
+                      // color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 5),
+              Center(
+                child: Container(
+                  child: Text(
+                    operations[index][3],
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+
+                      // color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
