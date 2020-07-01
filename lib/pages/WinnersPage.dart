@@ -7,8 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:mathcrush/models/FeedModel.dart';
-
+import 'package:wc_flutter_share/wc_flutter_share.dart';
 import 'package:theme_provider/theme_provider.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class WinnersPage extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class _WinnersPageState extends State<WinnersPage> {
   List<FeedModel> feed = List();
   bool _isLoading = true;
   var scr = new GlobalKey();
+  final BaseCacheManager baseCacheManager = DefaultCacheManager();
 
   var currentPageValue = 0.0;
   @override
@@ -56,7 +58,9 @@ class _WinnersPageState extends State<WinnersPage> {
           stream: Firestore.instance.collection('Winners').snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return CupertinoActivityIndicator();
+              return Center(
+                child: CupertinoActivityIndicator(),
+              );
             } else {
               return ThemeProvider(
                 child: PageView.builder(
@@ -72,7 +76,7 @@ class _WinnersPageState extends State<WinnersPage> {
                             color: Colors.black,
                           ),
                           Center(
-                            child: CircularProgressIndicator(),
+                            child: CupertinoActivityIndicator(),
                           ),
                         ],
                       );

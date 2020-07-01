@@ -40,8 +40,8 @@ class Fire {
       }
       return alreadyDataFromServer.fromMap(documentSnapshot);
     } catch (e) {
-      ErrorPage(context: context);
-      logOut(context);
+      print(e);
+      logOut(context).whenComplete(() => ErrorPage(context: context));
     }
   }
 

@@ -42,7 +42,7 @@ class ErrorPage {
               ),
               Flexible(
                 child: Text(
-                  message ?? "Unknown Error We will fix it Soon..",
+                  message ?? "Somthing Went Wrong try Again",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.black),
                 ),

@@ -108,17 +108,18 @@ Next:<br>
 
 <br>
 <h2>26/06/2020</h2>
-<br>
+
 Done:
-<br>
-      1.  Implemented the Tables Sceeen <br>
-1.1  Mul<br>
-1.2  Div <br>
-1.3  Add<br>
-1.4  Sub <br>
-1.5  Power <br>
-      2.  Adjested the Formule Page 
-<br>
+<br> 1. Implemented the Tables Sceeen <br>
+1.1 Mul<br>
+1.2 Div <br>
+1.3 Add<br>
+1.4 Sub <br>
+1.5 Power <br> 2. Adjested the Formule Page
 <br>
 
+<h2>1/07/2020 AN</h2>
+
 <br>
+1.implemented full fledged show Formule screen with Share,Video ads,NO isses
+2.Added All Edited 4.5 chaptor formules to FireBase and Linked successfuly

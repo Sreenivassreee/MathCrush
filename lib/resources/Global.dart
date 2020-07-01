@@ -51,12 +51,13 @@ final scaffoldKey = GlobalKey<ScaffoldState>();
 
 void snake({String message = "Something Wrong", BuildContext context}) {
   final snackBar = SnackBar(
-      duration: Duration(seconds: 5),
-      content: Text(
-        message,
-        style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
-      ));
-  // scaffoldKey.currentState.showSnackBar(snackBar);
+    duration: Duration(seconds: 5),
+    content: Text(
+      message,
+      style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+    ),
+  );
+  scaffoldKey.currentState.showSnackBar(snackBar);
 }
 
 GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email', 'profile']);

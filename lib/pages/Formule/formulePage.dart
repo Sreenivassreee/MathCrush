@@ -61,46 +61,42 @@ class _FormuleMainPageState extends State<FormuleMainPage>
             )
           ];
         },
-        body: Scaffold(
-          body: isLoading == true
-              ? Center(child: CupertinoActivityIndicator())
-              : ListView.builder(
-                  physics: ScrollPhysics(),
-                  itemCount: lenght,
-                  itemBuilder: (context, i) {
-                    return Card(
-                      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
-                      elevation: 0,
-                      color: Theme.of(context).dividerColor,
-                      child: ExpansionTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.red,
-                          child: Center(
-                            child: Text(
-                              "${i + 1}",
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
+        body: isLoading == true
+            ? Center(child: CupertinoActivityIndicator())
+            : ListView.builder(
+                physics: ScrollPhysics(),
+                itemCount: lenght,
+                itemBuilder: (context, i) {
+                  return Card(
+                    margin: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ExpansionTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.red,
+                        child: Center(
+                          child: Text(
+                            "${i + 1}",
+                            style: TextStyle(
+                              color: Colors.white,
                             ),
                           ),
                         ),
-                        title: Expanded(
-                          child: new Text(
-                            formuleData[i]["Top"],
-                          ),
-                        ),
-                        children: <Widget>[
-                          Column(
-                            children: tile(
-                              formuleData[i][formuleData[i]["Top"]],
-                            ),
-                          )
-                        ],
                       ),
-                    );
-                  },
-                ),
-        ),
+                      title: new Text(
+                        formuleData[i]["Top"],
+                      ),
+                      children: <Widget>[
+                        Column(
+                          children: tile(
+                            formuleData[i][formuleData[i]["Top"]],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
       ),
     );
   }
@@ -141,13 +137,11 @@ class _FormuleMainPageState extends State<FormuleMainPage>
                         CircleAvatar(
                           backgroundColor: Colors.green,
                           radius: 15,
-                          child: Expanded(
-                            child: Center(
-                              child: Text(
-                                "${i + 1}",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
+                          child: Center(
+                            child: Text(
+                              "${i + 1}",
+                              style: TextStyle(
+                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -155,9 +149,11 @@ class _FormuleMainPageState extends State<FormuleMainPage>
                         SizedBox(
                           width: 10,
                         ),
-                        Expanded(
-                          child: Text(
-                            data[i]["topic"],
+                        Container(
+                          child: Expanded(
+                            child: Text(
+                              data[i]["topic"],
+                            ),
                           ),
                         ),
                       ],
