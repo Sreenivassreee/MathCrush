@@ -633,8 +633,7 @@ class HomeDesignState extends State<HomeDesign>
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) =>
-                                ThemeConsumer(child: AllTableDesign()),
+                            builder: (context) => ThemeConsumer(child: demo()),
                           ),
                         );
                       },

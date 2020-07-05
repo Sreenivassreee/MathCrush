@@ -126,3 +126,7 @@ Done:
 Done:
 <br>
 1. Added the Ads in Formule screen in actions
+
+1->2.0
+<br>
+1.tested the Upload image and get the url back firebase
