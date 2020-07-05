@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -156,6 +158,8 @@ class _LisState extends State<Lis> {
     correntScore = widget.currentScore;
 
     p_Id = widget.pId;
+    // sleep(Duration(seconds: 1));
+    // _animateToIndex(widget.compliteLevel - 3);
 
     super.initState();
   }
@@ -175,7 +179,7 @@ class _LisState extends State<Lis> {
           color: Colors.red,
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: ListView.builder(
         physics: ScrollPhysics(),
         controller: _controller,
@@ -192,6 +196,7 @@ class _LisState extends State<Lis> {
                     complite_level: widget.compliteLevel,
                     correntScore: widget.currentScore,
                     pId: p_Id,
+                    title: categories[i].title,
                   )
                 : widget.compliteLevel == categories[i].id
                     ? t(
@@ -203,8 +208,23 @@ class _LisState extends State<Lis> {
                         complite_level: widget.compliteLevel,
                         correntScore: widget.currentScore,
                         pId: p_Id,
+                        title: categories[i].title,
                       )
-                    : t(i: i, color: Colors.grey, islock: true, action: false)
+                    : widget.compliteLevel + 3 < categories[i].id
+                        ? t(
+                            i: i,
+                            color: Colors.grey,
+                            islock: true,
+                            action: false,
+                            title: "Locked",
+                          )
+                        : t(
+                            i: i,
+                            color: Colors.grey,
+                            islock: true,
+                            action: false,
+                            title: categories[i].title,
+                          )
 
             // TimelineTile(
             //   alignment: TimelineAlign.left,
@@ -245,6 +265,7 @@ t(
     action,
     complite_level,
     correntScore,
+    title,
     pId}) {
   final isFirst = i == 0;
   final isLast = i == categories.length - 1;
@@ -312,10 +333,11 @@ t(
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
-                categories[i].title,
+                title,
+                // categories[i].title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 17.0,
+                  fontSize: 15.0,
                 ),
               ),
             ),

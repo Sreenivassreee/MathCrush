@@ -119,7 +119,6 @@ Done:
 <br>
 
 <h2>1/07/2020 AN</h2>
-
 <br>
-1.implemented full fledged show Formule screen with Share,Video ads,NO isses
-2.Added All Edited 4.5 chaptor formules to FireBase and Linked successfuly
+1.implemented full fledged show Formule screen with Share,Video ads,NO isses[ X ]<br>
+2.Added All Edited 4.5 chaptor formules to FireBase and Linked successfuly[ X ]<br>
