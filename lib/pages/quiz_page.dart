@@ -49,7 +49,7 @@ class _QuizPageState extends State<QuizPage> {
   );
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: InterId,
+        adUnitId: interId,
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
@@ -66,7 +66,7 @@ class _QuizPageState extends State<QuizPage> {
   @override
   void initState() {
     super.initState();
-    FirebaseAdMob.instance.initialize(appId: APPID);
+    FirebaseAdMob.instance.initialize(appId: appId);
 // APPID
     // createInterstitialAd()..load();
 

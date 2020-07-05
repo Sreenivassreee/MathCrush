@@ -69,6 +69,8 @@ dependencies:
   math_expressions: ^2.0.0
   wc_flutter_share: ^0.2.2
   flutter_cache_manager: ^1.4.1
+  firebase_dynamic_links: ^0.5.1
+
   example_timeline_tile:
     git:
       url: https://github.com/JHBitencourt/timeline_tile.git

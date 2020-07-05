@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mathcrush/Services/admob.dart';
 import 'package:mathcrush/pages/error.dart';
 import 'package:mathcrush/resources/Global.dart';
@@ -21,7 +22,8 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
   final BaseCacheManager baseCacheManager = DefaultCacheManager();
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  static const String testDevice = 'A293937208D4A2DC978165873AF0EB61';
+  static const String testDevice = 'k';
+  // = 'A293937208D4A2DC978165873AF0EB61';
 
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
@@ -34,7 +36,7 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
   // bool btn;
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: InterId,
+        adUnitId: interId,
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
@@ -44,6 +46,8 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
           } else if (event == MobileAdEvent.loaded) {
             print('interstitialAd show');
             _interstitialAd.show();
+          } else if (event == MobileAdEvent.closed) {
+            share();
           }
         });
   }
@@ -57,7 +61,7 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
 
   @override
   void initState() {
-    FirebaseAdMob.instance.initialize(appId: APPID);
+    FirebaseAdMob.instance.initialize(appId: appId);
 
     // btn = true;
 
@@ -67,7 +71,7 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
     // createInterstitialAd()..load();
 
     videoAd.load(
-      adUnitId: RewardedVideoAd.testAdUnitId,
+      adUnitId: revardedId,
       targetingInfo: targetingInfo,
     );
 
@@ -82,10 +86,10 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
         // btn = true;
       } else if (event == RewardedVideoAdEvent.completed) {
         videoAd.load(
-          adUnitId: RewardedVideoAd.testAdUnitId,
+          adUnitId: revardedId,
           targetingInfo: targetingInfo,
         );
-        Share();
+        share();
       } else if (event == RewardedVideoAdEvent.loaded) {
         setState(() {
           // btn = true;
@@ -93,17 +97,17 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
         // print(">>>>>>>>>>>>>> flase");
         // Share();
       } else if (event == RewardedVideoAdEvent.failedToLoad) {
-        videoAd.load(
-          adUnitId: RewardedVideoAd.testAdUnitId,
-          targetingInfo: targetingInfo,
-        );
-        Share();
+        // videoAd.load(
+        //   adUnitId: revardedId,
+        //   targetingInfo: targetingInfo,
+        // );
+        share();
       } else if (event == RewardedVideoAdEvent.closed) {
         videoAd.load(
-          adUnitId: RewardedVideoAd.testAdUnitId,
+          adUnitId: revardedId,
           targetingInfo: targetingInfo,
         );
-        Share();
+        share();
       }
       print("end");
     };
@@ -116,7 +120,7 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
   //   }
   // }
 
-  void Share() {
+  void share() {
     var appUrl =
         "https://play.google.com/store/apps/details?id=com.stevebrains.sreenivas.mathcrush";
     baseCacheManager.getFile(url).first.then((info) {
@@ -138,15 +142,17 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
     return Scaffold(
       key: _scaffoldKey,
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.screen_share),
+          child: Icon(
+            Icons.screen_share,
+          ),
           onPressed: () {
             // createInterstitialAd()
             //   ..load()
             //   ..show()
-
+            loading(time: "short");
             videoAd
               ..load(
-                adUnitId: RewardedVideoAd.testAdUnitId,
+                adUnitId: revardedId,
                 targetingInfo: targetingInfo,
               )
               ..show();
@@ -170,6 +176,20 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
           ),
           onPressed: () => Navigator.pop(context),
         ),
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.share,
+                color: Colors.red,
+              ),
+              onPressed: () {
+                loading();
+                createInterstitialAd()
+                  ..load()
+                  ..show();
+                // Share();
+              })
+        ],
         title: Text(
           topic,
           style: TextStyle(

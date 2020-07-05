@@ -122,3 +122,7 @@ Done:
 <br>
 1.implemented full fledged show Formule screen with Share,Video ads,NO isses[ X ]<br>
 2.Added All Edited 4.5 chaptor formules to FireBase and Linked successfuly[ X ]<br>
+<h2>5/07/2020 AN</h2>
+Done:
+<br>
+1. Added the Ads in Formule screen in actions

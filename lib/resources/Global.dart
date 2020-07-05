@@ -1,4 +1,5 @@
 import 'package:connectivity/connectivity.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mathcrush/Services/Preferences.dart';
 import 'package:mathcrush/pages/error.dart';
 import 'package:mathcrush/pages/intro.dart';
@@ -159,4 +160,12 @@ class LoginButton extends StatelessWidget {
       ),
     );
   }
+}
+
+loading({mess = "Loading...", time = Toast.LENGTH_LONG}) {
+  Fluttertoast.showToast(
+      msg: mess,
+      toastLength: time == "short" ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIos: 1);
 }

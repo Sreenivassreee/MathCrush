@@ -46,7 +46,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
     nonPersonalizedAds: true,
-    keywords: <String>['Game', 'Mario'],
+    keywords: <String>['Math', 'Education', 'mathematics', 'love'],
   );
 
   BannerAd _bannerAd;
@@ -66,7 +66,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
 //Interstitial Ads
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: InterId,
+        adUnitId: interId,
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
@@ -82,7 +82,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
 
   @override
   void initState() {
-    FirebaseAdMob.instance.initialize(appId: APPID);
+    FirebaseAdMob.instance.initialize(appId: appId);
     //Change appId With Admob Id
     // _bannerAd = createBannerAd()
     // ..load()

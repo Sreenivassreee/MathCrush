@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -75,6 +76,7 @@ class HomeDesignState extends State<HomeDesign>
     SystemChrome.setEnabledSystemUIOverlays([]);
     getPref();
     _myPage = PageController(initialPage: 0);
+
     super.initState();
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
     // SystemChrome.setEnabledSystemUIOverlays([]);
@@ -94,7 +96,9 @@ class HomeDesignState extends State<HomeDesign>
         fontSize: 16.0);
   }
 
-  getPref() {
+  getPref() async {
+    // var user = await FirebaseAuth.instance.currentUser();
+
     FirePref.getFireMainPref().then((value) {
       // print(value.MainPId);
       if (value.MainName != null) {
