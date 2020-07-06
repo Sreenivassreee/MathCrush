@@ -40,7 +40,8 @@ class _QuizPageState extends State<QuizPage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
   InterstitialAd _interstitialAd;
-  static const String testDevice = 'A293937208D4A2DC978165873AF0EB61';
+  // static const String testDevice = "l";
+  // 'A293937208D4A2DC978165873AF0EB61';
 
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,

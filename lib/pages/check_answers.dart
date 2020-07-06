@@ -40,7 +40,6 @@ class CheckAnswersPage extends StatefulWidget {
 
 class _CheckAnswersPageState extends State<CheckAnswersPage> {
   bool isLoading = false;
-  static const String testDevice = 'A293937208D4A2DC978165873AF0EB61';
   GlobalKey<FormState> _abcKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(

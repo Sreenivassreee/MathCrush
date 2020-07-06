@@ -218,3 +218,5 @@ class Fire {
     return _mess;
   }
 }
+
+updateCoinsFirebase() {}

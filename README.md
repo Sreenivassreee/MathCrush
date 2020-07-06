@@ -129,4 +129,9 @@ Done:
 
 1->2.0
 <br>
-1.tested the Upload image and get the url back firebase
+1.tested the Upload image and get the url back firebase<br>
+
+<h2>6/07/2020 AN</h2>
+<br>
+Done:
+1.Added the Reward Screen and Funtinolity.completly implemented.

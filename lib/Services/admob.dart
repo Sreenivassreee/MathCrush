@@ -4,6 +4,8 @@
 
 import 'package:firebase_admob/firebase_admob.dart';
 
+const String testDevice = 'A293937208D4A2DC978165873AF0EB61';
+
 String appId = FirebaseAdMob.testAppId;
 String interId = InterstitialAd.testAdUnitId;
 String revardedId = RewardedVideoAd.testAdUnitId;

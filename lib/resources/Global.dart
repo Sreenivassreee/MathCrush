@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:mathcrush/Services/Preferences.dart';
 import 'package:mathcrush/pages/error.dart';
 import 'package:mathcrush/pages/intro.dart';
@@ -168,4 +170,38 @@ loading({mess = "Loading...", time = Toast.LENGTH_LONG}) {
       toastLength: time == "short" ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG,
       gravity: ToastGravity.CENTER,
       timeInSecForIos: 1);
+}
+
+dialog({int addedCoins = 0, context}) {
+  showDialog(
+    context: context,
+    builder: (_) => NetworkGiffyDialog(
+      // key: Net,
+      image: CachedNetworkImage(
+        imageUrl: "https://media.giphy.com/media/MkvZFvzHIWbRK/giphy.gif",
+        fit: BoxFit.cover,
+        placeholder: (context, url) => Center(
+          child: CupertinoActivityIndicator(),
+        ),
+      ),
+      entryAnimation: EntryAnimation.TOP,
+      title: Text(
+        '+ $addedCoins',
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.w600),
+      ),
+
+      description: Text(
+        'Watch More Earn More',
+        style: TextStyle(
+          fontSize: 22,
+        ),
+        textAlign: TextAlign.center,
+      ),
+      onlyOkButton: true,
+      onOkButtonPressed: () {
+        Navigator.of(context).pop();
+      },
+    ),
+  );
 }

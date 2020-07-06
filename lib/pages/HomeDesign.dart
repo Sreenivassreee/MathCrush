@@ -12,6 +12,7 @@ import 'package:mathcrush/models/levelsPersentage.dart';
 import 'package:mathcrush/pages/EarningAds.dart';
 
 import 'package:mathcrush/pages/Formule/formulePage.dart';
+import 'package:mathcrush/pages/RewardScreen.dart';
 import 'package:mathcrush/pages/Tables/AllTableDesign.dart';
 import 'package:mathcrush/pages/Tables/TableMainPage.dart';
 import 'package:mathcrush/pages/WinnersPage.dart';
@@ -44,7 +45,8 @@ class HomeDesign extends StatefulWidget {
 
 // SingleTickerProviderStateMixin is used for animation
 class HomeDesignState extends State<HomeDesign>
-    with SingleTickerProviderStateMixin {
+// with SingleTickerProviderStateMixin
+{
   // String pId;
   Data da = Data();
   // HomeDesignState({this.pId});
@@ -98,7 +100,7 @@ class HomeDesignState extends State<HomeDesign>
 
   getPref() async {
     // var user = await FirebaseAuth.instance.currentUser();
-
+    print("hitting");
     FirePref.getFireMainPref().then((value) {
       // print(value.MainPId);
       if (value.MainName != null) {
@@ -231,6 +233,8 @@ class HomeDesignState extends State<HomeDesign>
 
           children: <Widget>[
             Center(
+              // getPref(),
+
               child: DashBoard(
                 pId: mainPref.MainPId,
                 currentLevel: mainPref.MainCurrentLevel,
@@ -303,14 +307,24 @@ class HomeDesignState extends State<HomeDesign>
   Widget DashBoard(
       {BuildContext context2, String pId, int currentLevel, int currentScore}) {
     SystemChrome.setEnabledSystemUIOverlays([]);
+    // initState() {
+    // getPref();
+
+    // }
 
 // print(widget.data);
     var levelsComplite;
-    bool isLoading = true;
+    bool isLoading;
     var earnings;
     Color text;
 
     // if (data != null) {
+    // getPref();
+    setState(() {
+      isLoading = true;
+      currentScore = currentScore;
+    });
+
     if ((currentLevel != null) && (currentScore != null)) {
       setState(() {
         isLoading = false;
@@ -628,43 +642,97 @@ class HomeDesignState extends State<HomeDesign>
                       ),
                     ],
                   ),
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => ThemeConsumer(child: demo()),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        height: 110,
-                        width: 110,
-                        child: Card(
-                          elevation: 0.0,
-                          shape: BeveledRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Flexible(
-                                  flex: 2,
-                                  child: Icon(Icons.add),
-                                ),
-                                Flexible(
-                                  flex: 1,
-                                  child: Text(
-                                    "Winners",
+                  SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ThemeConsumer(
+                                child: AllTableDesign(),
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          height: 110,
+                          width: 110,
+                          child: Card(
+                            elevation: 0.0,
+                            shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Flexible(
+                                    flex: 2,
+                                    child: Icon(Icons.add),
                                   ),
-                                )
-                              ],
+                                  Flexible(
+                                    flex: 1,
+                                    child: Text(
+                                      "Tables",
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                      GestureDetector(
+                        onTap: () async {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ThemeConsumer(
+                                child:
+                                    RewardScreen(id: pId, coins: currentScore),
+                              ),
+                            ),
+                          );
+                          setState(() {
+                            getPref();
+                          });
+                        },
+                        child: Container(
+                          height: 110,
+                          width: 110,
+                          child: Card(
+                            elevation: 0.0,
+                            shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Flexible(
+                                    flex: 2,
+                                    child: CachedNetworkImage(
+                                      imageUrl:
+                                          "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524",
+                                    ),
+                                  ),
+                                  Flexible(
+                                    flex: 1,
+                                    child: Text(
+                                      "Rewards",
+                                    ),
+                                    // https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

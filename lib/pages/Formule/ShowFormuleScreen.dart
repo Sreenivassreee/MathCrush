@@ -22,13 +22,13 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
   final BaseCacheManager baseCacheManager = DefaultCacheManager();
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  static const String testDevice = 'k';
-  // = 'A293937208D4A2DC978165873AF0EB61';
+  // static const String testDevice = "k";
+  // 'A293937208D4A2DC978165873AF0EB61';
 
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
     nonPersonalizedAds: true,
-    keywords: <String>['Math', 'Education', 'mathematics', 'love'],
+    keywords: <String>['Math', 'Education', 'mathematics', 'love', 'cinema'],
   );
   InterstitialAd _interstitialAd;
   RewardedVideoAd videoAd = RewardedVideoAd.instance;
