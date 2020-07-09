@@ -26,7 +26,7 @@ class _TablesState extends State<Tables> {
         {
           print("Ope is $ope");
           print("k is $k");
-          for (var i = 1; i <= 20; i++) {
+          for (var i = 1; i <= 100; i++) {
             if (i < 10) {
               if (k < 10) {
                 tableList.add("0$k  x  0$i  =  ${k * i}");
@@ -48,7 +48,7 @@ class _TablesState extends State<Tables> {
         {
           print("Ope is $ope");
           print("k is $k");
-          for (var i = 1; i <= 20; i++) {
+          for (var i = 1; i <= 100; i++) {
             if (i < 10) {
               if (k < 10) {
                 tableList.add("0$k  /  0$i  =  ${(k / i).toStringAsFixed(3)}");
@@ -70,7 +70,7 @@ class _TablesState extends State<Tables> {
         {
           print("Ope is $ope");
           print("k is $k");
-          for (var i = 1; i <= 20; i++) {
+          for (var i = 1; i <= 100; i++) {
             if (i < 10) {
               if (k < 10) {
                 tableList.add("0$k  +  0$i  =  ${(k + i)}");
@@ -92,7 +92,7 @@ class _TablesState extends State<Tables> {
         {
           print("Ope is $ope");
           print("k is $k");
-          for (var i = 1; i <= 20; i++) {
+          for (var i = 1; i <= 100; i++) {
             if (i < 10) {
               if (k < 10) {
                 tableList.add("0$k  -  0$i  =  ${(k - i)}");
@@ -109,17 +109,17 @@ class _TablesState extends State<Tables> {
           }
           break;
         }
-      case "Power":
-        {
-          print("Opeh is $ope");
-          print("k is $k");
-          for (var i = 1; i <= 100; i++) {
-            // var p = sqrt(i);
-            // print(p);
-            tableList.add("$i^$k  =  ${(i * i)}");
-          }
-          break;
-        }
+      // case "Power":
+      //   {
+      //     print("Opeh is $ope");
+      //     print("k is $k");
+      //     for (var i = 1; i <= 30; i++) {
+      //       // var p = sqrt(i);
+      //       // print(p);
+      //       tableList.add("$k^$i  =  ${pow(k, i)}");
+      //     }
+      //     break;
+      //   }
       // case "Square Root":
       //   {
       //     print("Ope is $ope");
@@ -151,7 +151,7 @@ class _TablesState extends State<Tables> {
       //     print("k is $k");
       //   }
       //   break;
-      default:
+      // default:
     }
 
     // for (var i = 1; i <= 20; i++) {
@@ -208,7 +208,7 @@ class _TablesState extends State<Tables> {
                         child: Text(
                           tableList[i],
                           style: TextStyle(
-                            fontSize: 22,
+                            fontSize: 20,
                           ),
                         ),
                       ),

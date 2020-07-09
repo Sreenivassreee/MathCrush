@@ -55,7 +55,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
                 automaticallyImplyTitle: true,
                 automaticallyImplyLeading: true,
                 actionsForegroundColor: Theme.of(context).dividerColor,
-                heroTag: "Hero2",
+                // heroTag: "Hero2",
                 largeTitle: Text(
                   'LeaderBoard',
                   style: TextStyle(
@@ -164,8 +164,8 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                                     snapshot.data.documents[i]
                                                         ['name'],
                                                     style: TextStyle(
-                                                      fontSize: 16.0,
-                                                    ),
+                                                        // fontSize: 16.0,
+                                                        ),
                                                   ),
                                                   SizedBox(
                                                     height: 2.0,
@@ -179,14 +179,14 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                                         Text(
                                                           "Coins",
                                                           style: TextStyle(
-                                                            fontSize: 16.0,
+                                                            // fontSize: 16.0,
                                                             color: Colors.amber,
                                                           ),
                                                         ),
                                                         Text(
                                                           "L C",
                                                           style: TextStyle(
-                                                            fontSize: 16.0,
+                                                            // fontSize: 16.0,
                                                             color: Colors.amber,
                                                           ),
                                                         ),
@@ -206,14 +206,14 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                                                   'currentScore']
                                                               .toString(),
                                                           style: TextStyle(
-                                                              fontSize: 15.0,
+                                                              // fontSize: 15.0,
                                                               color:
                                                                   Colors.green),
                                                         ),
                                                         Text(
                                                           "${snapshot.data.documents[i]['currentLevel'] - 1}",
                                                           style: TextStyle(
-                                                              fontSize: 15.0,
+                                                              // fontSize: 15.0,
                                                               color:
                                                                   Colors.green),
                                                         ),

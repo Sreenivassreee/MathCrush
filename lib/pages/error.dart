@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mathcrush/pages/intro.dart';
 
 class ErrorPage {
   BuildContext context;
@@ -61,6 +62,12 @@ class ErrorPage {
                 color: Colors.black,
                 onPressed: () {
                   Navigator.of(context).pop();
+                  // Navigator.of(context).pushAndRemoveUntil(
+                  //   MaterialPageRoute(
+                  //     builder: (contaxt) => Intro(),
+                  //   ),
+                  //   (route) => false,
+                  // );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

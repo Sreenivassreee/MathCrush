@@ -131,7 +131,10 @@ Done:
 <br>
 1.tested the Upload image and get the url back firebase<br>
 
-<h2>6/07/2020 AN</h2>
+<h2>6/07/2020 </h2>
 <br>
 Done:
 1.Added the Reward Screen and Funtinolity.completly implemented.
+
+<h2>9/07/2020 </h2>
+<br>

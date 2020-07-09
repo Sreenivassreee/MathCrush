@@ -87,6 +87,7 @@ class Fire {
 
   static Future<String> fireUpdaeScore(String id, int upScore) async {
     String _mess;
+    final usersReference = Firestore.instance.collection("Users");
 
     try {
       usersReference.document(id).updateData({

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +28,7 @@ class _RewardScreenState extends State<RewardScreen> {
   InterstitialAd _interstitialAd;
   RewardedVideoAd videoAd = RewardedVideoAd.instance;
   String url, topic;
+  int amount = 0;
 
   _RewardScreenState(this.id, this.coins);
   @override
@@ -40,12 +40,11 @@ class _RewardScreenState extends State<RewardScreen> {
       );
     videoAd.listener =
         (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
-      rewardAmount = rewardAmount * 2;
+      amount = rewardAmount;
       print("REWARDED VIDEO AD $event");
       if (event == RewardedVideoAdEvent.rewarded) {
-        dialog(addedCoins: rewardAmount, context: context);
         setState(() {
-          coins = coins + rewardAmount;
+          coins = coins + amount;
         });
         print("reward is $rewardType");
         print("rewardAmount is $rewardAmount");
@@ -86,8 +85,24 @@ class _RewardScreenState extends State<RewardScreen> {
         Pref.saveOnlyScorePref(coins).then((value) {
           if (value == "Sucess") {
             print("Updated");
+            dialog(
+                addedCoins: amount.toString(),
+                context: context,
+                url: "https://media.giphy.com/media/MkvZFvzHIWbRK/giphy.gif");
+          } else {
+            dialog(
+              addedCoins: "Error",
+              context: context,
+              url: "https://media.giphy.com/media/f9k1tV7HyORcngKF8v/giphy.gif",
+            );
           }
         });
+      } else {
+        dialog(
+          addedCoins: "Error",
+          context: context,
+          url: "https://media.giphy.com/media/f9k1tV7HyORcngKF8v/giphy.gif",
+        );
       }
     });
   }
@@ -193,7 +208,7 @@ class _RewardScreenState extends State<RewardScreen> {
                           child: Container(
                             margin: EdgeInsets.all(10),
                             child: Text(
-                              "If you want to Earn more coins you need see videos,to watch the video just click on show video button,Each Video Give You 20 Coins",
+                              "If you want to Earn more coins you need see videos,to watch the video just click on show video button,Each Video Give You 10 Coins",
                               textAlign: TextAlign.center,
                               style: TextStyle(fontSize: 20),
                             ),

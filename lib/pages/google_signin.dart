@@ -41,17 +41,17 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
     // setState(() {
     // _currentUser = account;
 
-    checkNetWork(context).then((value) {
-      print("NetworkValue is $value");
-      if (value == "Pass") {
-        // CheckUserFromDataBase();
-        // Pref.saveLoginStatusPrif();
-      } else {
-        // ErrorPage(context: context);
-        // logOut(context);
-        // Pref.saveLoginStatusPrifFalse();
-      }
-    });
+    // checkNetWork(context).then((value) {
+    //   print("NetworkValue is $value");
+    //   if (value == "Pass") {
+    //     // CheckUserFromDataBase();
+    //     // Pref.saveLoginStatusPrif();
+    //   } else {
+    //     // ErrorPage(context: context);
+    //     // logOut(context);
+    //     // Pref.saveLoginStatusPrifFalse();
+    //   }
+    // });
     // });
 //      if (_currentUser != null) {
 //        Navigator.of(context).pushReplacement(
@@ -87,8 +87,8 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
                   },
                 );
               } else {
-                ErrorPage(context: context);
                 logOut(context);
+                // ErrorPage(context: context);
 
                 // Pref.saveLoginStatusPrifFalse();
               }
@@ -100,7 +100,6 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
         }
       });
     } catch (e) {
-      ErrorPage(context: context, message: e);
       logOut(context);
     }
   }
@@ -263,14 +262,12 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
                               _isLoggedIn
                                   ? Container(
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(top: 200),
+                                        padding: EdgeInsets.only(top: 200),
                                         child: Center(
                                           child: Container(
                                             height: 50,
                                             width: 50,
                                             child: CircularProgressIndicator(
-                                              backgroundColor: Colors.white,
                                               strokeWidth: 6,
                                             ),
                                           ),
@@ -299,6 +296,10 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
                                   icon: Icon(FontAwesomeIcons.google,
                                       color: Colors.white),
                                   onPressed: () async {
+                                    setState(() {
+                                      _isLoggedIn = true;
+                                    });
+
                                     checkNetWork(context).then(
                                       (value) {
                                         print("NetworkValue is $value");

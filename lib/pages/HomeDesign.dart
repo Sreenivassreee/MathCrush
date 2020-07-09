@@ -1,24 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:mathcrush/Services/Preferences.dart';
 import 'package:mathcrush/models/DataClass.dart';
 import 'package:mathcrush/models/PrefData.dart';
-import 'package:mathcrush/models/category.dart';
-import 'package:mathcrush/models/levelsPersentage.dart';
 import 'package:mathcrush/pages/EarningAds.dart';
-
 import 'package:mathcrush/pages/Formule/formulePage.dart';
 import 'package:mathcrush/pages/RewardScreen.dart';
 import 'package:mathcrush/pages/Tables/AllTableDesign.dart';
-import 'package:mathcrush/pages/Tables/TableMainPage.dart';
 import 'package:mathcrush/pages/WinnersPage.dart';
-import 'package:mathcrush/pages/demo.dart';
-import 'package:mathcrush/pages/feed.dart';
-import 'package:mathcrush/pages/quiz_options.dart';
 import 'package:mathcrush/pages/settings.dart';
 import 'package:mathcrush/pages/totalScore.dart';
 import 'package:mathcrush/resources/Global.dart';
@@ -35,7 +25,6 @@ prefMainModel mainPref = prefMainModel();
 class HomeDesign extends StatefulWidget {
   // final VoidCallback signOut;
   var data;
-
   // String pId;
   // final currentScore, currentLevel;
   // HomeDesign({this.signOut, this.pId, this.currentScore, this.currentLevel});
@@ -671,7 +660,10 @@ class HomeDesignState extends State<HomeDesign>
                                 children: [
                                   Flexible(
                                     flex: 2,
-                                    child: Icon(Icons.add),
+                                    child: CachedNetworkImage(
+                                      imageUrl:
+                                          "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Ftables.png?alt=media&token=8406c4bb-ea18-491a-8f76-ec8707f12b9e",
+                                    ),
                                   ),
                                   Flexible(
                                     flex: 1,
@@ -687,7 +679,7 @@ class HomeDesignState extends State<HomeDesign>
                       ),
                       GestureDetector(
                         onTap: () async {
-                          Navigator.of(context).push(
+                          await Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => ThemeConsumer(
                                 child:
@@ -697,6 +689,7 @@ class HomeDesignState extends State<HomeDesign>
                           );
                           setState(() {
                             getPref();
+                            print("hit");
                           });
                         },
                         child: Container(

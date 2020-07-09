@@ -74,6 +74,8 @@ Future<void> logOut(BuildContext context) async {
         if (value == "Sucess") {
           Pref.saveLoginStatusPrifFalse().then((value) {
             if (value == "Sucess") {
+              // ErrorPage(context: context);
+
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
                   builder: (contaxt) => Intro(),
@@ -172,13 +174,14 @@ loading({mess = "Loading...", time = Toast.LENGTH_LONG}) {
       timeInSecForIos: 1);
 }
 
-dialog({int addedCoins = 0, context}) {
+dialog({String addedCoins = "0", context, url}) {
   showDialog(
     context: context,
     builder: (_) => NetworkGiffyDialog(
       // key: Net,
       image: CachedNetworkImage(
-        imageUrl: "https://media.giphy.com/media/MkvZFvzHIWbRK/giphy.gif",
+        imageUrl: url,
+        // "https://media.giphy.com/media/MkvZFvzHIWbRK/giphy.gif",
         fit: BoxFit.cover,
         placeholder: (context, url) => Center(
           child: CupertinoActivityIndicator(),
