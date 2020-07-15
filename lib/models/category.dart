@@ -288,7 +288,7 @@ final List<Category> categories = [
     level: "36",
     title: "Mixed Addition and Subtraction with 3",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Easy Level Questions with 3 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Easy Level Questions with 3 numbers",
     ex: "1 + 1 - 1 || Ans : 1",
   ),
   Category(
@@ -296,7 +296,7 @@ final List<Category> categories = [
     level: "37",
     title: "Mixed Addition and Subtraction with 3",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Medium Level Questions with 3 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Medium Level Questions with 3 numbers",
     ex: "9 + 3 - 1 || Ans : 4",
   ),
   Category(
@@ -304,7 +304,7 @@ final List<Category> categories = [
     level: "38",
     title: "Mixed Addition and Subtraction with 4",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Easy Level Questions with 4 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Easy Level Questions with 4 numbers",
     ex: "1 + 1 - 1 - 1 || Ans : 0 ",
   ),
   Category(
@@ -312,7 +312,7 @@ final List<Category> categories = [
     level: "39",
     title: "Mixed Addition and Subtraction with 4",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Medium Level Questions with 4 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Medium Level Questions with 4 numbers",
     ex: "9 + 3 - 1 - 2 || Ans : 9 ",
   ),
   Category(
@@ -320,7 +320,7 @@ final List<Category> categories = [
     level: "40",
     title: "Mixed Addition and Subtraction with 5",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Easy Level Questions with 5 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Easy Level Questions with 5 numbers",
     ex: "1 + 1 - 1 - 1 - 1 || Ans : - 1 ",
   ),
   Category(
@@ -328,7 +328,7 @@ final List<Category> categories = [
     level: "41",
     title: "Mixed Addition and Subtraction with 5",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Medium Level Questions with 5 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Medium Level Questions with 5 numbers",
     ex: "9 + 3 - 1 - 2 - 1 || Ans : 8 ",
   ),
   Category(
@@ -336,7 +336,7 @@ final List<Category> categories = [
     level: "42",
     title: "Mixed Addition and Subtraction with 6",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Easy Level Questions with 6 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Easy Level Questions with 6 numbers",
     ex: "1 + 1 - 1 - 1 - 1 + 1 || Ans : 0 ",
   ),
   Category(
@@ -344,7 +344,7 @@ final List<Category> categories = [
     level: "43",
     title: "Mixed Addition and Subtraction with 6",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Medium Level Questions with 6 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Medium Level Questions with 6 numbers",
     ex: "9 + 3 - 1 - 2 - 1 + 5 || Ans : 13 ",
   ),
   Category(
@@ -352,7 +352,7 @@ final List<Category> categories = [
     level: "44",
     title: "Mixed Addition and Subtraction with 7",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Easy Level Questions with 7 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Easy Level Questions with 7 numbers",
     ex: "1 + 1 - 1 - 1 - 1 + 1 - 1 || Ans : - 1",
   ),
   Category(
@@ -360,7 +360,7 @@ final List<Category> categories = [
     level: "45",
     title: "Mixed Addition and Subtraction with 7",
     message:
-        "In this level u will work on Mixed Addition and Subtraction,Medium Level Questions with 7 numbers",
+        "In this level u will work on Mixed problems with Addition and Subtraction,Medium Level Questions with 7 numbers",
     ex: "1 + 3 - 5 - 9 - 1 + 5 || Ans : - 6 ",
   ),
   Category(
@@ -368,7 +368,7 @@ final List<Category> categories = [
     level: "46",
     title: "Mixed Multilication and Division with 3",
     message:
-        "In this level u will work on Mixed Multilication and Division,Easy Level Questions with 3 numbers",
+        "In this level u will work on Mixed problems with Multilication and Division,Easy Level Questions with 3 numbers",
     ex: "1 x 1 / 1 || Ans : 1",
   ),
   Category(
@@ -376,7 +376,7 @@ final List<Category> categories = [
     level: "47",
     title: "Mixed Multilication and Division with 3",
     message:
-        "In this level u will work on Mixed Multilication and Division,Medium Level Questions with 3 numbers",
+        "In this level u will work on Mixed problems with Multilication and Division,Medium Level Questions with 3 numbers",
     ex: "9 x 5 / 2 || Ans : 22.5",
   ),
   Category(
@@ -384,7 +384,7 @@ final List<Category> categories = [
     level: "48",
     title: "Mixed Multilication and Division with 4",
     message:
-        "In this level u will work on Mixed Multilication and Division,Easy Level Questions with 4 numbers",
+        "In this level u will work on Mixed problems with Multilication and Division,Easy Level Questions with 4 numbers",
     ex: "1 x 1 / 1 x 1 || Ans : 1",
   ),
   Category(
@@ -392,7 +392,7 @@ final List<Category> categories = [
     level: "49",
     title: "Mixed Multilication and Division with 4",
     message:
-        "In this level u will work on Mixed Multilication and Division,Medium Level Questions with 4 numbers",
+        "In this level u will work on Mixed problems with Multilication and Division,Medium Level Questions with 4 numbers",
     ex: "9 x 5 / 2 x 5 || Ans : 112.5",
   ),
   Category(
@@ -400,7 +400,7 @@ final List<Category> categories = [
     level: "50",
     title: "Mixed All Math Operations [E]",
     message:
-        "In this level u will work on Mixed All Math Operations,Easy Level Questions",
+        "In this level u will work on Mixed problems with All Math Operations,Easy Level Questions",
     ex: "1 x 1 - 1 x 2 || Ans : - 1",
   ),
   Category(
@@ -408,7 +408,7 @@ final List<Category> categories = [
     level: "51",
     title: "Mixed All Math Operations [E]",
     message:
-        "In this level u will work on Mixed All Math Operations,Easy Level Questions",
+        "In this level u will work on Mixed problems with All Math Operations,Easy Level Questions",
     ex: "1 x 1 - 1 x 2 || Ans : - 1",
   ),
   Category(
@@ -416,7 +416,7 @@ final List<Category> categories = [
     level: "52",
     title: "Mixed All Math Operations [M]",
     message:
-        "In this level u will work on Mixed All Math Operations,Medium Level Questions",
+        "In this level u will work on Mixed problems with All Math Operations,Medium Level Questions",
     ex: "6 x 2 - 2 x 5 || Ans : 2",
   ),
   Category(
@@ -424,7 +424,7 @@ final List<Category> categories = [
     level: "53",
     title: "Mixed All Math Operations [M]",
     message:
-        "In this level u will work on Mixed All Math Operations,Medium Level Questions",
+        "In this level u will work on Mixed problems with All Math Operations,Medium Level Questions",
     ex: "6 x 2 - 2 x 5 || Ans : 2",
   ),
   Category(
@@ -432,7 +432,7 @@ final List<Category> categories = [
     level: "54",
     title: "Mixed All Math Operations [H]",
     message:
-        "In this level u will work on Mixed All Math Operations,High Level Questions",
+        "In this level u will work on Mixed problems with All Math Operations,High Level Questions",
     ex: "6 x 2 - 2 x 5 || Ans : 2",
   ),
   Category(
@@ -487,48 +487,64 @@ final List<Category> categories = [
     id: 61,
     level: "61",
     title: "Sentence Problems with Multilication [M]",
-    message: " ",
+    message:
+        "In this level u will work on Sentence Problems with Multilication,Medium Level Questions",
+    ex: "If X = 8 and Y = 2  Then X x Y  || Ans : 16",
   ),
   Category(
     id: 62,
     level: "62",
     title: "Sentence Problems with Division [E]",
-    message: " ",
+    message:
+        "In this level we will work on Sentence Problems with Division,Easy Level Questions",
+    ex: "If X = 1 and Y = 2  Then X / Y  || Ans : 0.5",
   ),
   Category(
     id: 63,
     level: "63",
     title: "Sentence Problems with Division [M]",
-    message: " ",
+    message:
+        "In this level we will work on Sentence Problems with Division,Medium Level Questions",
+    ex: "If X = 7 and Y = 2  Then X / Y  || Ans : 3.5",
   ),
   Category(
     id: 64,
     level: "64",
     title: "Input Math or Sign",
-    message: " ",
+    message:
+        "In this level we will work on Input Math or Sign based on the Logic of a Question",
+    ex: "2 + 3 = ? || Ans : 5",
   ),
   Category(
     id: 65,
     level: "65",
     title: "Input Math or Sign",
-    message: " ",
+    message:
+        "In this level we will work on Input Math or Sign based on the Logic of a Question",
+    ex: "2 + 3 = ? || Ans : 5",
   ),
   Category(
     id: 66,
     level: "66",
     title: "Input Math or Sign",
-    message: " ",
+    message:
+        "In this level we will work on Input Math or Sign based on the Logic of a Question",
+    ex: "2 + 3 = ? || Ans : 5",
   ),
   Category(
     id: 67,
     level: "67",
     title: "Input Math or Sign",
-    message: " ",
+    message:
+        "In this level we will work on Input Math or Sign based on the Logic of a Question",
+    ex: "2 + 3 = ? || Ans : 5",
   ),
   Category(
     id: 68,
     level: "68",
     title: "Input Math or Sign",
-    message: "",
+    message:
+        "In this level we will work on Input Math or Sign based on the Logic of a Question",
+    ex: "2 + 3 = ? || Ans : 5",
   ),
 ];

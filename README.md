@@ -138,3 +138,11 @@ Done:
 
 <h2>9/07/2020 </h2>
 <br>
+<h2>17/07/2020 </h2>
+<br>
+Done:<br>
+1.Modefyed all the Learning and play buttons 
+2.added ads on youtube video screen and also picture download
+3.added the contect in categery screen
+4.added the Level Details shown Dialog box 
+5.Everything Working Fine
