@@ -1,8 +1,11 @@
 import 'dart:typed_data';
 import 'package:dio/dio.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:mathcrush/Services/admob.dart';
+import 'package:mathcrush/resources/Global.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:photo_view/photo_view.dart';
 import 'dart:ui';
@@ -18,14 +21,38 @@ class Picture extends StatefulWidget {
 
 class _PictureState extends State<Picture> {
   bool isDownload;
-  int persentage;
+  int persentage = 0;
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    nonPersonalizedAds: true,
+    keywords: <String>['Math', 'Education', 'mathematics', 'love', 'cinema'],
+  );
+  InterstitialAd _interstitialAd;
+  RewardedVideoAd videoAd = RewardedVideoAd.instance;
+  String url, topic;
   @override
   void initState() {
     super.initState();
+    createInterstitialAd()..load();
     setState(() {
       isDownload = false;
       persentage = 0;
     });
+  }
+
+  InterstitialAd createInterstitialAd() {
+    return InterstitialAd(
+        adUnitId: interId,
+        targetingInfo: targetingInfo,
+        listener: (MobileAdEvent event) {
+          print("IntersttialAd $event");
+          if (event == MobileAdEvent.failedToLoad) {
+            _interstitialAd.load();
+          } else if (event == MobileAdEvent.loaded) {
+            print('interstitialAd show');
+            _interstitialAd.show();
+          } else if (event == MobileAdEvent.closed) {}
+        });
   }
 
   @override
@@ -74,9 +101,13 @@ class _PictureState extends State<Picture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          createInterstitialAd()
+            ..load()
+            ..show();
           _save();
           setState(() {
             isDownload = true;
+            persentage = 0;
           });
         },
         child: Icon(Icons.arrow_downward),
@@ -190,6 +221,7 @@ class _PictureState extends State<Picture> {
     setState(() {
       isDownload = false;
     });
+    loading(mess: "Download completed...\n Saved to Gallery");
 
     // Navigator.pop(context);
   }

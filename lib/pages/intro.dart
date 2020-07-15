@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/services.dart';
@@ -64,7 +64,6 @@ class _IntroState extends State<Intro> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     var isLogin = preferences.getString("ISLOGIN");
     var id = preferences.getString("id");
-
     // print(isLogin);
     // print(id);
 
@@ -120,7 +119,7 @@ class _IntroState extends State<Intro> {
         // }
 
       } else {
-        sleep(const Duration(microseconds: 500));
+        sleep(const Duration(microseconds: 2000));
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -152,20 +151,20 @@ class _IntroState extends State<Intro> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(
-                      10,
-                    ),
-                  ),
+                margin: EdgeInsets.only(bottom: 55),
+                child: CupertinoActivityIndicator(
+                  radius: 12,
                 ),
-                width: 150,
-                margin: EdgeInsets.only(
-                  bottom: 20.0,
-                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                color: Colors.black,
+                width: MediaQuery.of(context).size.width,
+                height: 40,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(7.0),
                   child: Image.asset(
                     "assets/images/steve.png",
                   ),

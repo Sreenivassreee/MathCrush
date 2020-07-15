@@ -48,22 +48,10 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
   void initState() {
     super.initState();
     isLoadingLearn = true;
-    getL(widget.category);
+    // getL(widget.category);
 //    _noOfQuestions = 10;
 //    _difficulty = "easy";
     processing = false;
-  }
-
-  getL(category) async {
-    print(category);
-    await getLearn(category).then((value) {
-      if (value != null) {
-        setState(() {
-          learn = value;
-          isLoadingLearn = false;
-        });
-      }
-    });
   }
 
   @override
@@ -87,112 +75,112 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 5,
-                      color: Theme.of(context).cardColor,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 5),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                            5,
-                          ),
-                          color: Colors.black,
-                        ),
-                        height: 26,
-                        width: double.infinity,
-                        child: Text(
-                          "Learn Concept",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    learn.pic != null
-                        ? Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Column(
-                                children: [
-                                  IconButton(
-                                    icon: Icon(
-                                      FontAwesomeIcons.video,
-                                      size: 40,
-                                    ),
-                                    onPressed: learn == null
-                                        ? null
-                                        : () {
-                                            Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                builder: (
-                                                  context,
-                                                ) =>
-                                                    ThemeConsumer(
-                                                  child: Youtube(
-                                                    url: learn.video,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                            print("video there ${learn.pic}");
-                                          },
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text("Video"),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  IconButton(
-                                    icon: Icon(
-                                      FontAwesomeIcons.stickyNote,
-                                      size: 30,
-                                    ),
-                                    onPressed: learn == null
-                                        ? null
-                                        : () {
-                                            Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                builder: (
-                                                  context,
-                                                ) =>
-                                                    ThemeConsumer(
-                                                  child: Picture(
-                                                    picUrl: learn.pic,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                            // print("video there ${learn.pic}");
-                                          },
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text("Notes"),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )
-                        : Container(
-                            height: 70,
-                            child: CupertinoActivityIndicator(
-                              animating: true,
-                            ),
-                          ),
+                    // Container(
+                    //   height: 5,
+                    //   color: Theme.of(context).cardColor,
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.symmetric(
+                    //       horizontal: 10, vertical: 5),
+                    //   child: Container(
+                    //     decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(
+                    //         5,
+                    //       ),
+                    //       color: Colors.black,
+                    //     ),
+                    //     height: 26,
+                    //     width: double.infinity,
+                    //     child: Text(
+                    //       "Learn Concept",
+                    //       textAlign: TextAlign.center,
+                    //       style: TextStyle(
+                    //         fontSize: 20,
+                    //         color: Colors.white,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // learn.pic != null
+                    // ? Row(
+                    //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    //     children: [
+                    //       Column(
+                    //         children: [
+                    //           IconButton(
+                    //             icon: Icon(
+                    //               FontAwesomeIcons.video,
+                    //               size: 40,
+                    //             ),
+                    //             onPressed: learn == null
+                    //                 ? null
+                    //                 : () {
+                    //                     Navigator.of(context).push(
+                    //                       MaterialPageRoute(
+                    //                         builder: (
+                    //                           context,
+                    //                         ) =>
+                    //                             ThemeConsumer(
+                    //                           child: Youtube(
+                    //                               // url: learn.video,
+                    //                               ),
+                    //                         ),
+                    //                       ),
+                    //                     );
+                    //                     print("video there ${learn.pic}");
+                    //                   },
+                    //           ),
+                    //           SizedBox(
+                    //             height: 10,
+                    //           ),
+                    //           Text("Video"),
+                    //           SizedBox(
+                    //             height: 5,
+                    //           ),
+                    //         ],
+                    //       ),
+                    //       Column(
+                    //         children: [
+                    //           IconButton(
+                    //             icon: Icon(
+                    //               FontAwesomeIcons.stickyNote,
+                    //               size: 30,
+                    //             ),
+                    //             onPressed: learn == null
+                    //                 ? null
+                    //                 : () {
+                    //                     Navigator.of(context).push(
+                    //                       MaterialPageRoute(
+                    //                         builder: (
+                    //                           context,
+                    //                         ) =>
+                    //                             ThemeConsumer(
+                    //                           child: Picture(
+                    //                             picUrl: learn.pic,
+                    //                           ),
+                    //                         ),
+                    //                       ),
+                    //                     );
+                    //                     // print("video there ${learn.pic}");
+                    //                   },
+                    //           ),
+                    //           SizedBox(
+                    //             height: 10,
+                    //           ),
+                    //           Text("Notes"),
+                    //           SizedBox(
+                    //             height: 5,
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ],
+                    //   )
+                    // : Container(
+                    //     height: 70,
+                    //     child: CupertinoActivityIndicator(
+                    //       animating: true,
+                    //     ),
+                    //   ),
                   ],
                 ),
               ),
@@ -316,38 +304,75 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                 ),
               ),
               SizedBox(height: 20.0),
-              processing
-                  ? Container(
-                      height: 30,
-                      width: 30,
-                      child: Theme(
-                        data: ThemeData(
-                          cupertinoOverrideTheme:
-                              CupertinoThemeData(brightness: Brightness.dark),
-                        ),
-                        child: CircularProgressIndicator(),
-                      ),
-                    )
-                  : Container(
-                      height: 40,
-                      width: 200,
-                      child: RaisedButton(
-                        color: Colors.red,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                            20.0,
-                          ),
-                        ),
-                        child: Text(
-                          "Start Quiz",
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                        onPressed: _startQuiz,
+              // processing
+              //     ? Container(
+              //         height: 30,
+              //         width: 30,
+              //         child: Theme(
+              //           data: ThemeData(
+              //             cupertinoOverrideTheme:
+              //                 CupertinoThemeData(brightness: Brightness.dark),
+              //           ),
+              //           child: CircularProgressIndicator(),
+              //         ),
+              //       )
+              //     : Container(
+              //         height: 40,
+              //         width: 200,
+              //         child: RaisedButton(
+              //           color: Colors.red,
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(
+              //               20.0,
+              //             ),
+              //           ),
+              //           child: Text(
+              //             "Start Quiz",
+              //             style: TextStyle(
+              //               fontSize: 20.0,
+              //               color: Colors.white,
+              //             ),
+              //           ),
+              //           onPressed: _startQuiz,
+              //         ),
+              //       ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: FloatingActionButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (
+                                context,
+                              ) =>
+                                  ThemeConsumer(
+                                child: Youtube(
+                                  cata: widget.category,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: Text("Learn"),
                       ),
                     ),
+                    Flexible(child: Text("All the Best")),
+                    Flexible(
+                      child: FloatingActionButton(
+                        onPressed: _startQuiz,
+                        child: processing
+                            ? CupertinoActivityIndicator()
+                            : Text("Start"),
+                      ),
+                    )
+                  ],
+                  // ),
+                ),
+              ),
               SizedBox(height: 20.0),
             ],
           ),

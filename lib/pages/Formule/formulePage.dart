@@ -29,6 +29,7 @@ class _FormuleMainPageState extends State<FormuleMainPage>
       FormuleFire.dataLenght().then((value) {
         setState(() {
           lenght = value;
+          print("Lenght is $lenght");
           if (formuleData != null) {
             setState(() {
               isLoading = false;
@@ -51,6 +52,32 @@ class _FormuleMainPageState extends State<FormuleMainPage>
               heroTag: "Hero2",
               automaticallyImplyLeading: true,
               backgroundColor: Theme.of(context).dividerColor,
+              trailing: IconButton(
+                icon: Icon(
+                  CupertinoIcons.refresh,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isLoading = true;
+                  });
+                  FormuleFire.getMainFormuleRefresh().then((value) {
+                    setState(() {
+                      formuleData = value;
+                    });
+                    FormuleFire.dataFormuleLenght().then((value) {
+                      setState(() {
+                        lenght = value;
+                        if (formuleData != null) {
+                          setState(() {
+                            isLoading = false;
+                          });
+                        }
+                      });
+                    });
+                  });
+                },
+              ),
               largeTitle: Text(
                 'Formules',
                 style: TextStyle(
@@ -107,7 +134,6 @@ class _FormuleMainPageState extends State<FormuleMainPage>
       for (var i = 0; data[i]["topic"] != null; i++) {
         // print(i);
         // print(data[i]);
-
         list.add(
           Padding(
             padding: EdgeInsets.symmetric(
