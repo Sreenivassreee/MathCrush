@@ -51,7 +51,7 @@ class showLevelDetails {
               ),
               Flexible(
                 child: Text(
-                  "Explanation",
+                  detail == null ? "" : "Explanation",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,
@@ -75,7 +75,7 @@ class showLevelDetails {
               ),
               Flexible(
                 child: Text(
-                  "Example",
+                  ex == null ? "" : "Example",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,

@@ -13,7 +13,7 @@ final List<Category> categories = [
     level: "1",
     title: "Numbers into Spellings 1 to 100",
     message:
-        "In this 1st level u will work on conversions of numbers into spellings from 1 to 100",
+        "In this level we will work on conversions of numbers into spellings from 1 to 100",
     ex: "1 = One",
   ),
   Category(
@@ -21,7 +21,7 @@ final List<Category> categories = [
     level: "2",
     title: "Spellings into Numbers 1 to 100",
     message:
-        "In this 2ed level u will work on conversions of Spellings into Numbers from 1 to 100",
+        "In this level we will work on conversions of Spellings into Numbers from 1 to 100",
     ex: "One = 1",
   ),
   Category(
@@ -29,14 +29,14 @@ final List<Category> categories = [
     level: "3",
     title: "Identify the Even Numbers 1-100",
     message:
-        "In this 3ed level u will work on Identify the Even Numbers from 1 to 100",
+        "In this level we will work on Identify the Even Numbers from 1 to 100",
     ex: "Find Even Number : 1,2,3,5 || Ans : 2",
   ),
   Category(
     id: 4,
     level: "4",
     title: "Identify the Even Numbers",
-    message: "In this 4th level u will work on Identify the Even Numbers",
+    message: "In this level we will work on Identify the Even Numbers",
     ex: "Find Even Number : 101,102,103,105 || Ans : 102",
   ),
   Category(
@@ -44,35 +44,35 @@ final List<Category> categories = [
     level: "5",
     title: "Identify the Odd Numbers 1-100",
     message:
-        "In this 5th level u will work on Identify the Odd Numbers from 1 to 100",
+        "In this level we will work on Identify the Odd Numbers from 1 to 100",
     ex: "Find Odd Number : 1,2,3,5 || Ans : 2",
   ),
   Category(
     id: 6,
     level: "6",
     title: "Identify the Odd Numbers",
-    message: "In this 6th level u will work on Identify the Odd Numbers",
+    message: "In this level we will work on Identify the Odd Numbers",
     ex: "Find Odd Number : 101,102,103,105 || Ans : 102",
   ),
   Category(
     id: 7,
     level: "7",
     title: "Roman Numbers 1 to 1000",
-    message: "In this 7th level u will work on Roman Numbers from 1 to 1000",
+    message: "In this level we will work on Roman Numbers from 1 to 1000",
     ex: "Roman Number : I   ||   Ans : 1",
   ),
   Category(
     id: 8,
     level: "8",
     title: "Ascending Order",
-    message: "In this 8th level u will work on Ascending Order",
+    message: "In this level we will work on Ascending Order",
     ex: "Ascending order of : 2,3,1,6 || Ans : 1,2,3,6",
   ),
   Category(
     id: 9,
     level: "9",
     title: "Descending Order",
-    message: "In this 9th level u will work on Descending Order",
+    message: "In this level we will work on Descending Order",
     ex: "Descending Order of : 2,3,1,6 || Ans : 6,3,2,1",
   ),
   Category(
@@ -80,7 +80,7 @@ final List<Category> categories = [
     level: "10",
     title: "Additions ( E ) with 2",
     message:
-        "In this 10th level u will work on Additions in Easy level Problems with 2 numbers",
+        "In this level we will work on Additions Easy level Problems with 2 numbers",
     ex: "1 + 1 || Ans : 2",
   ),
   Category(
@@ -88,7 +88,7 @@ final List<Category> categories = [
     level: "11",
     title: "Additions ( M ) with 2",
     message:
-        "In this 11th level u will work on Additions in Medium level Problems with 2 numbers",
+        "In this level we will work on Additions in Medium level Problems with 2 numbers",
     ex: "7 + 1 || Ans : 8",
   ),
   Category(
@@ -96,7 +96,7 @@ final List<Category> categories = [
     level: "12",
     title: "Substactions ( E ) with 2",
     message:
-        "In this 12th level u will work on Substactions in Easy level Problems with 2 numbers",
+        "In this level we will work on Substactions in Easy level Problems with 2 numbers",
     ex: "1 - 1 || Ans : 0",
   ),
   Category(
@@ -110,7 +110,7 @@ final List<Category> categories = [
   Category(
     id: 14,
     level: "14",
-    title: "multiplication ( E ) with 2",
+    title: "Multiplication ( E ) with 2",
     message:
         "In this level u will work on multiplication in Easy level Problems with 2 numbers",
     ex: "1 x 1 || Ans : 1",
@@ -118,7 +118,7 @@ final List<Category> categories = [
   Category(
     id: 15,
     level: "15",
-    title: "multiplication ( M ) with 2",
+    title: "Multiplication ( M ) with 2",
     message:
         "In this level u will work on multiplication in Medium level Problems with 2 numbers",
     ex: "3 x 9 || Ans : 27",
@@ -366,33 +366,33 @@ final List<Category> categories = [
   Category(
     id: 46,
     level: "46",
-    title: "Mixed Multilication and Division with 3",
+    title: "Mixed Multiplication and Division with 3",
     message:
-        "In this level u will work on Mixed problems with Multilication and Division,Easy Level Questions with 3 numbers",
+        "In this level u will work on Mixed problems with Multiplication and Division,Easy Level Questions with 3 numbers",
     ex: "1 x 1 / 1 || Ans : 1",
   ),
   Category(
     id: 47,
     level: "47",
-    title: "Mixed Multilication and Division with 3",
+    title: "Mixed Multiplication and Division with 3",
     message:
-        "In this level u will work on Mixed problems with Multilication and Division,Medium Level Questions with 3 numbers",
+        "In this level u will work on Mixed problems with Multiplication and Division,Medium Level Questions with 3 numbers",
     ex: "9 x 5 / 2 || Ans : 22.5",
   ),
   Category(
     id: 48,
     level: "48",
-    title: "Mixed Multilication and Division with 4",
+    title: "Mixed Multiplication and Division with 4",
     message:
-        "In this level u will work on Mixed problems with Multilication and Division,Easy Level Questions with 4 numbers",
+        "In this level u will work on Mixed problems with Multiplication and Division,Easy Level Questions with 4 numbers",
     ex: "1 x 1 / 1 x 1 || Ans : 1",
   ),
   Category(
     id: 49,
     level: "49",
-    title: "Mixed Multilication and Division with 4",
+    title: "Mixed Multiplication and Division with 4",
     message:
-        "In this level u will work on Mixed problems with Multilication and Division,Medium Level Questions with 4 numbers",
+        "In this level u will work on Mixed problems with Multiplication and Division,Medium Level Questions with 4 numbers",
     ex: "9 x 5 / 2 x 5 || Ans : 112.5",
   ),
   Category(
@@ -477,18 +477,18 @@ final List<Category> categories = [
   ),
   Category(
     id: 60,
-    level: "",
-    title: "Sentence Problems with Multilication [E]",
+    level: "60",
+    title: "Sentence Problems with Multiplication [E]",
     message:
-        "In this level u will work on Sentence Problems with Multilication,Easy Level Questions",
+        "In this level u will work on Sentence Problems with Multiplication,Easy Level Questions",
     ex: "If X = 1 and Y = 2  Then X x Y  || Ans : 2",
   ),
   Category(
     id: 61,
     level: "61",
-    title: "Sentence Problems with Multilication [M]",
+    title: "Sentence Problems with Multiplication [M]",
     message:
-        "In this level u will work on Sentence Problems with Multilication,Medium Level Questions",
+        "In this level u will work on Sentence Problems with Multiplication,Medium Level Questions",
     ex: "If X = 8 and Y = 2  Then X x Y  || Ans : 16",
   ),
   Category(
@@ -547,4 +547,610 @@ final List<Category> categories = [
         "In this level we will work on Input Math or Sign based on the Logic of a Question",
     ex: "2 + 3 = ? || Ans : 5",
   ),
+  Category(
+    id: 69,
+    level: "69",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 70,
+    level: "70",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 71,
+    level: "71",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 72,
+    level: "72",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 73,
+    level: "73",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 74,
+    level: "74",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 75,
+    level: "75",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 76,
+    level: "76",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 77,
+    level: "77",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 78,
+    level: "78",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 79,
+    level: "79",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 80,
+    level: "80",
+    title: "All Above Concepts",
+    message: "In this level we will work on all the above concepts",
+    ex: null,
+  ),
+  Category(
+    id: 81,
+    level: "81",
+    title: "Statement Questions",
+    message:
+        "In this level we will work on Statement Questions from all the above concepts",
+    ex: "How much is 9 hours plus 1 hour ? || Ans : 10",
+  ),
+  Category(
+    id: 82,
+    level: "82",
+    title: "Ascending Order with 2 Digit Numbers",
+    message:
+        "Welcome to double digit Qestions.In this Level we will learn Ascending And Dissending With 2 digits",
+    ex: "Ascending order of : 12,13,11,16 || Ans : 11,12,13,16",
+  ),
+  Category(
+    id: 83,
+    level: "83",
+    title: "Ascending Order with 2 Digit Numbers",
+    message:
+        "In this Level we will learn Ascending And Dissending With 2 digits",
+    ex: "Ascending order of : 12,13,11,16 || Ans : 11,12,13,16",
+  ),
+  Category(
+    id: 84,
+    level: "84",
+    title: "Additions[E] 2 digit with 1 digit",
+    message:
+        "In this level we will work on Additions Easy level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "11 + 1 || Ans : 12",
+  ),
+  Category(
+    id: 85,
+    level: "85",
+    title: "Additions[M] 2 digit with 1 digit",
+    message:
+        "In this level we will work on Additions Medium level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "11 + 1 || Ans : 12",
+  ),
+  Category(
+    id: 86,
+    level: "86",
+    title: "Substactions[E] 2 digit with 1 digit",
+    message:
+        "In this level we will work on Substactions Easy level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "11 - 1 || Ans : 10",
+  ),
+  Category(
+    id: 87,
+    level: "87",
+    title: "Substactions[M] 2 digit with 1 digit",
+    message:
+        "In this level we will work on Substactions Medium level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "71 - 5 || Ans : 66",
+  ),
+  Category(
+    id: 88,
+    level: "88",
+    title: "multiplication[E] 2 digit with 1 digit",
+    message:
+        "In this level we will work on multiplication Easy level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "11 x 1 || Ans : 11",
+  ),
+  Category(
+    id: 89,
+    level: "89",
+    title: "multiplication[M] 2 digit with 1 digit",
+    message:
+        "In this level we will work on multiplication Medium level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "59 x 7 || Ans : 413",
+  ),
+  Category(
+    id: 90,
+    level: "90",
+    title: "Division[E] 2 digit with 1 digit",
+    message:
+        "In this level we will work on Division Easy level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "11 / 1 || Ans : 11",
+  ),
+  Category(
+    id: 91,
+    level: "91",
+    title: "Division[M] 2 digit with 1 digit",
+    message:
+        "In this level we will work on Division Medium level Problems,2 digits with 1 digit,with 2 numbers",
+    ex: "56 / 3 || Ans : 18.66",
+  ),
+  Category(
+    id: 92,
+    level: "92",
+    title: "Additions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Easy level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "11 + 11 || Ans : 22",
+  ),
+  Category(
+    id: 93,
+    level: "93",
+    title: "Additions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Medium level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "11 + 11 || Ans : 22",
+  ),
+  Category(
+    id: 94,
+    level: "94",
+    title: "Substactions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Substactions Easy level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "11 - 11 || Ans : 0",
+  ),
+  Category(
+    id: 95,
+    level: "95",
+    title: "Substactions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Substactions Medium level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "99 - 33 || Ans : 66",
+  ),
+  Category(
+    id: 96,
+    level: "96",
+    title: "Multiplication[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Easy level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "11 x 11 || Ans : 121",
+  ),
+  Category(
+    id: 97,
+    level: "97",
+    title: "Multiplication[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Medium level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "64 x 34 || Ans : 2,176",
+  ),
+  Category(
+    id: 98,
+    level: "98",
+    title: "Division[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Division Easy level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "11 / 11 || Ans : 1",
+  ),
+  Category(
+    id: 99,
+    level: "99",
+    title: "Division[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Division Medium level Problems,2 digits with 2 digits,with 2 numbers",
+    ex: "85 / 32 || Ans : 2.65",
+  ),
+  Category(
+    id: 100,
+    level: "100",
+    title: "Additions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Easy level Problems,2 digits with 2 digits,with 3 numbers",
+    ex: "11 + 11 + 11 || Ans : 33",
+  ),
+  Category(
+    id: 101,
+    level: "101",
+    title: "Additions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Medium level Problems,2 digits with 2 digits,with 3 numbers",
+    ex: "43 + 62 + 23 || Ans : 128",
+  ),
+  Category(
+    id: 102,
+    level: "102",
+    title: "Substactions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Substactions Easy level Problems,2 digits with 2 digits,with 3 numbers",
+    ex: "11 - 11 - 11 || Ans : -11",
+  ),
+  Category(
+    id: 103,
+    level: "103",
+    title: "Substactions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Substactions Medium level Problems,2 digits with 2 digits,with 3 numbers",
+    ex: "43 - 62 - 23 || Ans : -42",
+  ),
+  Category(
+    id: 104,
+    level: "104",
+    title: "Multiplication[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Easy level Problems,2 digits with 2 digits,with 3 numbers",
+    ex: "11 x 11 x 11 || Ans : 1,331",
+  ),
+  Category(
+    id: 105,
+    level: "105",
+    title: "Multiplication[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Medium level Problems,2 digits with 2 digits,with 3 numbers",
+    ex: "11 x 11 x 11 || Ans : 1,331",
+  ),
+  Category(
+    id: 106,
+    level: "106",
+    title: "Additions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Easy level Problems,2 digits with 2 digits,with 4 numbers",
+    ex: "11 + 11 + 11 + 11 || Ans : 44",
+  ),
+  Category(
+    id: 107,
+    level: "107",
+    title: "Additions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Medium level Problems,2 digits with 2 digits,with 4 numbers",
+    ex: "11 + 11 + 11 + 11 || Ans : 44",
+  ),
+  Category(
+    id: 108,
+    level: "108",
+    title: "Substactions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Substactions Easy level Problems,2 digits with 2 digits,with 4 numbers",
+    ex: "11 - 11 - 11 - 11 || Ans : -22",
+  ),
+  Category(
+    id: 109,
+    level: "109",
+    title: "Substactions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Substactions Medium level Problems,2 digits with 2 digits,with 4 numbers",
+    ex: "11 - 11 - 11 - 11 || Ans : -22",
+  ),
+  Category(
+    id: 110,
+    level: "110",
+    title: "Multiplication[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Easy level Problems,2 digits with 2 digits,with 4 numbers",
+    ex: "11 x 11 x 11 x 11 || Ans : 14,641",
+  ),
+  Category(
+    id: 111,
+    level: "111",
+    title: "Multiplication[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Medium level Problems,2 digits with 2 digits,with 4 numbers",
+    ex: "11 x 11 x 11 x 11 || Ans : 14,641",
+  ),
+  Category(
+    id: 112,
+    level: "112",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 113,
+    level: "113",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 114,
+    level: "114",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 115,
+    level: "115",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 116,
+    level: "116",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 117,
+    level: "117",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 118,
+    level: "118",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 119,
+    level: "119",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 120,
+    level: "120",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 121,
+    level: "121",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 123,
+    level: "123",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 124,
+    level: "124",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 125,
+    level: "125",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 126,
+    level: "126",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 127,
+    level: "127",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 128,
+    level: "128",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 129,
+    level: "129",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 130,
+    level: "130",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 131,
+    level: "131",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 132,
+    level: "132",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 133,
+    level: "133",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 134,
+    level: "134",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 135,
+    level: "135",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 136,
+    level: "136",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 137,
+    level: "137",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 138,
+    level: "138",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 139,
+    level: "139",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 140,
+    level: "140",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 141,
+    level: "141",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 142,
+    level: "142",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 143,
+    level: "143",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 144,
+    level: "144",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 145,
+    level: "145",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 146,
+    level: "146",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 147,
+    level: "147",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 148,
+    level: "148",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 149,
+    level: "149",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  Category(
+    id: 150,
+    level: "150",
+    title: "",
+    message: "",
+    ex: "",
+  ),
+  //  Category(
+  //   id: ,
+  //   level: "",
+  //   title: "",
+  //   message:
+  //       "",
+  //   ex: "",
+  // ),
 ];

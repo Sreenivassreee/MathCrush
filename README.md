@@ -146,3 +146,9 @@ Done:<br>
 3.added the contect in categery screen [ X ]<br>
 4.added the Level Details shown Dialog box [ X ]<br>
 5.Everything Working Fine [ X ]<br>
+
+<h2>17/07/2020 </h2>
+<br>
+Done:<br>
+1.added the contect in categery screen [ X ]<br>
+2.Updated some showLevelDetails [ X ]<br>
