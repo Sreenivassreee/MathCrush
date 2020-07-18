@@ -682,8 +682,10 @@ class HomeDesignState extends State<HomeDesign>
                           await Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => ThemeConsumer(
-                                child:
-                                    RewardScreen(id: pId, coins: currentScore),
+                                child: RewardScreen(
+                                  id: pId,
+                                  coins: currentScore,
+                                ),
                               ),
                             ),
                           );

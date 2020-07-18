@@ -401,7 +401,7 @@ final List<Category> categories = [
     title: "Mixed All Math Operations [E]",
     message:
         "In this level u will work on Mixed problems with All Math Operations,Easy Level Questions",
-    ex: "1 x 1 - 1 x 2 || Ans : - 1",
+    ex: "( 1+1 )-( 1x1 ) || Ans :  1",
   ),
   Category(
     id: 51,
@@ -409,7 +409,7 @@ final List<Category> categories = [
     title: "Mixed All Math Operations [E]",
     message:
         "In this level u will work on Mixed problems with All Math Operations,Easy Level Questions",
-    ex: "1 x 1 - 1 x 2 || Ans : - 1",
+    ex: "( 1+1 )-( 1x1 ) || Ans :  1",
   ),
   Category(
     id: 52,
@@ -417,7 +417,7 @@ final List<Category> categories = [
     title: "Mixed All Math Operations [M]",
     message:
         "In this level u will work on Mixed problems with All Math Operations,Medium Level Questions",
-    ex: "6 x 2 - 2 x 5 || Ans : 2",
+    ex: "( 1+1+1 ) - ( 1x1+1 ) || Ans : 1",
   ),
   Category(
     id: 53,
@@ -425,7 +425,7 @@ final List<Category> categories = [
     title: "Mixed All Math Operations [M]",
     message:
         "In this level u will work on Mixed problems with All Math Operations,Medium Level Questions",
-    ex: "6 x 2 - 2 x 5 || Ans : 2",
+    ex: "( 1+1+1 ) - ( 1x1+1 ) || Ans : 1",
   ),
   Category(
     id: 54,
@@ -433,7 +433,7 @@ final List<Category> categories = [
     title: "Mixed All Math Operations [H]",
     message:
         "In this level u will work on Mixed problems with All Math Operations,High Level Questions",
-    ex: "6 x 2 - 2 x 5 || Ans : 2",
+    ex: "(1+1+1)-(1x1)+(1-1) || Ans : 2",
   ),
   Category(
     id: 55,
@@ -441,7 +441,7 @@ final List<Category> categories = [
     title: "Mixed All Math Operations [H]",
     message:
         "In this level u will work on Mixed All Math Operations,High Level Questions",
-    ex: "6 x 2 - 2 x 5 || Ans : 2",
+    ex: "(1+1+1)-(1x1)+(1-1) || Ans : 2",
   ),
   Category(
     id: 56,
@@ -882,261 +882,306 @@ final List<Category> categories = [
   Category(
     id: 112,
     level: "112",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Additions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Easy level Problems,2 digits with 2 digits,with 5 numbers",
+    ex: "11 + 11 + 11 + 11 + 11 || Ans : 55",
   ),
   Category(
     id: 113,
     level: "113",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Additions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Medium level Problems,2 digits with 2 digits,with 5 numbers",
+    ex: "11 + 11 + 11 + 11 + 11 || Ans : 55",
   ),
   Category(
     id: 114,
     level: "114",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Substactions[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Easy level Problems,2 digits with 2 digits,with 5 numbers",
+    ex: "11 - 11 - 11 - 11 - 11 || Ans : 55",
   ),
   Category(
     id: 115,
     level: "115",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Substactions[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Additions Medium level Problems,2 digits with 2 digits,with 5 numbers",
+    ex: "11 - 11 - 11 - 11 - 11 || Ans : -33",
   ),
   Category(
     id: 116,
     level: "116",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Multiplication[E] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Easy level Problems,2 digits with 2 digits,with 5 numbers",
+    ex: "11 x 11 x 11 x 11 x 11 || Ans : 1,61,051",
   ),
   Category(
     id: 117,
     level: "117",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Multiplication[M] 2 digit with 2 digit",
+    message:
+        "In this level we will work on Multiplication Medium level Problems,2 digits with 2 digits,with 5 numbers",
+    ex: "11 x 11 x 11 x 11 x 11 || Ans : 1,61,051",
   ),
   Category(
     id: 118,
     level: "118",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 3 [E]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits ,Easy Level Questions with 3 numbers",
+    ex: "12 + 12 - 12 || Ans : 12",
   ),
   Category(
     id: 119,
     level: "119",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 3 [M]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Medium Level Questions with 3 numbers",
+    ex: "12 + 12 - 12 || Ans : 12",
   ),
   Category(
     id: 120,
     level: "120",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 4 [E]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Easy Level Questions with 4 numbers",
+    ex: "11 + 11 - 11 - 11 || Ans : 0 ",
   ),
   Category(
     id: 121,
     level: "121",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 4 [M]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Medium Level Questions with 4 numbers",
+    ex: "11 + 11 - 11 - 11 || Ans : 0 ",
+  ),
+  Category(
+    id: 122,
+    level: "122",
+    title: "Mixed Addition & Subtraction with 5 [E]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Easy Level Questions with 5 numbers",
+    ex: "11 + 11 - 11 - 11 - 11 || Ans : -11 ",
   ),
   Category(
     id: 123,
     level: "123",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 5 [M]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Medium Level Questions with 5 numbers",
+    ex: "11 + 11 - 11 - 11 - 11 || Ans : -11 ",
   ),
   Category(
     id: 124,
     level: "124",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 6 [E]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Easy Level Questions with 6 numbers",
+    ex: "11 + 11 - 11 + 11 + 11 - 11 || Ans : 22",
   ),
   Category(
     id: 125,
     level: "125",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 6 [M]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Medium Level Questions with 6 numbers",
+    ex: "11 + 11 - 11 + 11 + 11 - 11 || Ans : 22",
   ),
   Category(
     id: 126,
     level: "126",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 7 [E]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Easy Level Questions with 7 numbers",
+    ex: "11 + 11 - 11 + 11 + 11 - 11 + 11 || Ans : 33",
   ),
   Category(
     id: 127,
     level: "127",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Addition & Subtraction with 7 [M]",
+    message:
+        "In this level we will work on Mixed problems with Addition and Subtraction which are 2 digits,Medium Level Questions with 7 numbers",
+    ex: "11 + 11 - 11 + 11 + 11 - 11 + 11 || Ans : 33",
   ),
   Category(
     id: 128,
     level: "128",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 3",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are combination of 2 digits & 1 digit ,Easy Level Questions with 3 numbers",
+    ex: "10 x 10 / 1 || Ans : 100",
   ),
   Category(
     id: 129,
     level: "129",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 3",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are combination of 2 digits & 1 digit ,Medium Level Questions with 3 numbers",
+    ex: "10 x 10 / 1 || Ans : 100",
   ),
   Category(
     id: 130,
     level: "130",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 4",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are combination of 2 digits & 1 digit ,Easy Level Questions with 4 numbers",
+    ex: "10 x 10 x 10 / 1 || Ans : 1000",
   ),
   Category(
     id: 131,
     level: "131",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 4",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are combination of 2 digits & 1 digit ,Medium Level Questions with 4 numbers",
+    ex: "10 x 10 x 10 / 1 || Ans : 1000",
   ),
   Category(
     id: 132,
     level: "132",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 3",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are of 2 digits,Easy Level Questions with 3 numbers",
+    ex: "10 x 10 / 10 || Ans : 10",
   ),
   Category(
     id: 133,
     level: "133",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 3",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are of 2 digits,Medium Level Questions with 3 numbers",
+    ex: "10 x 10 / 10 || Ans : 10",
   ),
   Category(
     id: 134,
     level: "134",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 4",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are of 2 digits,Easy Level Questions with 4 numbers",
+    ex: "10 x 10 x 10 / 10 || Ans : 100",
   ),
   Category(
     id: 135,
     level: "135",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 4",
+    message:
+        "In this level we will work on Mixed problems with Multiplications and Divisions which are of 2 digits,Medium Level Questions with 4 numbers",
+    ex: "10 x 10 x 10 / 10 || Ans : 100",
   ),
   Category(
     id: 136,
     level: "136",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 4",
+    message:
+        "In this level we will work on Mixed problems with Multiplication and Division which are of 2 digits & 1 digit,Easy Level Questions with 3 numbers",
+    ex: "12x12/12 || Ans : 12",
   ),
   Category(
     id: 137,
     level: "137",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 4",
+    message:
+        "In this level we will work on Mixed problems with Multiplication and Division which are of 2 digits & 1 digit,Medium Level Questions with 3 numbers",
+    ex: "(12+12) - (1x1)|| Ans : 23",
   ),
   Category(
     id: 138,
     level: "138",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 6",
+    message:
+        "In this level we will work on Mixed problems with Multiplication and Division which are of 2 digits & 1 digit,Easy Level Questions with 3 numbers",
+    ex: "(12+12+12) - (1x1+1) || Ans : 34",
   ),
   Category(
     id: 139,
     level: "139",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed Multiplication and Division with 6",
+    message:
+        "In this level we will work on Mixed problems with Multiplication and Division which are of 2 digits & 1 digit,Medium Level Questions with 3 numbers",
+    ex: "(12+12+12) - (1x1+1) || Ans : 34",
   ),
   Category(
     id: 140,
     level: "140",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [E]",
+    message:
+        "In this level we will work on Mixed problems with All Math Operations which are of Combination 2 digits & 1 digit,Easy Level Questions",
+    ex: "( 12+1 ) - ( 12x1 ) || Ans : 1",
   ),
   Category(
     id: 141,
     level: "141",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [E]",
+    message:
+        "In this level we will work on Mixed problems with All Math Operations which are of Combination 2 digits & 1 digit,Easy Level Questions",
+    ex: "(12+1) - (12x1) || Ans : 1",
   ),
   Category(
     id: 142,
     level: "142",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [M]",
+    message:
+        "In this level we will work on Mixed problems with All Math Operations which are of Combination 2 digits & 1 digit,Medium Level Questions",
+    ex: "(12+12+1) - (12x12+1) || Ans : -120",
   ),
   Category(
     id: 143,
     level: "143",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [M]",
+    message:
+        "In this level we will work on Mixed problems with All Math Operations which are of Combination 2 digits & 1 digit,Medium Level Questions",
+    ex: "(12+12+1) - (12x12+1) || Ans : -120",
   ),
   Category(
     id: 144,
     level: "144",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [E]",
+    message:
+        "In this level we will work on Mixed problems with All Math Operations which are of 2 digits,Easy Level Questions",
+    ex: "( 12+12 ) - ( 12x12 ) || Ans : -120",
   ),
   Category(
     id: 145,
     level: "145",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [E]",
+    message:
+        "In this level u will work on Mixed problems with All Math Operations which are of 2 digits,Easy Level Questions",
+    ex: "( 12+12 ) - ( 12x12 ) || Ans : -120",
   ),
   Category(
     id: 146,
     level: "146",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [M]",
+    message:
+        "In this level u will work on Mixed problems with All Math Operations which are of 2 digits,Medium Level Questions",
+    ex: "(12+12+12) - (12x12+12) || Ans : -120",
   ),
   Category(
     id: 147,
     level: "147",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [M]",
+    message:
+        "In this level u will work on Mixed problems with All Math Operations which are of 2 digits,Medium Level Questions",
+    ex: "(12+12+12) - (12x12+12) || Ans : -120",
   ),
   Category(
     id: 148,
     level: "148",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [H]",
+    message:
+        "In this level u will work on Mixed problems with All Math Operations which are of 2 digits,Hard Level Questions",
+    ex: "(12+12+12) - (12x12) + (12-12) || Ans : -108",
   ),
   Category(
     id: 149,
     level: "149",
-    title: "",
-    message: "",
-    ex: "",
+    title: "Mixed All Math Operations [H]",
+    message:
+        "In this level u will work on Mixed problems with All Math Operations which are of 2 digits,Hard Level Questions",
+    ex: "(12+12+12) - (12x12) + (12-12) || Ans : -108",
   ),
   Category(
     id: 150,
