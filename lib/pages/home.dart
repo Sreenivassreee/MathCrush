@@ -3,11 +3,14 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mathcrush/pages/showLevelDetails.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 import 'package:theme_provider/theme_provider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import '../models/category.dart';
 import './quiz_options.dart';
+
+List<Category> categories = [];
 
 class HomePage extends StatefulWidget {
   // List<BasicData> basicData;
@@ -25,6 +28,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // List<BasicData> basicData;
   var currentScore, compliteLevel;
+  bool isLoadingLevel = true;
 
   // List data;
   var pId;
@@ -38,12 +42,21 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    setState(() {
-      // fetchData();
-      // this.data;
-    });
+
+    data();
+
+    // fetchData();
+    // this.data;
 
     // getdata();
+  }
+
+  data() async {
+    fireCata().then((value) {
+      setState(() {
+        categories = value;
+      });
+    });
   }
 
 // void fetchData() async {
@@ -60,9 +73,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (compliteLevel != null && currentScore != null) {
+    if (compliteLevel != null && currentScore != null && categories != null) {
       setState(() {
         isloading = false;
+        isLoadingLevel = false;
       });
     }
 
@@ -115,10 +129,15 @@ class _HomePageState extends State<HomePage> {
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
-                : Lis(
-                    pId: pId,
-                    compliteLevel: compliteLevel,
-                    currentScore: currentScore)
+                : isLoadingLevel == false
+                    ? Lis(
+                        pId: pId,
+                        compliteLevel: compliteLevel,
+                        currentScore: currentScore)
+                    : Center(
+                        child: CupertinoActivityIndicator(
+                        radius: 15,
+                      ))
           ],
         ),
       ),
@@ -161,7 +180,6 @@ class _LisState extends State<Lis> {
     p_Id = widget.pId;
     // sleep(Duration(seconds: 1));
     // _animateToIndex(widget.compliteLevel - 3);
-
     super.initState();
   }
 
