@@ -162,6 +162,20 @@ Done:<br>
 1.added the contect in categery screen Upto 156 Levels[ X ]<br>
 <h2>21/07/2020 </h2>
 <br>
+
 Done:<br>
+
+<h2>Commit 1</h2><br>
 1.Make a LevelDetails Dymanic now its comes from Database dynamically [ X ]<br>
-2.No isses to get data (Total implementation is Over)
+2.No isses to get data (Total implementation is Over)<br>
+<h2>Commit 2</h2><br>
+
+<br>
+<h2>22/07/2020 </h2>
+<br>
+
+Done:<br>
+
+<h2>Commit 1</h2><br>
+1.Changed App images to Local from server[ X ]<br>
+2.fixing the Login screen isses<br>

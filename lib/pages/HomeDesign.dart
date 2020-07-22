@@ -523,10 +523,13 @@ class HomeDesignState extends State<HomeDesign>
                                   children: [
                                     Flexible(
                                       flex: 2,
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Fwinner-icon.png?alt=media&token=52df5c84-c845-4188-a2c9-3997640c1944",
+                                      child: Image.asset(
+                                        "assets/images/winner.png",
                                       ),
+                                      // child: CachedNetworkImage(
+                                      //   imageUrl:
+                                      //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Fwinner-icon.png?alt=media&token=52df5c84-c845-4188-a2c9-3997640c1944",
+                                      // ),
                                     ),
                                     Flexible(
                                       flex: 1,
@@ -567,10 +570,13 @@ class HomeDesignState extends State<HomeDesign>
                                   children: [
                                     Flexible(
                                       flex: 2,
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FEarn.png?alt=media&token=9a360431-40ef-4acf-927c-03ec0e7b4655",
+                                      child: Image.asset(
+                                        "assets/images/Earn-1.png",
                                       ),
+                                      // child: CachedNetworkImage(
+                                      //   imageUrl:
+                                      //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FEarn.png?alt=media&token=9a360431-40ef-4acf-927c-03ec0e7b4655",
+                                      // ),
                                     ),
                                     Flexible(
                                       flex: 1,
@@ -611,10 +617,13 @@ class HomeDesignState extends State<HomeDesign>
                                   children: [
                                     Flexible(
                                       flex: 2,
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Fprogress.png?alt=media&token=baad0328-c06d-400d-8467-417582fadce6",
+                                      child: Image.asset(
+                                        "assets/images/progress.png",
                                       ),
+                                      // child: CachedNetworkImage(
+                                      //   imageUrl:
+                                      //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Fprogress.png?alt=media&token=baad0328-c06d-400d-8467-417582fadce6",
+                                      // ),
                                     ),
                                     Flexible(
                                       flex: 1,
@@ -660,10 +669,13 @@ class HomeDesignState extends State<HomeDesign>
                                 children: [
                                   Flexible(
                                     flex: 2,
-                                    child: CachedNetworkImage(
-                                      imageUrl:
-                                          "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Ftables.png?alt=media&token=8406c4bb-ea18-491a-8f76-ec8707f12b9e",
+                                    child: Image.asset(
+                                      "assets/images/tables.png",
                                     ),
+                                    // child: CachedNetworkImage(
+                                    //   imageUrl:
+                                    //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2Ftables.png?alt=media&token=8406c4bb-ea18-491a-8f76-ec8707f12b9e",
+                                    // ),
                                   ),
                                   Flexible(
                                     flex: 1,
@@ -709,10 +721,13 @@ class HomeDesignState extends State<HomeDesign>
                                 children: [
                                   Flexible(
                                     flex: 2,
-                                    child: CachedNetworkImage(
-                                      imageUrl:
-                                          "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524",
+                                    child: Image.asset(
+                                      "assets/images/Rewards.png",
                                     ),
+                                    // child: CachedNetworkImage(
+                                    //   imageUrl:
+                                    //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524",
+                                    // ),
                                   ),
                                   Flexible(
                                     flex: 1,

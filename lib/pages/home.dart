@@ -55,6 +55,9 @@ class _HomePageState extends State<HomePage> {
     fireCata().then((value) {
       setState(() {
         categories = value;
+        if (categories != null) {
+          isLoadingLevel = false;
+        }
       });
     });
   }
@@ -73,10 +76,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (compliteLevel != null && currentScore != null && categories != null) {
+    if (compliteLevel != null && currentScore != null) {
       setState(() {
         isloading = false;
-        isLoadingLevel = false;
       });
     }
 

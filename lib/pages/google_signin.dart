@@ -221,7 +221,7 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
                   FadeAnimation(
                     1.3,
                     Text(
-                      "There",
+                      "There,",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -242,100 +242,117 @@ class _GoogleWithLoginState extends State<GoogleWithLogin> {
                   ),
                 ),
                 child: SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.all(0),
-                    child: Column(
-                      children: <Widget>[
-                        FadeAnimation(
-                          1.4,
-                          Stack(
-                            children: [
-                              Container(
-                                height: 400,
-                                margin: EdgeInsets.symmetric(horizontal: 50),
-                                child: SvgPicture.asset(
-                                  "assets/images/signup.svg",
-                                  height: 500,
-                                  width: 500,
-                                ),
-                              ),
-                              _isLoggedIn
-                                  ? Container(
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: 200),
-                                        child: Center(
-                                          child: Container(
-                                            height: 50,
-                                            width: 50,
-                                            child: CircularProgressIndicator(
-                                              strokeWidth: 6,
+                  child: Center(
+                    child: Container(
+                      child: Padding(
+                        padding: EdgeInsets.all(0),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 30,
+                            ),
+                            FadeAnimation(
+                              1.4,
+                              Stack(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 10),
+                                    child: Container(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              3,
+                                      margin:
+                                          EdgeInsets.symmetric(horizontal: 30),
+                                      child: SvgPicture.asset(
+                                        "assets/images/signup.svg",
+                                        height: 500,
+                                        width: 500,
+                                      ),
+                                    ),
+                                  ),
+                                  _isLoggedIn
+                                      ? Container(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(top: 200),
+                                            child: Center(
+                                              child: Container(
+                                                height: 50,
+                                                width: 50,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  strokeWidth: 6,
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                    )
-                                  : Container()
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        FadeAnimation(
-                          2.5,
-                          Container(
-                            height: 80,
-                            margin: EdgeInsets.symmetric(horizontal: 50),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange[900]),
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: FlatButton.icon(
-                                  icon: Icon(FontAwesomeIcons.google,
-                                      color: Colors.white),
-                                  onPressed: () async {
-                                    setState(() {
-                                      _isLoggedIn = true;
-                                    });
+                                        )
+                                      : Container()
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            FadeAnimation(
+                              2.5,
+                              Container(
+                                height: 55,
+                                margin: EdgeInsets.symmetric(horizontal: 50),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.orange[900]),
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: FlatButton.icon(
+                                      icon: Icon(FontAwesomeIcons.google,
+                                          color: Colors.white),
+                                      onPressed: () async {
+                                        setState(() {
+                                          _isLoggedIn = true;
+                                        });
 
-                                    checkNetWork(context).then(
-                                      (value) {
-                                        print("NetworkValue is $value");
-                                        if (value == "Pass") {
-                                          onGoogleSignIn(context);
-                                          // _login();
-                                          setState(
-                                            () {
-                                              // _isLoggedIn == true;
-                                            },
-                                          );
-                                        }
+                                        checkNetWork(context).then(
+                                          (value) {
+                                            print("NetworkValue is $value");
+                                            if (value == "Pass") {
+                                              onGoogleSignIn(context);
+                                              // _login();
+                                              setState(
+                                                () {
+                                                  // _isLoggedIn == true;
+                                                },
+                                              );
+                                            }
+                                          },
+                                        );
                                       },
-                                    );
-                                  },
-                                  label: Expanded(
-                                    child: Text(
-                                      'LOGIN WITH GOOGLE',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15.0,
+                                      label: Expanded(
+                                        child: Text(
+                                          'LOGIN WITH GOOGLE',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
