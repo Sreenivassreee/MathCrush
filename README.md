@@ -179,3 +179,11 @@ Done:<br>
 <h2>Commit 1</h2><br>
 1.Changed App images to Local from server[ X ]<br>
 2.fixing the Login screen isses<br>
+<h1>New Pull<h1>
+<h2>25/07/2020 </h2>
+<br>
+Done:<br>
+
+<h2>Commit 1</h2><br>
+1.Optimising the Winners page based in the Priority<br>
+2.Optimising the EarnAds page based in the Priority<br>

@@ -55,7 +55,10 @@ class _WinnersPageState extends State<WinnersPage> {
       child: Scaffold(
         body: Container(
             child: StreamBuilder<QuerySnapshot>(
-          stream: Firestore.instance.collection('Winners').snapshots(),
+          stream: Firestore.instance
+              .collection('Winners')
+              .orderBy('pri', descending: true)
+              .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return Center(

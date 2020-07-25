@@ -53,7 +53,10 @@ class _EarnAdsState extends State<EarnAds> {
       child: Scaffold(
         body: Container(
             child: StreamBuilder<QuerySnapshot>(
-          stream: Firestore.instance.collection('EarnAds').snapshots(),
+          stream: Firestore.instance
+              .collection('EarnAds')
+              .orderBy('pri', descending: true)
+              .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return Stack(
