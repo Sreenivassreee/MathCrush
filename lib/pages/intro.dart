@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mathcrush/Services/Firebase.dart';
 import 'package:mathcrush/Services/Preferences.dart';
 import 'package:mathcrush/pages/HomeDesign.dart';
@@ -19,7 +20,7 @@ class Intro extends StatefulWidget {
 
 class _IntroState extends State<Intro> {
   String id;
-
+  bool net = true;
   @override
   void initState() {
     super.initState();
@@ -119,7 +120,7 @@ class _IntroState extends State<Intro> {
         // }
 
       } else {
-        sleep(const Duration(microseconds: 2000));
+        sleep(const Duration(microseconds: 1000));
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -129,6 +130,25 @@ class _IntroState extends State<Intro> {
           ),
         );
       }
+    } else {
+      setState(() {
+        net = false;
+      });
+      Fluttertoast.showToast(
+        msg: "Not Connected to internet ! \n Try Agin",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.CENTER,
+      );
+      sleep(Duration(microseconds: 1000));
+
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (BuildContext context) => ThemeConsumer(
+      //       child: Intro(),
+      //     ),
+      //   ),
+      // );
     }
   }
 
@@ -150,12 +170,14 @@ class _IntroState extends State<Intro> {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: EdgeInsets.only(bottom: 55),
-                child: CupertinoActivityIndicator(
-                  radius: 12,
-                ),
-              ),
+              child: net == true
+                  ? Container(
+                      margin: EdgeInsets.only(bottom: 55),
+                      child: CupertinoActivityIndicator(
+                        radius: 12,
+                      ),
+                    )
+                  : Container(),
             ),
             Align(
               alignment: Alignment.bottomCenter,

@@ -131,7 +131,7 @@ class _WinnersPageState extends State<WinnersPage> {
                                             "",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                          fontSize: 22.0,
+                                          fontSize: 15.0,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -146,7 +146,7 @@ class _WinnersPageState extends State<WinnersPage> {
                                             "",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                          fontSize: 22.0,
+                                          fontSize: 15.0,
                                           color: Colors.white,
                                         ),
                                       ),

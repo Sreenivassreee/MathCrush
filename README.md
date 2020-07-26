@@ -187,3 +187,6 @@ Done:<br>
 <h2>Commit 1</h2><br>
 1.Optimising the Winners page based in the Priority<br>
 2.Optimising the EarnAds page based in the Priority<br>
+
+<h1>Published Stable 1.0.1 </h1>
+<h2>26/07/2020</h2>

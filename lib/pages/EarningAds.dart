@@ -137,7 +137,7 @@ class _EarnAdsState extends State<EarnAds> {
                                               "",
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                            fontSize: 22.0,
+                                            fontSize: 15.0,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -168,7 +168,7 @@ class _EarnAdsState extends State<EarnAds> {
                                               "",
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                            fontSize: 22.0,
+                                            fontSize: 15.0,
                                             color: Colors.white,
                                           ),
                                         ),

@@ -49,7 +49,7 @@ Future<List<Question>> getQuestions(Category category) async {
   } catch (e) {
     print(e.toString());
   }
-  for (var i = 0; i <= 14; i++) {
+  for (var i = 0; i <= 11; i++) {
     list2.add(list[i]);
     list2.shuffle();
     print(list2.length);
