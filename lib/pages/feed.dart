@@ -27,6 +27,7 @@ class _FeedState extends State<Feed> {
     super.initState();
 
     SystemChrome.setEnabledSystemUIOverlays([]);
+    //1
   }
 
   // takescrshot() async {

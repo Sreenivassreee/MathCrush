@@ -199,7 +199,7 @@ class _TablesState extends State<Tables> {
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: ListView.builder(
-                physics: RangeMaintainingScrollPhysics(),
+                // physics: RangeMaintainingScrollPhysics(),
                 itemBuilder: (context, i) => Column(
                   children: [
                     Container(

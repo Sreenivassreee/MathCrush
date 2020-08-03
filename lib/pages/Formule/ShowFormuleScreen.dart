@@ -28,7 +28,18 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
     nonPersonalizedAds: true,
-    keywords: <String>['Math', 'Education', 'mathematics', 'love', 'cinema'],
+    keywords: <String>[
+      'Math',
+      'Education',
+      'mathematics',
+      'kids math',
+      'online math',
+      'math quiz',
+      'math',
+      'online Education'
+    ],
+    childDirected: true,
+    designedForFamilies: true,
   );
   InterstitialAd _interstitialAd;
   RewardedVideoAd videoAd = RewardedVideoAd.instance;
@@ -184,9 +195,10 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
               ),
               onPressed: () {
                 loading();
-                createInterstitialAd()
-                  ..load()
-                  ..show();
+                share();
+                // createInterstitialAd()
+                //   ..load()
+                //   ..show();
                 // Share();
               })
         ],
@@ -198,23 +210,27 @@ class _ShowFormuleScreenState extends State<ShowFormuleScreen> {
           ),
         ),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: CachedNetworkImage(
-              fadeInDuration: Duration(seconds: 1),
-              placeholder: (context, url) => Center(
-                child: CircularProgressIndicator(),
+      body: SafeArea(
+        top: false,
+        bottom: false,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              child: CachedNetworkImage(
+                fadeInDuration: Duration(seconds: 1),
+                placeholder: (context, url) => Center(
+                  child: CircularProgressIndicator(),
+                ),
+                imageUrl: url,
+                errorWidget: (context, url, error) => Icon(Icons.error),
+                fit: BoxFit.cover,
               ),
-              imageUrl: url,
-              errorWidget: (context, url, error) => Icon(Icons.error),
-              fit: BoxFit.cover,
+              //  Image.network(
+              // data["url"],
+              // fit: BoxFit.fitWidth,
+              // ),
             ),
-            //  Image.network(
-            // data["url"],
-            // fit: BoxFit.fitWidth,
-            // ),
           ),
         ),
       ),

@@ -23,6 +23,7 @@ class _settingsState extends State<settings> {
     // data();
     super.initState();
     SystemChrome.setEnabledSystemUIOverlays([]);
+    //1
   }
 
   final TextStyle whiteText = TextStyle(
@@ -150,7 +151,7 @@ class _settingsState extends State<settings> {
                         title: Text(
                           "Support Us",
                         ),
-                        focusColor: Colors.red,
+                        // focusColor: Colors.red,
                         // subtitle: Text(
                         //   "English US",
                         //   style: greyTExt,
@@ -180,7 +181,7 @@ class _settingsState extends State<settings> {
                         title: Text(
                           "Contact Us",
                         ),
-                        focusColor: Colors.red,
+                        // focusColor: Colors.red,
                         // subtitle: Text(
                         //   "English US",
                         //   style: greyTExt,
@@ -256,7 +257,7 @@ class _settingsState extends State<settings> {
                         title: Text(
                           "Change Theme   ( Dark / Light )",
                         ),
-                        focusColor: Colors.red,
+                        // focusColor: Colors.red,
                         // subtitle: Text(
                         //   "English US",
                         //   style: greyTExt,

@@ -35,7 +35,18 @@ class _YoutubeState extends State<Youtube> {
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
     nonPersonalizedAds: true,
-    keywords: <String>['Math', 'Education', 'mathematics', 'love'],
+    keywords: <String>[
+      'Math',
+      'Education',
+      'mathematics',
+      'kids math',
+      'online math',
+      'math quiz',
+      'math',
+      'online Education'
+    ],
+    childDirected: true,
+    designedForFamilies: true,
   );
   InterstitialAd _interstitialAd;
   RewardedVideoAd videoAd = RewardedVideoAd.instance;
@@ -50,6 +61,7 @@ class _YoutubeState extends State<Youtube> {
       );
     adLeasion();
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SystemChrome.setEnabledSystemUIOverlays([]);
 
     super.initState();
     print(widget.cata.level);
@@ -177,6 +189,7 @@ class _YoutubeState extends State<Youtube> {
   @override
   Widget build(BuildContext context) {
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return isLoadingLearn
         ? Container(
@@ -189,6 +202,7 @@ class _YoutubeState extends State<Youtube> {
             onExitFullScreen: () {
               // The player forces portraitUp after exiting fullscreen. This overrides the behaviour.
               // SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+              // SystemChrome.setEnabledSystemUIOverlays([]);
             },
             player: YoutubePlayer(
               controller: _controller,
@@ -226,18 +240,18 @@ class _YoutubeState extends State<Youtube> {
                         // loading();
                       },
                     ),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.play_arrow,
-                        color: Colors.white,
-                        size: 25.0,
-                      ),
-                      onPressed: () {
-                        createInterstitialAd()
-                          ..load()
-                          ..show();
-                      },
-                    ),
+                    // IconButton(
+                    //   icon: const Icon(
+                    //     Icons.play_arrow,
+                    //     color: Colors.white,
+                    //     size: 25.0,
+                    //   ),
+                    //   onPressed: () {
+                    //     createInterstitialAd()
+                    //       ..load()
+                    //       ..show();
+                    //   },
+                    // ),
                   ],
                 ),
               ],

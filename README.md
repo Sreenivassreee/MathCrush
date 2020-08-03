@@ -189,4 +189,6 @@ Done:<br>
 2.Optimising the EarnAds page based in the Priority<br>
 
 <h1>Published Stable 1.0.1 </h1>
-<h2>26/07/2020</h2>
+<h2>04/08/2020</h2>
+<br>
+<h1>Published Stable 1.0.3 </h1>

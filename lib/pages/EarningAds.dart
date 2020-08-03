@@ -27,6 +27,7 @@ class _EarnAdsState extends State<EarnAds> {
     super.initState();
 
     SystemChrome.setEnabledSystemUIOverlays([]);
+    //1
   }
 
   // takescrshot() async {

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:mathcrush/models/FeedModel.dart';
-import 'package:wc_flutter_share/wc_flutter_share.dart';
+
 import 'package:theme_provider/theme_provider.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
@@ -52,127 +52,123 @@ class _WinnersPageState extends State<WinnersPage> {
   @override
   Widget build(BuildContext context) {
     return ThemeProvider(
-      child: Scaffold(
-        body: Container(
-            child: StreamBuilder<QuerySnapshot>(
-          stream: Firestore.instance
-              .collection('Winners')
-              .orderBy('pri', descending: true)
-              .snapshots(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return Center(
-                child: CupertinoActivityIndicator(),
-              );
-            } else {
-              return ThemeProvider(
-                child: PageView.builder(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  controller: controller,
-                  itemBuilder: (context, i) {
-                    if (!snapshot.hasData) {
-                      return Stack(
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height,
-                            color: Colors.black,
-                          ),
-                          Center(
-                            child: CupertinoActivityIndicator(),
-                          ),
-                        ],
-                      );
-                    } else if (snapshot.hasData) {
-                      var url = snapshot.data.documents[i]['Poster url'];
-                      return Container(
-                        color: Colors.black,
-                        height: MediaQuery.of(context).size.height,
-                        child: Stack(
+      child: SafeArea(
+        bottom: false,
+        child: Scaffold(
+          body: StreamBuilder<QuerySnapshot>(
+            stream: Firestore.instance
+                .collection('Winners')
+                .orderBy('pri', descending: true)
+                .snapshots(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return Center(
+                  child: CupertinoActivityIndicator(),
+                );
+              } else {
+                return ThemeProvider(
+                  child: PageView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    controller: controller,
+                    itemBuilder: (context, i) {
+                      if (!snapshot.hasData) {
+                        return Stack(
                           children: [
                             Container(
                               height: MediaQuery.of(context).size.height,
-                              child: CachedNetworkImage(
-                                fadeInDuration: Duration(seconds: 1),
-                                placeholder: (context, url) => Center(
-                                  child: CircularProgressIndicator(),
-                                ),
-                                imageUrl: url,
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
-                                fit: BoxFit.cover,
-                              ),
+                              color: Colors.black,
                             ),
-                            Container(
-                              color: Colors.black26,
-                            ),
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                margin: EdgeInsets.only(bottom: 50.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.black45,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(5),
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 10.0,
-                                        vertical: 10.0,
-                                      ),
-                                      child: Text(
-                                        snapshot.data.documents[i]['Name'] ??
-                                            "",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 15.0,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 10.0,
-                                        vertical: 10.0,
-                                      ),
-                                      child: Text(
-                                        snapshot.data.documents[i]['Date'] ??
-                                            "",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 15.0,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            Center(
+                              child: CupertinoActivityIndicator(),
                             ),
                           ],
-                        ),
-                      );
-                    }
-                  },
-                  itemCount: snapshot.data.documents.length,
-                ),
-              );
-            }
-          },
-        )
-
-            // height: MediaQuery.of(context).size.height,
-            // child: Image.network(
-            //   "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-            //   fit: BoxFit.cover,
-            // ),
-            ),
+                        );
+                      } else if (snapshot.hasData) {
+                        var url = snapshot.data.documents[i]['Poster url'];
+                        return Container(
+                          color: Colors.black,
+                          height: MediaQuery.of(context).size.height,
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height,
+                                child: CachedNetworkImage(
+                                  fadeInDuration: Duration(seconds: 1),
+                                  placeholder: (context, url) => Center(
+                                    child: CircularProgressIndicator(),
+                                  ),
+                                  imageUrl: url,
+                                  errorWidget: (context, url, error) =>
+                                      Icon(Icons.error),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Container(
+                                color: Colors.black26,
+                              ),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Container(
+                                  margin: EdgeInsets.only(bottom: 50.0),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(5),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 10.0,
+                                          vertical: 10.0,
+                                        ),
+                                        child: Text(
+                                          snapshot.data.documents[i]['Name'] ??
+                                              "",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 15.0,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 10.0,
+                                          vertical: 10.0,
+                                        ),
+                                        child: Text(
+                                          snapshot.data.documents[i]['Date'] ??
+                                              "",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 15.0,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+                    },
+                    itemCount: snapshot.data.documents.length,
+                  ),
+                );
+              }
+            },
+          ),
+        ),
       ),
     );
   }

@@ -20,6 +20,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
     // data();
     super.initState();
     SystemChrome.setEnabledSystemUIOverlays([]);
+    //1
   }
 
   // void data() {
@@ -43,7 +44,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
     Stream<QuerySnapshot> _query = Firestore.instance
         .collection('Users')
         .orderBy('currentScore', descending: true)
-        // .limit(10)
+        .limit(5)
         .snapshots();
     return ThemeProvider(
       child: CupertinoPageScaffold(

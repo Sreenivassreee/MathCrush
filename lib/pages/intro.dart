@@ -26,6 +26,7 @@ class _IntroState extends State<Intro> {
     super.initState();
 
     SystemChrome.setEnabledSystemUIOverlays([]);
+    //1
 
     checkNetWork();
   }
