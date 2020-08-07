@@ -688,59 +688,59 @@ class HomeDesignState extends State<HomeDesign>
                             ),
                           ),
                         ),
-                      ),
-                      GestureDetector(
-                        onTap: () async {
-                          await Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => ThemeConsumer(
-                                child: RewardScreen(
-                                  id: pId,
-                                  coins: currentScore,
-                                ),
-                              ),
-                            ),
-                          );
-                          setState(() {
-                            getPref();
-                            print("hit");
-                          });
-                        },
-                        child: Container(
-                          height: 110,
-                          width: 110,
-                          child: Card(
-                            elevation: 0.0,
-                            shape: BeveledRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Flexible(
-                                    flex: 2,
-                                    child: Image.asset(
-                                      "assets/images/Rewards.png",
-                                    ),
-                                    // child: CachedNetworkImage(
-                                    //   imageUrl:
-                                    //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524",
-                                    // ),
-                                  ),
-                                  Flexible(
-                                    flex: 1,
-                                    child: Text(
-                                      "Rewards",
-                                    ),
-                                    // https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+                        // ),
+                        // GestureDetector(
+                        //   onTap: () async {
+                        //     await Navigator.of(context).push(
+                        //       MaterialPageRoute(
+                        //         builder: (context) => ThemeConsumer(
+                        //           child: RewardScreen(
+                        //             id: pId,
+                        //             coins: currentScore,
+                        //           ),`
+                        //         ),
+                        //       ),
+                        //     );
+                        //     setState(() {
+                        //       getPref();
+                        //       print("hit");
+                        //     });
+                        //   },
+                        //   child: Container(
+                        //     height: 110,
+                        //     width: 110,
+                        //     child: Card(
+                        //       elevation: 0.0,
+                        //       shape: BeveledRectangleBorder(
+                        //         borderRadius: BorderRadius.circular(15),
+                        //       ),
+                        //       child: Center(
+                        //         child: Column(
+                        //           mainAxisAlignment:
+                        //               MainAxisAlignment.spaceAround,
+                        //           children: [
+                        //             Flexible(
+                        //               flex: 2,
+                        //               child: Image.asset(
+                        //                 "assets/images/Rewards.png",
+                        //               ),
+                        //               // child: CachedNetworkImage(
+                        //               //   imageUrl:
+                        //               //       "https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524",
+                        //               // ),
+                        //             ),
+                        //             Flexible(
+                        //               flex: 1,
+                        //               child: Text(
+                        //                 "Rewards",
+                        //               ),
+                        //               // https://firebasestorage.googleapis.com/v0/b/math-crush-e3ec2.appspot.com/o/App%2FRewards.png?alt=media&token=97171f10-241e-4ccd-a02a-acb9de654524
+                        //             )
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ),
                       ),
                     ],
                   ),

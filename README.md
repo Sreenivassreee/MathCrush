@@ -191,4 +191,7 @@ Done:<br>
 <h1>Published Stable 1.0.1 </h1>
 <h2>04/08/2020</h2>
 <br>
-<h1>Published Stable 1.0.3 </h1>
+<h1>Published Stable 1.0.3 </h1><br>
+<h2>07/08/2020</h2>
+<br>
+<h1>Published Stable 1.0.4 </h1>
