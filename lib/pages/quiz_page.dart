@@ -45,8 +45,10 @@ class _QuizPageState extends State<QuizPage> {
 
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
-    nonPersonalizedAds: true,
-    keywords: <String>['Game', 'Mario'],
+    // nonPersonalizedAds: true,
+    keywords: <String>[
+      'Education',
+    ],
   );
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
@@ -307,7 +309,7 @@ class _QuizPageState extends State<QuizPage> {
       builder: (_) {
         return AlertDialog(
           content: Text(
-            "You want to quit? All your progress will be lost",
+            "You want to quit ? All your progress will be lost",
             textAlign: TextAlign.center,
           ),
           title: Text(

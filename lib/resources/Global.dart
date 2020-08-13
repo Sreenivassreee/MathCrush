@@ -208,3 +208,80 @@ dialog({String addedCoins = "0", context, url}) {
     ),
   );
 }
+
+Future<Widget> congra(
+    {String Per, String title, String dis, Icon icon, context}) {
+  return showDialog(
+    barrierDismissible: false,
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: Color(0xFFF4F4F4),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16.0),
+          ),
+        ),
+        contentPadding:
+            const EdgeInsets.only(bottom: 0, left: 8, right: 8, top: 8),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              icon ?? Icons.check,
+              color: Colors.red,
+              size: 90.0,
+            ),
+            Flexible(
+                child: Text(
+              title ?? "Congratulations",
+              style: TextStyle(
+                fontSize: 27,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            )),
+            SizedBox(
+              height: 15.0,
+            ),
+            Flexible(
+              child: Text(
+                dis ?? "You Got $Per %, You Promoted to Next Level",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(9.0))),
+              color: Colors.black,
+              onPressed: () {
+                // Navigator.pushAndRemoveUntil(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => HomeDesign(),
+                //   ),
+                //   (Route<dynamic> route) => false,
+                // );
+                Navigator.of(context).pop();
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Next",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    },
+  );
+}
