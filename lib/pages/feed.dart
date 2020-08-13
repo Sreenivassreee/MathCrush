@@ -26,7 +26,7 @@ class _FeedState extends State<Feed> {
   void initState() {
     super.initState();
 
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
     //1
   }
 

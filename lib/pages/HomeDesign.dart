@@ -64,7 +64,7 @@ class HomeDesignState extends State<HomeDesign>
   void initState() {
 //    data();
     // _getCustomer();
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
     getPref();
     _myPage = PageController(initialPage: 0);
 
@@ -123,7 +123,7 @@ class HomeDesignState extends State<HomeDesign>
     //   print(data);
     // //   });
     // // }
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
 
     setState(() {
       MainData = {
@@ -295,7 +295,7 @@ class HomeDesignState extends State<HomeDesign>
 
   Widget DashBoard(
       {BuildContext context2, String pId, int currentLevel, int currentScore}) {
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
     // initState() {
     // getPref();
 

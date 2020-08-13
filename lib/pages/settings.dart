@@ -22,7 +22,7 @@ class _settingsState extends State<settings> {
   void initState() {
     // data();
     super.initState();
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
     //1
   }
 
@@ -68,267 +68,290 @@ class _settingsState extends State<settings> {
               )
             ];
           },
-          body: Scaffold(
-            body: DefaultTextStyle(
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(height: 15.0),
-                    GestureDetector(
+          body: DefaultTextStyle(
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 7.0),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 15.0),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => ThemeConsumer(
+                            child: Profile(),
+                          ),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      elevation: 0,
+                      color: Theme.of(context).dividerColor,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 5,
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: CachedNetworkImageProvider(
+                                    widget.MainData["MainPhotoUrl"] == null
+                                        ? "https://www.pngitem.com/pimgs/m/391-3918613_personal-service-platform-person-icon-circle-png-transparent.png"
+                                        : widget.MainData["MainPhotoUrl"],
+                                  ),
+                                  fit: BoxFit.cover,
+                                ),
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 2.0,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10.0),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                widget.MainData["MainName"],
+                                style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: Text(
+                  //     MainData["About"],
+                  //     style: TextStyle(
+                  //       color: Colors.grey.shade400,
+                  //     ),
+                  //   ),
+                  // ),
+                  Card(
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ListTile(
+                      title: Text(
+                        "Support Us",
+                      ),
+                      // focusColor: Colors.red,
+                      // subtitle: Text(
+                      //   "English US",
+                      //   style: greyTExt,
+                      // ),
+                      trailing: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.grey.shade400,
+                      ),
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => ThemeConsumer(
-                              child: Profile(),
+                              child: support(),
+                            ),
+                          ),
+                        );
+                        // ThemeProvider.controllerOf(context).setTheme(pureblack);
+
+                        // changeBrightness(context);
+                      },
+                    ),
+                  ),
+                  Card(
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ListTile(
+                      title: Text(
+                        "Contact Us",
+                      ),
+                      // focusColor: Colors.red,
+                      // subtitle: Text(
+                      //   "English US",
+                      //   style: greyTExt,
+                      // ),
+                      trailing: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.grey.shade400,
+                      ),
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ThemeConsumer(
+                              child: Contact(),
                             ),
                           ),
                         );
                       },
-                      child: Card(
-                        elevation: 0,
-                        color: Theme.of(context).dividerColor,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10,
-                            horizontal: 5,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image: CachedNetworkImageProvider(
-                                      widget.MainData["MainPhotoUrl"] == null
-                                          ? "https://www.pngitem.com/pimgs/m/391-3918613_personal-service-platform-person-icon-circle-png-transparent.png"
-                                          : widget.MainData["MainPhotoUrl"],
-                                    ),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2.0,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 10.0),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10.0),
-                                child: Text(
-                                  widget.MainData["MainName"],
-                                  style: TextStyle(
-                                    color: Theme.of(context).primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(8.0),
-                    //   child: Text(
-                    //     MainData["About"],
-                    //     style: TextStyle(
-                    //       color: Colors.grey.shade400,
-                    //     ),
-                    //   ),
-                    // ),
-                    Card(
-                      elevation: 0,
-                      color: Theme.of(context).dividerColor,
-                      child: ListTile(
-                        title: Text(
-                          "Support Us",
-                        ),
-                        // focusColor: Colors.red,
-                        // subtitle: Text(
-                        //   "English US",
-                        //   style: greyTExt,
-                        // ),
-                        trailing: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.grey.shade400,
-                        ),
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => ThemeConsumer(
-                                child: support(),
-                              ),
-                            ),
-                          );
-                          // ThemeProvider.controllerOf(context).setTheme(pureblack);
+                  ),
 
-                          // changeBrightness(context);
-                        },
+                  Card(
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ListTile(
+                      title: Text(
+                        "Privacy Policy",
                       ),
-                    ),
-                    Card(
-                      elevation: 0,
-                      color: Theme.of(context).dividerColor,
-                      child: ListTile(
-                        title: Text(
-                          "Contact Us",
-                        ),
-                        // focusColor: Colors.red,
-                        // subtitle: Text(
-                        //   "English US",
-                        //   style: greyTExt,
-                        // ),
-                        trailing: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.grey.shade400,
-                        ),
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => ThemeConsumer(
-                                child: Contact(),
-                              ),
-                            ),
-                          );
-                        },
+                      // subtitle: Text(
+                      //   "Jane Doe",
+                      //   style: greyTExt,
+                      // ),
+                      trailing: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.grey.shade400,
                       ),
+                      onTap: () {
+                        _launchURL(
+                            "https://stevebrainsmathcrush.blogspot.com/p/privacy-policy.html");
+                        // ThemeProvider.controllerOf(context).nextTheme();
+                      },
                     ),
+                  ),
 
-                    Card(
-                      elevation: 0,
-                      color: Theme.of(context).dividerColor,
-                      child: ListTile(
-                        title: Text(
-                          "Privacy Policy",
-                        ),
-                        // subtitle: Text(
-                        //   "Jane Doe",
-                        //   style: greyTExt,
-                        // ),
-                        trailing: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.grey.shade400,
-                        ),
-                        onTap: () {
-                          _launchURL(
-                              "https://stevebrainsmathcrush.blogspot.com/p/privacy-policy.html");
-                          // ThemeProvider.controllerOf(context).nextTheme();
-                        },
+                  Card(
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ListTile(
+                      title: Text(
+                        "Terms of Service",
                       ),
+                      // subtitle: Text(
+                      //   "Jane Doe",
+                      //   style: greyTExt,
+                      // ),
+                      trailing: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.grey.shade400,
+                      ),
+                      onTap: () {
+                        _launchURL(
+                            "https://stevebrainsmathcrush.blogspot.com/p/terms-of-service.html");
+                        // ThemeProvider.controllerOf(context).nextTheme();
+                      },
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Card(
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ListTile(
+                      title: Text(
+                        "Change Theme   ( Dark / Light )",
+                      ),
+                      // focusColor: Colors.red,
+                      // subtitle: Text(
+                      //   "English US",
+                      //   style: greyTExt,
+                      // ),
+                      trailing: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.grey.shade400,
+                      ),
+                      onTap: () {
+                        ThemeProvider.controllerOf(context).nextTheme();
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3,
+                  ),
+                  Card(
+                    elevation: 0,
+                    color: Theme.of(context).dividerColor,
+                    child: ListTile(
+                      title: Text(
+                        "Check for Update",
+                      ),
+                      // focusColor: Colors.red,
+                      // subtitle: Text(
+                      //   "English US",
+                      //   style: greyTExt,
+                      // ),
+                      trailing: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.grey.shade400,
+                      ),
+                      onTap: () {
+                        _launchURL(
+                            "https://play.google.com/store/apps/details?id=com.stevebrains.sreenivas.mathcrush");
+                      },
+                    ),
+                  ),
+                  // Card(
+                  //   elevation: 0,
+                  //   color: Theme.of(context).dividerColor,
+                  //   child: ListTile(
+                  //     title: Text(
+                  //       "White Theme",
+                  //     ),
+                  //     focusColor: Colors.red,
+                  //     // subtitle: Text(
+                  //     //   "English US",
+                  //     //   style: greyTExt,
+                  //     // ),
+                  //     trailing: Icon(
+                  //       Icons.keyboard_arrow_right,
+                  //       color: Colors.grey.shade400,
+                  //     ),
+                  //     onTap: () {
+                  //       ThemeProvider.controllerOf(context).setTheme("white");
 
-                    Card(
-                      elevation: 0,
-                      color: Theme.of(context).dividerColor,
-                      child: ListTile(
-                        title: Text(
-                          "Terms of Service",
-                        ),
-                        // subtitle: Text(
-                        //   "Jane Doe",
-                        //   style: greyTExt,
-                        // ),
-                        trailing: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.grey.shade400,
-                        ),
-                        onTap: () {
-                          _launchURL(
-                              "https://stevebrainsmathcrush.blogspot.com/p/terms-of-service.html");
-                          // ThemeProvider.controllerOf(context).nextTheme();
-                        },
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Card(
-                      elevation: 0,
-                      color: Theme.of(context).dividerColor,
-                      child: ListTile(
-                        title: Text(
-                          "Change Theme   ( Dark / Light )",
-                        ),
-                        // focusColor: Colors.red,
-                        // subtitle: Text(
-                        //   "English US",
-                        //   style: greyTExt,
-                        // ),
-                        trailing: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.grey.shade400,
-                        ),
-                        onTap: () {
-                          ThemeProvider.controllerOf(context).nextTheme();
-                        },
-                      ),
-                    ),
-                    // Card(
-                    //   elevation: 0,
-                    //   color: Theme.of(context).dividerColor,
-                    //   child: ListTile(
-                    //     title: Text(
-                    //       "White Theme",
-                    //     ),
-                    //     focusColor: Colors.red,
-                    //     // subtitle: Text(
-                    //     //   "English US",
-                    //     //   style: greyTExt,
-                    //     // ),
-                    //     trailing: Icon(
-                    //       Icons.keyboard_arrow_right,
-                    //       color: Colors.grey.shade400,
-                    //     ),
-                    //     onTap: () {
-                    //       ThemeProvider.controllerOf(context).setTheme("white");
+                  //       // ThemeProvider.controllerOf(context).setTheme(pureblack);
 
-                    //       // ThemeProvider.controllerOf(context).setTheme(pureblack);
-
-                    //       // changeBrightness(context);
-                    //     },
-                    //   ),
-                    // ),
-                    SizedBox(
-                      height: 20,
+                  //       // changeBrightness(context);
+                  //     },
+                  //   ),
+                  // ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  // SwitchListTile(
+                  //   title: Text("Email Notifications"),
+                  //   subtitle: Text(
+                  //     "On",
+                  //     style: greyTExt,
+                  //   ),
+                  //   value: true,
+                  //   onChanged: (val) {},
+                  // ),
+                  // SwitchListTile(
+                  //   title: Text("Push Notifications"),
+                  //   subtitle: Text(
+                  //     "Off",
+                  //     style: greyTExt,
+                  //   ),
+                  //   value: false,
+                  //   onChanged: (val) {},
+                  // ),
+                  Card(
+                    color: Theme.of(context).dividerColor,
+                    elevation: 0,
+                    child: ListTile(
+                      title: Text("Logout"),
+                      onTap: () async {
+                        await logOut(context);
+                      },
                     ),
-                    // SwitchListTile(
-                    //   title: Text("Email Notifications"),
-                    //   subtitle: Text(
-                    //     "On",
-                    //     style: greyTExt,
-                    //   ),
-                    //   value: true,
-                    //   onChanged: (val) {},
-                    // ),
-                    // SwitchListTile(
-                    //   title: Text("Push Notifications"),
-                    //   subtitle: Text(
-                    //     "Off",
-                    //     style: greyTExt,
-                    //   ),
-                    //   value: false,
-                    //   onChanged: (val) {},
-                    // ),
-                    Card(
-                      color: Theme.of(context).dividerColor,
-                      elevation: 0,
-                      child: ListTile(
-                        title: Text("Logout"),
-                        onTap: () async {
-                          await logOut(context);
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

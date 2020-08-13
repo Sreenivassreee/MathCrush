@@ -24,19 +24,12 @@ class _PictureState extends State<Picture> {
   int persentage = 0;
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
-    nonPersonalizedAds: true,
+    // nonPersonalizedAds: true,
     keywords: <String>[
-      'Math',
       'Education',
-      'mathematics',
-      'kids math',
-      'online math',
-      'math quiz',
-      'math',
-      'online Education'
     ],
-    childDirected: true,
-    designedForFamilies: true,
+    // childDirected: true,
+    // designedForFamilies: true,
   );
   InterstitialAd _interstitialAd;
   RewardedVideoAd videoAd = RewardedVideoAd.instance;
