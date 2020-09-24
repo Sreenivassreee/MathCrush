@@ -1,10 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mathcrush/pages/showLevelDetails.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
 import 'package:theme_provider/theme_provider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import '../models/category.dart';
@@ -301,13 +299,13 @@ t(
   print("correntScore $correntScore");
   return TimelineTile(
     alignment: TimelineAlign.manual,
-    lineX: 0.1,
+    // lineX: 0.1,
     isFirst: isFirst,
     isLast: isLast,
     indicatorStyle: IndicatorStyle(
       width: 50,
       height: 50,
-      indicatorY: indicatorY,
+      // indicatorY: indicatorY,
       indicator: GestureDetector(
         onTap: () {
           action == false
@@ -339,54 +337,54 @@ t(
         ),
       ),
     ),
-    rightChild: GestureDetector(
-      onTap: () {
-        showLevelDetails(
-          context: context,
-          message: title,
-          level: categories[i].level,
-          detail: categories[i].message,
-          ex: categories[i].ex,
-        );
-      },
-      child: Card(
-        shape: BeveledRectangleBorder(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(50),
-            bottomLeft: Radius.circular(50),
-          ),
-        ),
-        elevation: 0.0,
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Text(
-                  title,
-                  // categories[i].title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15.0,
-                  ),
-                ),
-              ),
-              // Text(
-              //   categories[i].message,
-              //   style: TextStyle(
-              //     fontSize: 15.0,
-              //   ),
-              // ),
-            ],
-          ),
-        ),
-      ),
-    ),
-    topLineStyle: const LineStyle(
-      color: Color(0xFFCB8421),
-      width: 3,
-    ),
+    // rightChild: GestureDetector(
+    //   onTap: () {
+    //     showLevelDetails(
+    //       context: context,
+    //       message: title,
+    //       level: categories[i].level,
+    //       detail: categories[i].message,
+    //       ex: categories[i].ex,
+    //     );
+    //   },
+    //   child: Card(
+    //     shape: BeveledRectangleBorder(
+    //       borderRadius: const BorderRadius.only(
+    //         topLeft: Radius.circular(50),
+    //         bottomLeft: Radius.circular(50),
+    //       ),
+    //     ),
+    //     elevation: 0.0,
+    //     child: Container(
+    //       child: Column(
+    //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+    //         children: [
+    //           Padding(
+    //             padding: const EdgeInsets.only(left: 20),
+    //             child: Text(
+    //               title,
+    //               // categories[i].title,
+    //               textAlign: TextAlign.center,
+    //               style: TextStyle(
+    //                 fontSize: 15.0,
+    //               ),
+    //             ),
+    //           ),
+    //           // Text(
+    //           //   categories[i].message,
+    //           //   style: TextStyle(
+    //           //     fontSize: 15.0,
+    //           //   ),
+    //           // ),
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // ),
+    // topLineStyle: const LineStyle(
+    //   color: Color(0xFFCB8421),
+    //   width: 3,
+    // ),
   );
 }
 
