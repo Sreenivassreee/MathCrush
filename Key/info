@@ -1,9 +1,0 @@
-pass:: Ksv@14356
-alis :: math123
-key name :: math123
-
-
-storePassword=Ksv@14356
-keyPassword=Ksv@14356
-keyAlias=math123
-storeFile=/Users/sreenivask/Documents/WorkSpace/Math\ Crush/math/Key/math123.jks
