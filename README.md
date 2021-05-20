@@ -1,7 +1,52 @@
 # mathcrush
 
-With all the Firebase data project ---- Math Crush project
 
+<br>
+- [Play Store](https://play.google.com/store/search?q=stevebrains)
+<br>
+
+<h1>Previews</h1>
+
+Image 1 | Image 2 | Image 3
+:-: | :-: | :-:
+![Image1](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview2.png) | ![Image2](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview3.png)| ![Image3](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview4.png)
+
+Image 4 | Image 5 | Image 6
+:-: | :-: | :-:
+![Image4](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview5.png) | ![Image5](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview6.png)| ![Image6](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview7.png)
+
+Image 7 | Image 8 | Image 9
+:-: | :-: | :-:
+![Image7](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview8.png) | ![Image8](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview9.png)| ![Image9](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview10.png)
+
+
+Image 10 | Image 11 | Image 12
+:-: | :-: | :-:
+![Image10](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview11.png) | ![Image11](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview12.png)| ![Image12](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview13.png)
+
+Image 13 | Image 14 | Image 15
+:-: | :-: | :-:
+![Image13](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview17.png) | ![Image14](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview14.png)| ![Image15](https://github.com/Sreenivassreee/MathCrush/blob/master/previews/mathcrush%20preview15.png)
+
+  <h3> By  </h3>
+  <h3> Sreenivas K </h3>
+  <h4> made with ❤️</h4>
+  
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 ## Getting Started
 
 <h2>11/06/2020</h2>
