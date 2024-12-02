@@ -26,8 +26,8 @@ class _EarnAdsState extends State<EarnAds> {
   void initState() {
     super.initState();
 
-    SystemChrome.setEnabledSystemUIOverlays([]);
-    //1
+    // SystemChrome.setEnabledSystemUIOverlays([]);
+    // 1
   }
 
   // takescrshot() async {
@@ -79,108 +79,110 @@ class _EarnAdsState extends State<EarnAds> {
                   controller: controller,
                   itemBuilder: (context, i) {
                     var url = snapshot.data.documents[i]['Poster url'];
-                    return Container(
-                      height: MediaQuery.of(context).size.height,
-                      child: Stack(
-                        children: [
-                          Container(
-                            color: Colors.black,
-                            height: MediaQuery.of(context).size.height,
-                            child: CachedNetworkImage(
-                              fadeInDuration: Duration(seconds: 1),
-                              placeholder: (context, url) => Center(
-                                child: CircularProgressIndicator(),
+                    return Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height,
+                        child: Stack(
+                          children: [
+                            Container(
+                              color: Colors.black,
+                              height: MediaQuery.of(context).size.height,
+                              child: CachedNetworkImage(
+                                fadeInDuration: Duration(seconds: 1),
+                                placeholder: (context, url) => Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                                imageUrl: url,
+                                errorWidget: (context, url, error) =>
+                                    Icon(Icons.error),
+                                fit: BoxFit.cover,
                               ),
-                              imageUrl: url,
-                              errorWidget: (context, url, error) =>
-                                  Icon(Icons.error),
-                              fit: BoxFit.cover,
+                              // child: CachedNetworkImage(
+                              //   imageUrl: snapshot.data.documents[i]
+                              //       ['Poster url'],
+                              //   errorWidget: (context, url, error) =>
+                              //       Image.network(
+                              //     "",
+                              //     //TODO:
+                              //     fit: BoxFit.cover,
+                              //   ),
+                              //   fit: BoxFit.cover,
+                              // ),
+                              // ),
+                              // Container(
+                              //   color: Colors.black26,
+                              // ),
+                              // Align(
+                              //   alignment: Alignment.bottomCenter,
+                              //   child: Column(
+                              // children: [
+                              //   Container(
+                              //     decoration: BoxDecoration(
+                              //       color: Colors.black45,
+                              //       borderRadius: BorderRadius.all(
+                              //         Radius.circular(5),
+                              //       ),
+                              //     ),
+                              //   child: Row(
+                              //     mainAxisAlignment:
+                              //         MainAxisAlignment.spaceBetween,
+                              //     crossAxisAlignment:
+                              //         CrossAxisAlignment.center,
+                              //     children: [
+                              //       Padding(
+                              //         padding: const EdgeInsets.symmetric(
+                              //           horizontal: 10.0,
+                              //           vertical: 10.0,
+                              //         ),
+                              //         child: Text(
+                              //           "Start Date : ${snapshot.data.documents[i]['sDate']}" ??
+                              //               "",
+                              //           textAlign: TextAlign.center,
+                              //           style: TextStyle(
+                              //             fontSize: 15.0,
+                              //             color: Colors.white,
+                              //           ),
+                              //         ),
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
+                              // Container(
+                              //   decoration: BoxDecoration(
+                              //     color: Colors.black45,
+                              //     borderRadius: BorderRadius.all(
+                              //       Radius.circular(5),
+                              //     ),
+                              //   ),
+                              //   child: Row(
+                              //     mainAxisAlignment:
+                              //         MainAxisAlignment.spaceBetween,
+                              //     crossAxisAlignment:
+                              //         CrossAxisAlignment.center,
+                              // children: [
+                              //   Padding(
+                              //     padding: const EdgeInsets.symmetric(
+                              //       horizontal: 10.0,
+                              //       vertical: 10.0,
+                              //     ),
+                              //     child: Text(
+                              //       "End Date : ${snapshot.data.documents[i]['eDate']}" ??
+                              //           "",
+                              //       textAlign: TextAlign.center,
+                              //       style: TextStyle(
+                              //         fontSize: 15.0,
+                              //         color: Colors.white,
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ],
+                              // ),
+                              //               ),
+                              //             ],
+                              //           ),
                             ),
-                            // child: CachedNetworkImage(
-                            //   imageUrl: snapshot.data.documents[i]
-                            //       ['Poster url'],
-                            //   errorWidget: (context, url, error) =>
-                            //       Image.network(
-                            //     "",
-                            //     //TODO:
-                            //     fit: BoxFit.cover,
-                            //   ),
-                            //   fit: BoxFit.cover,
-                            // ),
-                          ),
-                          Container(
-                            color: Colors.black26,
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black45,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(5),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 10.0,
-                                          vertical: 10.0,
-                                        ),
-                                        child: Text(
-                                          "Start Date : ${snapshot.data.documents[i]['sDate']}" ??
-                                              "",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black45,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(5),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 10.0,
-                                          vertical: 10.0,
-                                        ),
-                                        child: Text(
-                                          "End Date : ${snapshot.data.documents[i]['sDate']}" ??
-                                              "",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },

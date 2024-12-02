@@ -22,9 +22,11 @@ class _RewardScreenState extends State<RewardScreen> {
 
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
-    nonPersonalizedAds: true,
-    keywords: <String>['Math', 'Education', 'mathematics'],
-    childDirected: true,
+    // nonPersonalizedAds: true,
+    keywords: <String>[
+      'Education',
+    ],
+    // childDirected: true,
 
     // keywords: <String>[
     //   'Math',

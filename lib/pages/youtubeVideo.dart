@@ -34,19 +34,12 @@ class _YoutubeState extends State<Youtube> {
   String video;
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
-    nonPersonalizedAds: true,
+    // nonPersonalizedAds: true,
     keywords: <String>[
-      'Math',
       'Education',
-      'mathematics',
-      'kids math',
-      'online math',
-      'math quiz',
-      'math',
-      'online Education'
     ],
-    childDirected: true,
-    designedForFamilies: true,
+    // childDirected: true,
+    // designedForFamilies: true,
   );
   InterstitialAd _interstitialAd;
   RewardedVideoAd videoAd = RewardedVideoAd.instance;
@@ -61,7 +54,7 @@ class _YoutubeState extends State<Youtube> {
       );
     adLeasion();
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
 
     super.initState();
     print(widget.cata.level);
@@ -189,7 +182,7 @@ class _YoutubeState extends State<Youtube> {
   @override
   Widget build(BuildContext context) {
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
 
     return isLoadingLearn
         ? Container(

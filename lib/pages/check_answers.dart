@@ -44,19 +44,12 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
-    nonPersonalizedAds: true,
+    // nonPersonalizedAds: true,
     keywords: <String>[
-      'Math',
       'Education',
-      'mathematics',
-      'kids math',
-      'online math',
-      'math quiz',
-      'math',
-      'online Education'
     ],
-    childDirected: true,
-    designedForFamilies: true,
+    // childDirected: true,
+    // designedForFamilies: true,
   );
 
   BannerAd _bannerAd;
@@ -132,39 +125,40 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
             ),
           ];
         },
-        body: Scaffold(
-          key: _scaffoldKey,
-          body: Container(
-            color: Theme.of(context).scaffoldBackgroundColor,
-            child: Stack(
-              children: <Widget>[
-                // ClipPath(
-                //   clipper: WaveClipperTwo(),
-                //   child: Container(
-                //     decoration: BoxDecoration(
-                //       color: Theme.of(context).scaffoldBackgroundColor,
-                //     ),
-                //     height: 200,
-                //   ),
-                // ),
-                isLoading == true
-                    ? Center(
-                        child: Container(
-                          height: 70,
-                          width: 70,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 7.0,
-                          ),
+        // body:
+        // Scaffold(
+        //   key: _scaffoldKey,
+        body: Container(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          child: Stack(
+            children: <Widget>[
+              // ClipPath(
+              //   clipper: WaveClipperTwo(),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       color: Theme.of(context).scaffoldBackgroundColor,
+              //     ),
+              //     height: 200,
+              //   ),
+              // ),
+              isLoading == true
+                  ? Center(
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 7.0,
                         ),
-                      )
-                    : ListView.builder(
-                        physics: AlwaysScrollableScrollPhysics(),
-                        padding: const EdgeInsets.all(7.0),
-                        itemCount: widget.questions.length + 1,
-                        itemBuilder: _buildItem,
-                      )
-              ],
-            ),
+                      ),
+                    )
+                  : ListView.builder(
+                      physics: AlwaysScrollableScrollPhysics(),
+                      padding: const EdgeInsets.all(7.0),
+                      itemCount: widget.questions.length + 1,
+                      itemBuilder: _buildItem,
+                    )
+            ],
+            // ),
           ),
         ),
       ),
@@ -220,7 +214,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
             width: MediaQuery.of(context).size.width - 40,
             child: RaisedButton(
               child: new Text(
-                "Finish & Go",
+                "Submit",
                 style: TextStyle(
                   fontSize: 20.0,
                 ),
@@ -233,6 +227,9 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
                   (value) {
                     if (value == "Pass") {
                       if (widget.NeedUpLevel == widget.corret_level) {
+                        // print({widget.NeedUpLevel}.toString() +
+                        //     "  " +
+                        //     {widget.corret_level}.toString());
                         if (int.parse(Per) > 60.0) {
                           print("Up $Per");
                           Fire.fireUpdaeScoreAndLevel(
@@ -340,6 +337,7 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
                                           );
                                           congra(
                                             Per: Per,
+                                            context: context2,
                                             title: "Updated",
                                             dis:
                                                 "${widget.noOfCorrectAnswers * 2} Coins Added",
@@ -374,6 +372,20 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
                           },
                         );
                       }
+                    } else {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context2) => ThemeConsumer(
+                            child: HomeDesign(),
+                          ),
+                        ),
+                        (Route<dynamic> route) => false,
+                      );
+                      ErrorPage(
+                        context: context,
+                        message: "Your Internet Connection is Slow",
+                      );
                     }
                   },
                 );
@@ -450,82 +462,6 @@ class _CheckAnswersPageState extends State<CheckAnswersPage> {
           ],
         ),
       ),
-    );
-  }
-
-  Future<Widget> congra({String Per, String title, String dis, Icon icon}) {
-    return showDialog(
-      barrierDismissible: false,
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: Color(0xFFF4F4F4),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(16.0),
-            ),
-          ),
-          contentPadding:
-              const EdgeInsets.only(bottom: 0, left: 8, right: 8, top: 8),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Icon(
-                icon ?? Icons.check,
-                color: Colors.red,
-                size: 90.0,
-              ),
-              Flexible(
-                  child: Text(
-                title ?? "Congratulations",
-                style: TextStyle(
-                  fontSize: 27,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
-                ),
-              )),
-              SizedBox(
-                height: 15.0,
-              ),
-              Flexible(
-                child: Text(
-                  dis ?? "You Got $Per %, You Promoted to Next Level",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              SizedBox(
-                height: 15.0,
-              ),
-              FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(9.0))),
-                color: Colors.black,
-                onPressed: () {
-                  // Navigator.pushAndRemoveUntil(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => HomeDesign(),
-                  //   ),
-                  //   (Route<dynamic> route) => false,
-                  // );
-                  Navigator.of(context).pop();
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Next",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        );
-      },
     );
   }
 }

@@ -19,7 +19,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
   void initState() {
     // data();
     super.initState();
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
     //1
   }
 

@@ -28,7 +28,7 @@ class _WinnersPageState extends State<WinnersPage> {
   void initState() {
     super.initState();
 
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
   }
 
   // takescrshot() async {
@@ -86,78 +86,82 @@ class _WinnersPageState extends State<WinnersPage> {
                         );
                       } else if (snapshot.hasData) {
                         var url = snapshot.data.documents[i]['Poster url'];
-                        return Container(
-                          color: Colors.black,
-                          height: MediaQuery.of(context).size.height,
-                          child: Stack(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height,
-                                child: CachedNetworkImage(
-                                  fadeInDuration: Duration(seconds: 1),
-                                  placeholder: (context, url) => Center(
-                                    child: CircularProgressIndicator(),
+                        return Center(
+                          child: Container(
+                            color: Colors.black,
+                            height: MediaQuery.of(context).size.height,
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: MediaQuery.of(context).size.height,
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: Duration(seconds: 1),
+                                    placeholder: (context, url) => Center(
+                                      child: CircularProgressIndicator(),
+                                    ),
+                                    imageUrl: url,
+                                    errorWidget: (context, url, error) =>
+                                        Icon(Icons.error),
+                                    fit: BoxFit.cover,
                                   ),
-                                  imageUrl: url,
-                                  errorWidget: (context, url, error) =>
-                                      Icon(Icons.error),
-                                  fit: BoxFit.cover,
                                 ),
-                              ),
-                              Container(
-                                color: Colors.black26,
-                              ),
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                  margin: EdgeInsets.only(bottom: 50.0),
-                                  decoration: BoxDecoration(
-                                    color: Colors.black45,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(5),
+                                Container(
+                                  color: Colors.black26,
+                                ),
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Container(
+                                    margin: EdgeInsets.only(bottom: 50.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black45,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(5),
+                                      ),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0,
+                                            vertical: 10.0,
+                                          ),
+                                          child: Text(
+                                            snapshot.data.documents[i]
+                                                    ['Name'] ??
+                                                "",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0,
+                                            vertical: 10.0,
+                                          ),
+                                          child: Text(
+                                            snapshot.data.documents[i]
+                                                    ['Date'] ??
+                                                "",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 10.0,
-                                          vertical: 10.0,
-                                        ),
-                                        child: Text(
-                                          snapshot.data.documents[i]['Name'] ??
-                                              "",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 10.0,
-                                          vertical: 10.0,
-                                        ),
-                                        child: Text(
-                                          snapshot.data.documents[i]['Date'] ??
-                                              "",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         );
                       }

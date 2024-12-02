@@ -240,3 +240,13 @@ Done:<br>
 <h2>07/08/2020</h2>
 <br>
 <h1>Published Stable 1.0.4 </h1>
+<br>
+<br>
+<h1> New Branch </h1>
+<h2>13/08/2020</h2>
+<br>
+Done::
+1.Added submit button to reduce steps..100 Done with implementation [x]<br>
+2.Remove the hiding bottom nav bar.[x]<br>
+3.adjested the Eds page and winners page.[x]<br>
+4.Added the Update button in settings.[x]<br>
